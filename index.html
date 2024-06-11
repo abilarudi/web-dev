@@ -12,6 +12,15 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
       rel="stylesheet"
     />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
 
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
@@ -22,7 +31,11 @@
   <body>
     <!-- Navbar Start -->
     <nav class="navbar">
-      <a href="#" class="navbar-logo"> Coconut<span>OIL</span> </a>
+      <div class="navbar-logo">
+      <img src="image/ABILA.svg" class= "abila" alt="">
+      <img src="image/Coconut.png" alt="">
+      </div>
+      
 
       <div class="navbar-nav">
         <a href="#home">Home</a>
@@ -31,9 +44,17 @@
         <a href="#contact">Kontak</a>
         <a href="catalog.html">Katalog</a>
       </div>
+        
+      
 
       <div class="navbar-extra">
-        <a href="#" id="search"><i data-feather="search"></i></a>
+          <form action="">
+            <div class="navbar-search">
+              <input type="text" placeholder="Search..." />
+              <a href=""><i data-feather="search" class="isearch"></i></a>
+            </div>
+          </form>
+        <a href="login.html" class="logins"><i data-feather="user"></i></a>
         <a href="#" id="shopping"><i data-feather="shopping-cart"></i></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>

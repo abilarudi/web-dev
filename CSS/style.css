@@ -1,6 +1,6 @@
 :root {
-  --primary: #4b9881;
-  --bg: #010101;
+  --primary: #03484A;
+  --bg: #F1E4C3;
 }
 
 * {
@@ -24,8 +24,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.4rem 7%;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-bottom: 1px solid var(--primary);
+  background-color: var(--primary);
+  /* border-bottom: 1px solid var(--primary); */
+  color: var(--bg);
   position: fixed;
   top: 0;
   left: 0;
@@ -34,9 +35,30 @@ body {
 }
 
 .navbar .navbar-logo {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: #fff;
+  font-family: "Giddelham-Bold", Giddelham;
+  color: var(--bg);
+  display:flex;
+  text-align: center;
+  padding: 0.2rem 1rem 0.2rem 0.5rem;
+  line-height: 2rem;
+  justify-content: center;
+  position: relative;
+  left: -2rem;
+  /* width: 10rem;
+  height: 2rem; */
+}
+.navbar .navbar-logo .abila {
+  width: 7rem;
+  margin: 0 0.5rem 0 2rem; 
+  position:relative;
+}
+.navbar .navbar-logo img {
+  width: 3.7rem;
+  padding-left: 1rem;
+  position: relative;
+  top:-0.7rem;
 }
 
 .navbar .navbar-logo span {
@@ -52,14 +74,14 @@ body {
 }
 
 .navbar .navbar-nav a:hover {
-  color: var(--primary);
+  color: var(--bg);
 }
 
 .navbar .navbar-nav a::after {
   content: "";
   display: block;
   padding-bottom: 0.5rem;
-  border-bottom: 0.1rem solid var(--primary);
+  border-bottom: 0.1rem solid var(--bg);
   transform: scaleX(0);
   transition: 0.2s linear;
 }
@@ -68,16 +90,54 @@ body {
   transform: scaleX(0.75);
 }
 
+.navbar .navbar-extra{
+  display: flex;
+  align-items: center;
+}
+
 .navbar .navbar-extra a {
   color: #fff;
   margin: 0 0.5rem;
 }
 
 .navbar .navbar-extra a:hover {
-  color: var(--primary);
+  color: var(--bg);
   transition: 0.2s linear;
 }
+.navbar .navbar-extra .navbar-search {
+  height: 2rem;
+  background: bisque;
+  display: flex;
+  align-items: center;
+  color: #333;
+  padding: 0.5rem 0 0.5rem 0;
+  position: relative;
+  top:-0.3rem;
+}
+.navbar .navbar-extra .navbar-search input{
+  height: 2rem;
+  width: 10rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444; 
+  background-color: #fff;
+}
+.navbar .navbar-extra .navbar-search a {
+  color: #666;
+  position: relative;
+  top: 0.2rem;
+}
 
+.navbar .navbar-extra .navbar-search .isearch{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.navbar .navbar-extra .navbar-search:hover{
+  background-color: var(--bg);
+  color: var(--primary);
+  cursor: pointer;
+}
 #hamburger-menu {
   display: none;
 }
@@ -459,3 +519,25 @@ html {
 }
 /* Responsive break point?
 titik lebar layar css akan berubah*/
+/* Font Queries */
+@font-face{
+  font-family: 'Giddelham';
+  src: url('../Font/Giddelham-Bold/Giddelham-Regular.ttf') format('truetype');
+  src: url('../Font/Giddelham-Bold/Giddelham-Regular.woff') format('woff');
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Giddelham-Bold";
+  src: url('../Font/Giddelham-Bold/Giddelham-Bold.ttf') format('truetype');
+  src: url('../Font/Giddelham-Bold/Giddelham-Bold.woff') format('woff'),
+url('../Font/Giddelham-Bold/Giddelham-Bold.woff2') format('woff2'), ;
+  font-weight: bold;
+}
+/* @font-face {
+  font-family: "Gi";
+  src: url('fonts/fira/eot/FiraSans-Regular.eot');
+  src: url('fonts/fira/eot/FiraSans-Regular.eot') format('embedded-opentype'),
+       url('fonts/fira/woff2/FiraSans-Regular.woff2') format('woff2'),
+       url('fonts/fira/woff/FiraSans-Regular.woff') format('woff'),
+       url('fonts/fira/woff2/FiraSans-Regular.ttf') format('truetype');
+} */
