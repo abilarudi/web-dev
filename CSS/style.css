@@ -360,33 +360,113 @@ body {
 
 .catalog {
   display: block;
-  border: 1px solid #222; /* Add a border around the catalog */
+  /* border: 1px solid #222; Add a border around the catalog */
   gap: 0;
+}
+.catalog-header {
+  background-color: #FFFFEC; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 25rem; 
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.catalog-name{
+  display: flex;
+  margin-top: 2rem;
+  border-top: 3px solid var(--text);
+  position: relative;
+  /* justify-content: center; */
+}
+.catalog-name h3{
+  font-size: 1.5rem;
+  color: var(--primary);
+  font-weight: normal;
+  padding: 0.5rem 0rem;
+  position: relative;
+  /* border: 1px solid #222; */
+}
+.catalog .catalog-name i{
+  font-size: 2rem;
+  position: absolute;
+  padding: 0.7rem 0;
+  right: 1rem;
+  color: var(--primary);
+  cursor: pointer;
+  /* display: none; */
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  z-index: 1;
+}
+.catalog .catalog-name i::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%; /* Adjust as needed */
+  height: 90%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.catalog .catalog-name i:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+  background-color: rgba(0, 0, 0, 0.2); /* Adjust as needed */
+}
+.catalog .catalog-name .dropdown-menu {
+  display:none;
+  position: absolute;
+  background-color: #f9f9f9;
+ 
+  width: 15rem;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  font-size: 1rem;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+  border-radius: 5px;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+}
+.catalog .catalog-name .dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.catalog .dropdown-menu a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 .catalog-row {
   /* margin: 0 1rem 1rem 2rem; */
   overflow: hidden;
+  height: auto;
+  padding: 1rem 0 5rem 1rem;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2%;
   flex-wrap: wrap;
   position: relative;
-  border: 1px solid #222; /* Add a border around the catalog */
+  /* border: 1px solid #222; Add a border around the catalog */
 }
 
 .catalog .product-card {
   flex: 1 0 21%; 
   border-radius: 15px;
   display: flex; 
+  transition: transform 0.3s ease-in-out;
   height: auto;
-  justify-content:center; 
+  overflow: hidden;
+  /* justify-content:center;  */
   align-items: center; 
   flex-direction: column;
   /* border: 1px solid #D6C8A9; */
   width: fit-content;
-  position: relative;
+  position:relative;
   padding: 0rem; 
-  background: #F1E4C3;
+  background:#FFFFEC;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
@@ -397,9 +477,13 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(to right, #D6C8A9, #F1E4C3); /* Replace with your gradient */
+  transition: transform 0.3s ease-in-out;
+  background: #FFFFEC; /* Replace with your gradient */
   z-index: -1;
   border-radius: inherit; /* If your .product-card has rounded corners */
+}
+.catalog .product-card:hover {
+  transform: scale(1.05); /* Add this */
 }
 
 .catalog .product-card img{
@@ -410,6 +494,44 @@ body {
   object-position: center;
   border-top-left-radius: 15px; /* Add this */
   border-top-right-radius: 15px;
+}
+.catalog .product-card .product-card-title {
+  font-size: 1rem;
+  width: 100%;
+  text-align: left;
+  /* border: 1px solid #222; */
+  color: var(--primary);
+  font: fallback;
+  font-weight: bolder;
+  padding: 0.5rem 1rem;
+  /* padding: 0rem 1rem; */
+}
+.catalog .product-card .menu-card-price{
+  font-size: 1rem;
+  width: 100%;
+  text-align: left;
+  /* border: 1px solid #222; */
+  color: var(--primary);
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  /* padding: 0rem 1rem; */
+}
+.catalog .product-card .btdetail{
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+  /* border: 1px solid #222; */
+  background: var(--primary);
+  color: #FFFFEC;
+  font-weight: bold;
+  padding: 0.7rem 1rem;
+  margin-top: auto;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.catalog .product-card .btdetail:hover{
+  background: #E6FF94;
+  color: var(--primary);
 }
 /* .catalog .product-card:nth-last-child(-n+2) {
   width: auto; /* Make the width depend on the content (the image) */
