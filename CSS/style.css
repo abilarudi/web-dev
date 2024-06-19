@@ -1,6 +1,6 @@
 :root {
   --primary: #03484a;
-  --bg: #F1E4C3;
+  --bg: #f1e4c3;
   --text: #808080;
 }
 
@@ -26,7 +26,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.4rem 7%;
-  background-color: rgba(3,72,74,0.9);
+  background-color: rgba(3, 72, 74, 0.9);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   color: var(--bg);
   position: fixed;
@@ -40,7 +40,7 @@ body {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--bg);
-  display:flex;
+  display: flex;
   text-align: center;
   padding: 0.2rem 1rem 0.2rem 0.5rem;
   line-height: 2rem;
@@ -54,14 +54,14 @@ body {
 }
 .navbar .navbar-logo .abila {
   width: 7rem;
-  margin: 1rem 0.5rem 0 2rem; 
-  position:relative;
+  margin: 1rem 0.5rem 0 2rem;
+  position: relative;
 }
 .navbar .navbar-logo img {
   width: 3.7rem;
   padding-left: 1rem;
   position: relative;
-  top:-0.7rem;
+  top: -0.7rem;
 }
 
 .navbar .navbar-logo span {
@@ -93,7 +93,7 @@ body {
   transform: scaleX(0.75);
 }
 
-.navbar .navbar-extra{
+.navbar .navbar-extra {
   display: flex;
   align-items: center;
 }
@@ -115,15 +115,15 @@ body {
   color: #333;
   padding: 0.5rem 0 0.5rem 0;
   position: relative;
-  top:-0.3rem;
+  top: -0.3rem;
 }
-.navbar .navbar-extra .navbar-search input{
+.navbar .navbar-extra .navbar-search input {
   height: 2rem;
   width: 10rem;
   padding: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
-  color: #444; 
+  color: #444;
   background-color: #fff;
 }
 .navbar .navbar-extra .navbar-search a {
@@ -132,11 +132,11 @@ body {
   top: 0.2rem;
 }
 
-.navbar .navbar-extra .navbar-search .isearch{
+.navbar .navbar-extra .navbar-search .isearch {
   width: 1.5rem;
   height: 1.5rem;
 }
-.navbar .navbar-extra .navbar-search:hover{
+.navbar .navbar-extra .navbar-search:hover {
   background-color: var(--bg);
   color: var(--primary);
   cursor: pointer;
@@ -171,7 +171,7 @@ body {
   background: linear-gradient(
     180deg,
     rgba(228, 212, 174, 1) 20%,
-    rgba(242, 230, 191, 1)50%
+    rgba(242, 230, 191, 1) 50%
   );
 }
 
@@ -216,19 +216,21 @@ body {
 .about,
 .product,
 .contact,
-.catalog {
+.catalog,
+.category {
   padding: 8rem 7% 1.4rem;
 }
 
 .about h2,
 .product h2,
 .contact h2,
-.catalog h2{
+.catalog h2,
+.category h3 {
   text-align: center;
   font-size: 2.6rem;
   margin: 3rem;
   margin-bottom: 1rem;
-  padding:0;
+  padding: 0;
   color: #eee;
   margin-top: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -236,8 +238,9 @@ body {
 
 .about h2 span,
 .product h2 span,
-.contact h2 span, 
-.catalog h2 span{
+.contact h2 span,
+.catalog h2 span,
+.category h3 span {
   color: var(--primary);
 }
 /* pengertian tentang flex box sangat penting */
@@ -276,7 +279,7 @@ body {
 } */
 
 .product h2,
-.contact h2{
+.contact h2 {
   margin-bottom: 3rem;
 }
 
@@ -309,8 +312,6 @@ body {
 .product .row .product-card .product-card-title {
   margin: 1rem auto 0.5rem;
 }
-
-
 
 /* Contact Section */
 .contact .row {
@@ -364,20 +365,20 @@ body {
   gap: 0;
 }
 .catalog-header {
-  background-color: #FFFFEC; 
+  background-color: #ffffec;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: 25rem; 
+  height: 25rem;
   padding: 3rem 2rem;
   text-align: center;
 }
-.catalog-name{
+.catalog-name {
   display: flex;
   margin-top: 2rem;
   border-top: 3px solid var(--text);
   position: relative;
   /* justify-content: center; */
 }
-.catalog-name h3{
+.catalog-name h3 {
   font-size: 1.5rem;
   color: var(--primary);
   font-weight: normal;
@@ -385,7 +386,7 @@ body {
   position: relative;
   /* border: 1px solid #222; */
 }
-.catalog .catalog-name i{
+.catalog .catalog-name i {
   font-size: 2rem;
   position: absolute;
   padding: 0.7rem 0;
@@ -413,15 +414,15 @@ body {
   background-color: rgba(0, 0, 0, 0.2); /* Adjust as needed */
 }
 .catalog .catalog-name .dropdown-menu {
-  display:none;
+  display: none;
   position: absolute;
   background-color: #f9f9f9;
- 
+
   width: 15rem;
   font-family: "Poppins", sans-serif;
   color: var(--text);
   font-size: 1rem;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   z-index: 1;
   left: 50%;
@@ -453,21 +454,21 @@ body {
 }
 
 .catalog .product-card {
-  flex: 1 0 21%; 
+  flex: 1 0 21%;
   border-radius: 15px;
-  display: flex; 
+  display: flex;
   transition: transform 0.3s ease-in-out;
   height: auto;
   overflow: hidden;
   /* justify-content:center;  */
-  align-items: center; 
+  align-items: center;
   flex-direction: column;
   /* border: 1px solid #D6C8A9; */
   width: fit-content;
-  position:relative;
-  padding: 0rem; 
-  background:#FFFFEC;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  position: relative;
+  padding: 0rem;
+  background: #ffffec;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .catalog .product-card::before {
@@ -478,7 +479,7 @@ body {
   bottom: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
-  background: #FFFFEC; /* Replace with your gradient */
+  background: #ffffec; /* Replace with your gradient */
   z-index: -1;
   border-radius: inherit; /* If your .product-card has rounded corners */
 }
@@ -486,7 +487,7 @@ body {
   transform: scale(1.05); /* Add this */
 }
 
-.catalog .product-card img{
+.catalog .product-card img {
   width: 17.62rem;
   height: 23.5rem;
   object-fit: cover;
@@ -506,7 +507,7 @@ body {
   padding: 0.5rem 1rem;
   /* padding: 0rem 1rem; */
 }
-.catalog .product-card .menu-card-price{
+.catalog .product-card .menu-card-price {
   font-size: 1rem;
   width: 100%;
   text-align: left;
@@ -516,25 +517,156 @@ body {
   padding: 0.5rem 1rem;
   /* padding: 0rem 1rem; */
 }
-.catalog .product-card .btdetail{
+.catalog .product-card .btdetail {
   font-size: 1rem;
   width: 100%;
   text-align: center;
   /* border: 1px solid #222; */
   background: var(--primary);
-  color: #FFFFEC;
+  color: #ffffec;
   font-weight: bold;
   padding: 0.7rem 1rem;
   margin-top: auto;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-.catalog .product-card .btdetail:hover{
-  background: #E6FF94;
+.catalog .product-card .btdetail:hover {
+  background: #e6ff94;
   color: var(--primary);
 }
 /* .catalog .product-card:nth-last-child(-n+2) {
   width: auto; /* Make the width depend on the content (the image) */
+
+/* Kategori */
+.product-summary {
+  display: flex;
+}
+.border-product {
+  background-color: #ffffec;
+  width: 50%;
+  border: #ffffec;
+  margin: 20px;
+}
+.border-product ::-webkit-scrollbar {
+  width: 10px;
+  height: 2px;
+}
+.border-product ::-webkit-scrollbar-track {
+  background: var(--text);
+  border-radius: 10px;
+}
+.border-product ::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
+.border-product ::-webkit-scrollbar-thumb:hover {
+  background: var(--bg);
+}
+.product-sumwoimg h3 {
+  text-align: center;
+}
+
+.product-images {
+  background-color: var(--bg);
+  overflow: auto;
+  white-space: nowrap;
+  padding: 0.1rem;
+}
+.product-images img {
+  padding: 0.1rem;
+}
+
+.category .product-detail {
+  text-align: justify;
+}
+.category .product-sumwoimg .product-detail .exc {
+  display: inline-block;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+.category .product-sumwoimg .product-detail .category-link a {
+  color: var(--text);
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+.category .category-link {
+  margin-bottom: 0.5rem;
+}
+.category .product-sumwoimg .product-detail .category-link a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+.category .product-description {
+  text-align: justify;
+}
+.category .product-selling {
+  display: flex;
+}
+.category .product-price {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  color: var(--primary);
+  font-size: 1.2rem;
+  padding: 1rem;
+  background-color: #ffffec;
+  width: fit-content;
+}
+.category .shopee-link {
+  margin-top: 2rem;
+  margin-right: 1rem;
+}
+.category .shopee-link a {
+  color: var(--primary);
+  font-size: 1.2rem;
+  padding: 1rem;
+  background-color: #ffffec;
+  width: fit-content;
+}
+.category .shopee-link a:hover {
+  color: #ffffec;
+  background-color: var(--primary);
+}
+
+/* MINI NAVBAR BUAT SEMMARY */
+.category .product-description {
+  display: flex;
+  gap: 2rem;
+}
+
+.category .desk {
+  padding: 1rem;
+  cursor: pointer;
+  background-color: var(--bg);
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.category .desk:hover,
+.category .desk.active {
+  background-color: var(--bg);
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.category .sumcontent {
+  display: none;
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+}
+.category .sumcontent .desc-fix {
+  display: flex;
+  flex-direction: column;
+}
+.category .sumcontent .desc-fix .tittle-desc {
+  font-weight: bold;
+  background-color: #ffffec;
+  padding: 1rem;
+  flex: max-content;
+}
+.category .sumcontent .desc-fix .content-desc {
+  background-color: var(--bg);
+  margin-bottom: 1.5rem;
+}
 
 /* Footer Section */
 footer {
@@ -596,7 +728,7 @@ html {
   }
 }
 /* idk */
-@media(max-width: 1030px){
+@media (max-width: 1030px) {
   .catalog-row {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -674,6 +806,13 @@ html {
   .catalog-row {
     grid-template-columns: repeat(2, 1fr);
   }
+  .category .product-summary {
+    display: block;
+  }
+  .category .border-product {
+    width: 100%;
+    margin: 20px;
+  }
 }
 
 /* yang mobile belum diatur aboutnya */
@@ -715,21 +854,28 @@ html {
   .catalog-row {
     grid-template-columns: repeat(1, 1fr);
   }
+  .category .product-summary {
+    display: block;
+  }
+  .category .border-product {
+    width: 100%;
+    margin: 20px;
+  }
 }
 /* Responsive break point?
 titik lebar layar css akan berubah*/
 /* Font Queries */
-@font-face{
-  font-family: 'Giddelham';
-  src: url('../Font/Giddelham-Bold/Giddelham-Regular.ttf') format('truetype');
-  src: url('../Font/Giddelham-Bold/Giddelham-Regular.woff') format('woff');
+@font-face {
+  font-family: "Giddelham";
+  src: url("../Font/Giddelham-Bold/Giddelham-Regular.ttf") format("truetype");
+  src: url("../Font/Giddelham-Bold/Giddelham-Regular.woff") format("woff");
   font-weight: bold;
 }
 @font-face {
   font-family: "Giddelham-Bold";
-  src: url('../Font/Giddelham-Bold/Giddelham-Bold.ttf') format('truetype');
-  src: url('../Font/Giddelham-Bold/Giddelham-Bold.woff') format('woff'),
-url('../Font/Giddelham-Bold/Giddelham-Bold.woff2') format('woff2'), ;
+  src: url("../Font/Giddelham-Bold/Giddelham-Bold.ttf") format("truetype");
+  src: url("../Font/Giddelham-Bold/Giddelham-Bold.woff") format("woff"),
+    url("../Font/Giddelham-Bold/Giddelham-Bold.woff2") format("woff2");
   font-weight: bold;
 }
 /* @font-face {

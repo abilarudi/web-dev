@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COCONUT OIL</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- My Style -->
+    <link rel="Stylesheet" href="CSS/style.css?v=1" />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <img src="image/ABILA.svg" class="abila" alt="" />
+        <img src="image/Coconut.svg" alt="" />
+      </div>
+
+      <div class="navbar-nav">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">Tentang Kami</a>
+        <a href="index.html#product">Produk</a>
+        <a href="index.html#contact">Kontak</a>
+        <a href="catalog.html">Katalog</a>
+      </div>
+
+      <div class="navbar-extra">
+        <form action="">
+          <div class="navbar-search">
+            <input type="text" placeholder="Search..." />
+            <a href=""><i data-feather="search" class="isearch"></i></a>
+          </div>
+        </form>
+        <a href="login.html" class="logins"><i data-feather="user"></i></a>
+        <a href="#" id="shopping"><i data-feather="shopping-cart"></i></a>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!--  Detail Product Start -->
+    <section class="category" id="category">
+      <div class="product-summary">
+        <div class="border-product">
+          <div class="product-images">
+            <img src="/image/abilahome1.png" alt="Cococnut Oil1" width="100%" />
+            <img src="/image/abilahome6.png" alt="Coconut Oil1" width="100%" />
+            <img src="/image/abilahome4.png" alt="Cococnut Oil1" width="100%" />
+          </div>
+        </div>
+        <div class="product-sumwoimg">
+          <h3><span>Produk </span>1</h3>
+          <div class="product-detail">
+            <p class="exc">
+              Mengatasi Rambut Rontok
+              <span>○</span>
+              Mengurangi Ketombe <span>○</span>
+              Mengobati Kulit Kepala Gatal
+            </p>
+            <p class="category-link">
+              <a href="catalog.html">Minyak Kelapa</a>
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Exercitationem quas debitis, non fugiat mollitia provident.
+            </p>
+          </div>
+          <div class="product-selling">
+            <div class="product-price">Rp 90.000</div>
+            <div class="shopee-link">
+              <a
+                href="https://www.instagram.com/griya_sehat_abila?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                >Beli Sekarang</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-description">
+        <button class="desk" onclick="openCity(event,'Deskripsi')">
+          Deskripsi
+        </button>
+        <button class="desk" onclick="openCity(event,'Cara Penggunaan')">
+          Cara Penggunaan
+        </button>
+        <button class="desk" onclick="openCity(event,'Review')">Review</button>
+      </div>
+      <div id="Deskripsi" class="sumcontent">
+        <div class="desc-fix">
+          <div class="title-desc">Ringkasan</div>
+          <div class="content-desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
+            dolore sunt temporibus magni repellendus architecto aliquid ab
+            cumque sit minima!
+          </div>
+        </div>
+        <div class="desc-fix">
+          <div class="title-desc">Ukuran</div>
+          <div class="content-desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
+            dolore sunt temporibus magni repellendus architecto aliquid ab
+            cumque sit minima!
+          </div>
+        </div>
+        <div class="desc-fix">
+          <div class="title-desc">Tips</div>
+          <div class="content-desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
+            dolore sunt temporibus magni repellendus architecto aliquid ab
+            cumque sit minima!
+          </div>
+        </div>
+      </div>
+      <div id="Cara Penggunaan" class="sumcontent">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+          sapiente alias repellendus provident sed harum ad necessitatibus
+          commodi! Labore sunt officia rerum id nemo doloremque asperiores
+          nostrum. Labore, in quis.
+        </p>
+      </div>
+      <div id="Review" class="sumcontent">
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
+          aperiam.
+        </p>
+      </div>
+      <script>
+        function openCity(evt, cityName) {
+          var i, sumcontent, desk;
+          sumcontent = document.getElementsByClassName("sumcontent");
+          for (i = 0; i < sumcontent.length; i++) {
+            sumcontent[i].style.display = "none";
+          }
+          desk = document.getElementsByClassName("desk");
+          for (i = 0; i < desk.length; i++) {
+            desk[i].className = desk[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+      </script>
+    </section>
+
+    <!-- Detail Product End -->
+
+    <!-- Footer Section Start -->
+    <footer>
+      <div class="socials">
+        <a href="https://www.instagram.com/timkkn_mtkits/"
+          ><i data-feather="instagram"></i
+        ></a>
+        <a href="a"><i data-feather="facebook"></i></a>
+      </div>
+      <div class="links">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#product">Produk</a>
+        <a href="#contact">Kontak</a>
+        <a href="catalog.html">Katalog</a>
+      </div>
+
+      <div class="credit">
+        <p>
+          Created by
+          <a href="https://www.instagram.com/timkkn_mtkits/"
+            >KKN MATEMATIKA ITS</a
+          >
+          | &copy;2024
+        </p>
+      </div>
+    </footer>
+
+    <!-- Footer Section End -->
+
+    <!-- Feather Icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- My Javascript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
