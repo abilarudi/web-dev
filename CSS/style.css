@@ -217,7 +217,8 @@ body {
 .product,
 .contact,
 .catalog,
-.category {
+.category,
+.FAQ {
   padding: 8rem 7% 1.4rem;
 }
 
@@ -225,7 +226,8 @@ body {
 .product h2,
 .contact h2,
 .catalog h2,
-.category h3 {
+.category h3,
+.FAQ h2 {
   text-align: center;
   font-size: 2.6rem;
   margin: 3rem;
@@ -240,7 +242,8 @@ body {
 .product h2 span,
 .contact h2 span,
 .catalog h2 span,
-.category h3 span {
+.category h3 span,
+.FAQ h2 span {
   color: var(--primary);
 }
 /* pengertian tentang flex box sangat penting */
@@ -279,7 +282,8 @@ body {
 } */
 
 .product h2,
-.contact h2 {
+.contact h2,
+.FAQ h2 {
   margin-bottom: 3rem;
 }
 
@@ -311,6 +315,34 @@ body {
 
 .product .row .product-card .product-card-title {
   margin: 1rem auto 0.5rem;
+}
+/* FAQ Section */
+.FAQ .QnA-border {
+  border: 2px solid var(--primary);
+}
+.FAQ .QnA .Question {
+  background-color: var(--bg);
+  color: var(--primary);
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  font-size: 14px;
+  transition: 0.4s;
+  border-top: 2px solid var(--primary);
+}
+.FAQ .QnA .Question.active,
+.FAQ .QnA .Question:hover {
+  background-color: #ffffec;
+}
+.FAQ .QnA .Answer {
+  padding: 1rem;
+  display: none;
+  background-color: #ffffec;
+  overflow: hidden;
+  font-size: 12px;
+  border-bottom: 2px solid var(--primary);
 }
 
 /* Contact Section */
@@ -542,9 +574,9 @@ body {
   display: flex;
 }
 .border-product {
-  background-color: #ffffec;
+  background-color: var(--bg);
   width: 50%;
-  border: #ffffec;
+  border: var(--bg);
   margin: 20px;
 }
 .border-product ::-webkit-scrollbar {
@@ -627,23 +659,36 @@ body {
 }
 
 /* MINI NAVBAR BUAT SEMMARY */
+.category .border-sum {
+  background-color: #ffffec;
+  border: #ffffec;
+  /* border-top: 2px solid var(--primary); */
+  padding: 1rem;
+}
+
 .category .product-description {
   display: flex;
+  margin-top: 2rem;
+  background-color: var(--primary);
   gap: 2rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 
 .category .desk {
   padding: 1rem;
   cursor: pointer;
-  background-color: var(--bg);
+  background-color: var(--primary);
   border: none;
   font-size: 1.2rem;
-  color: var(--text);
+  color: #ffffec;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 
-.category .desk:hover,
+/* .category .desk:hover, */
 .category .desk.active {
-  background-color: var(--bg);
+  background-color: #ffffec;
   color: var(--primary);
   text-decoration: underline;
 }
@@ -664,10 +709,20 @@ body {
   flex: max-content;
 }
 .category .sumcontent .desc-fix .content-desc {
-  background-color: var(--bg);
   margin-bottom: 1.5rem;
 }
+.category .sumcontent .product-review {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--text);
+  margin-bottom: 0.5rem;
+}
 
+.category .sumcontent .product-review .user {
+  font-size: 14px;
+}
+.category .sumcontent .product-review .content-review {
+  padding-left: 20px;
+}
 /* Footer Section */
 footer {
   background-color: var(--primary);
