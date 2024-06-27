@@ -95,18 +95,16 @@
           </div>
         </div>
       </div>
+      <div class="product-description">
+        <button class="desk" onclick="openCity(event,'Deskripsi')">
+          Deskripsi
+        </button>
+        <button class="desk" onclick="openCity(event,'Cara Penggunaan')">
+          Cara Penggunaan
+        </button>
+        <button class="desk" onclick="openCity(event,'Review')">Review</button>
+      </div>
       <div class="border-sum">
-        <div class="product-description">
-          <button class="desk" onclick="openCity(event,'Deskripsi')">
-            Deskripsi
-          </button>
-          <button class="desk" onclick="openCity(event,'Cara Penggunaan')">
-            Cara Penggunaan
-          </button>
-          <button class="desk" onclick="openCity(event,'Review')">
-            Review
-          </button>
-        </div>
         <div id="Deskripsi" class="sumcontent">
           <div class="desc-fix">
             <div class="title-desc">Ringkasan</div>
@@ -142,10 +140,37 @@
           </p>
         </div>
         <div id="Review" class="sumcontent">
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
-            aperiam.
-          </p>
+          <div class="product-review">
+            <div class="user">
+              <i class="fas fa-user-circle" style="font-size: 16px"></i>
+              User1234xxxx
+            </div>
+            <div class="content-review">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptate, aperiam.
+            </div>
+          </div>
+          <div class="product-review">
+            <div class="user">
+              <i class="fas fa-user-circle" style="font-size: 16px"></i>
+              User1234xxxx
+            </div>
+            <div class="content-review">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptate, aperiam.
+            </div>
+          </div>
+          <!-- ADD REVIE BARU -->
+          <!-- <div class="product-review">
+            <div class="user">  
+              <i class="fas fa-user-circle" style="font-size: 16px"></i>
+              User1234xxxx
+            </div>
+            <div class="content-review">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptate, aperiam.
+            </div>
+          </div> -->
         </div>
         <script>
           function openCity(evt, cityName) {
@@ -161,6 +186,9 @@
             document.getElementById(cityName).style.display = "block";
             evt.currentTarget.className += " active";
           }
+          document.addEventListener("DOMContentLoaded", function () {
+            openCity(null, "Deskripsi");
+          });
         </script>
       </div>
     </section>
