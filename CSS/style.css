@@ -351,8 +351,60 @@ body {
   background-size: 30% 80%, 70% 90%;
   background-color: #ede1d1;
 }
+
 .about .row {
   display: flex;
+}
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes anim-lineBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes anim-lineright {
+  0% {
+    opacity: 0;
+    transform: translateX(-80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
 }
 .about .row .leftrow {
   display: block;
@@ -370,42 +422,76 @@ body {
   object-fit: unset;
   object-position: center;
 }
+.about .row .about-img .abt-product {
+  animation: 5s moveImg ease;
+}
 .about .row .about-img .dec1 {
   width: 20%;
   object-fit: unset;
   object-position: 100%;
   transform: translate(80%, -40%);
+  animation: 5s moveImg ease-in-out;
 }
 .about .row .about-img .dec2 {
   width: 20%;
   object-fit: unset;
   object-position: 100%;
   transform: translate(-50%, 40%);
+  animation: 5s moveImg ease-in-out;
+}
+@keyframes moveImg1 {
+  0% {
+    transform: translate(80%, -40%) rotate(90deg);
+    opacity: 50%;
+  }
+  100% {
+    transform: translate(80%, -40%) rotate(360deg);
+    opacity: 100%;
+  }
+}
+@keyframes moveImg2 {
+  0% {
+    transform: translate(-50%, 40%) rotate(90deg);
+    opacity: 50%;
+  }
+  100% {
+    transform: translate(-50%, 40%) rotate(360deg);
+    opacity: 100%;
+  }
+}
+@keyframes moveImg {
+  0% {
+    transform: rotate(90deg);
+    opacity: 50%;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 100%;
+  }
 }
 .about .leftrow .title p {
   color: #a25b1d;
   font-size: 1.4rem;
+  animation: 5s anim-lineBottom ease-out;
 }
 .about .leftrow .title h3 {
   display: block;
   margin-bottom: 0.2px;
   font-size: 2rem;
   color: #fdb320;
+  animation: 5s anim-lineBottom ease-out;
 }
 .about .leftrow .title h3 span {
   color: #a25b1d;
   margin-bottom: 1rem;
 }
 
-/* .about .row .about-img img {
-  width: 70%;
-} */
-
 .about .row .content {
   flex: 1 1 35rem;
   padding: 1rem;
   background-color: #84563c;
   border-radius: 1rem;
+  animation: 5s anim-lineUp ease-out;
 }
 
 .about .row .content p {
@@ -423,6 +509,7 @@ body {
   font-size: 2rem;
   text-align: center;
   padding: 1.5rem;
+  animation: 5s anim-lineBottom ease-out;
 }
 .about .eminance {
   background-color: #84563c;
@@ -431,6 +518,7 @@ body {
   display: grid;
   grid-template-columns: auto auto auto;
   align-items: start;
+  animation: 5s anim-lineUp ease-out;
 }
 .about .eminance .em-content {
   text-align: center;
@@ -492,6 +580,7 @@ body {
 .product .row .product-card {
   background-color: #ffffff;
   margin: 2rem;
+  animation: 5s anim-lineUp ease-out;
 }
 .product .row .product-card .top-tag {
   font-weight: 700;
@@ -559,6 +648,9 @@ body {
   font-style: italic;
 }
 /* Blog Section */
+.blog {
+  background-color: #ede1d1;
+}
 .blog .blog-content {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -610,6 +702,9 @@ body {
   text-decoration: underline;
 }
 /* FAQ Section */
+.FAQ {
+  background-color: #ede1d1;
+}
 .FAQ .QnA-border {
   border: 2px solid var(--primary);
 }
@@ -1025,10 +1120,26 @@ body {
 }
 /* Footer Section */
 footer {
-  background-color: var(--primary);
+  background-color: rgba(3, 72, 74, 0.5);
   text-align: center;
   padding: 1rem 3rem;
   margin-top: 3rem;
+  display: block;
+}
+footer .foot-content {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 2rem;
+}
+footer .foot-content p {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: larger;
+}
+footer .foot-content .foot-motto {
+  text-align: justify;
+  color: #ffffff;
+  padding-right: 2rem;
 }
 
 footer .socials {
@@ -1038,6 +1149,7 @@ footer .socials {
 footer .socials a {
   color: #fff;
   margin: 1rem;
+  display: block;
 }
 
 footer .socials a:hover {
@@ -1051,6 +1163,8 @@ footer .links {
 footer .links a {
   color: #fff;
   padding: 0.7rem 1rem;
+  display: block;
+  text-align: left;
 }
 
 footer .links a:hover {
