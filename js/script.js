@@ -16,29 +16,27 @@ document.addEventListener("click", function (e) {
 });
 
 // Efek Bg Navbar saat di scroll
-window.onscroll = function() {
-  const navbars = document.querySelectorAll('.navbar, .navbar-alt');
-  navbars.forEach(navbar => {
+window.onscroll = function () {
+  const navbars = document.querySelectorAll(".navbar, .navbar-alt");
+  navbars.forEach((navbar) => {
     if (window.scrollY > 400) {
-      navbar.classList.add('scrolled');
+      navbar.classList.add("scrolled");
     } else {
-      navbar.classList.remove('scrolled');
+      navbar.classList.remove("scrolled");
     }
   });
 };
 
-
 // Efek Scroll Smooth
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-      e.preventDefault();
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
 
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-      });
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
   });
 });
-
 
 // Klik di filter untuk menampilkan atau menghilangkan filter
 var filterIcon = document.querySelector(".catalog-name .fa-filter");
