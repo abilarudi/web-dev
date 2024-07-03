@@ -560,8 +560,8 @@ body {
   margin-bottom: 3rem;
 }
 
-.product p,
-.contact p {
+.product p {
+  /* .contact p { */
   text-align: center;
   max-width: 30rem;
   margin: auto;
@@ -738,14 +738,55 @@ body {
   background-color: rgba(3, 72, 74, 0.5);
   border-top-right-radius: 3rem;
   border-top-left-radius: 3rem;
+  align-content: center;
 }
-.contact .row {
-  display: flex;
-  margin-top: 2rem;
-  background-color: #222;
+.contact p {
+  color: #ffffff;
+  text-align: justify;
+  padding: none;
+  border: none;
+}
+.contact .contact-content {
+  display: grid;
+  border: 3px solid #cceeec;
+  border-radius: 1rem;
+  grid-template-columns: 1fr 2fr 1fr;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 3rem;
+  /* align-content: space-around; */
+  align-items: center;
+}
+.contact .contact-img img {
+  max-width: 100%;
+  height: auto;
+  padding-right: 2rem;
+}
+.contact .contact-sentence {
+  padding-left: 4rem;
+  font-size: 18px;
+  text-align: left;
+  vertical-align: middle;
+  color: #ffffff;
+}
+.contact .contact-sentence .contact-ask {
+  font-weight: 700;
+  font-size: larger;
+}
+.contact .contact-link a {
+  display: inline-block;
+  background-color: #f68b29;
+  color: #ffffff;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-radius: 0.5rem;
+}
+.contact .contact-link a span {
+  font-size: 14px;
 }
 
-.contact .row .map {
+/* .contact .row .map {
   flex: 1 1 45rem;
   width: 100%;
   object-fit: cover;
@@ -782,7 +823,7 @@ body {
   color: #fff;
   background-color: var(--primary);
   cursor: pointer;
-}
+} */
 
 .catalog {
   display: block;
@@ -1123,33 +1164,43 @@ footer {
   background-color: rgba(3, 72, 74, 0.5);
   text-align: center;
   padding: 1rem 3rem;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
+  padding-top: 5rem;
   display: block;
 }
 footer .foot-content {
+  text-align: center;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 2.5fr 1fr 1fr;
+  gap: 3rem;
   padding: 2rem;
+  align-content: center;
+  padding-left: 2rem;
 }
 footer .foot-content p {
   font-weight: 700;
   color: #ffffff;
   font-size: larger;
+  text-align: left;
 }
 footer .foot-content .foot-motto {
   text-align: justify;
   color: #ffffff;
-  padding-right: 2rem;
+  padding: 3rem;
+  /* padding-top: none; */
 }
 
 footer .socials {
-  padding: 1rem;
+  /* padding: 1rem; */
+  display: block;
 }
 
 footer .socials a {
   color: #fff;
-  margin: 1rem;
   display: block;
+  font-size: 14px;
+  text-align: justify;
+  padding-bottom: 1rem;
 }
 
 footer .socials a:hover {
@@ -1157,14 +1208,17 @@ footer .socials a:hover {
 }
 
 footer .links {
-  margin-bottom: 1.6rem;
+  display: grid;
+  grid-template-columns: auto;
+  gap: 1rem;
+
+  /* margin-bottom: 1.6rem; */
 }
 
 footer .links a {
   color: #fff;
-  padding: 0.7rem 1rem;
-  display: block;
   text-align: left;
+  display: inline-block;
 }
 
 footer .links a:hover {
@@ -1173,6 +1227,7 @@ footer .links a:hover {
 
 footer .credit {
   font-size: 0.8rem;
+  text-align: center;
 }
 
 footer .credit a {
