@@ -139,19 +139,19 @@ body {
   color: #444;
   background-color: #fff;
 }
-.navbar-extra .navbar-search a {
+.navbar-extra .navbar-search button {
   color: #666;
   position: relative;
   top: 0.2rem;
+  background: none;
 }
 
 .navbar-extra .navbar-search .isearch {
   width: 1.5rem;
   height: 1.5rem;
 }
-.navbar-extra .navbar-search:hover {
-  background-color: var(--bg);
-  color: var(--primary);
+.navbar-extra .navbar-search button:hover {
+  /* color: var(--primary); */
   cursor: pointer;
 }
 #hamburger-menu {
@@ -167,22 +167,20 @@ body {
   align-items: center;
   background-image: url("../image/bgirvan.jpg");
   background-repeat: no-repeat;
-  /* background-size: 433px 577px;
-  background-position: 90% 50%; */
   background-size: cover;
   background-position: center;
   position: relative;
 }
-.hero .motto {
+.hero .motto h1 {
+  font-family: "Inter", sans-serif;
   position: absolute;
   top: 25%;
   left: 50%;
-  font-weight: 100;
+  font-weight: 400;
   transform: translate(-50%, -50%);
   color: #fff;
-  font-size: 1.7rem;
-  width: fit-content;
-  /* font-weight: 200; */
+  font-size: 50px;
+  width: 100%;
   text-align: center;
   font-style: italic;
   padding: 1rem;
@@ -908,7 +906,6 @@ body {
   display: block;
 }
 .catalog-row {
-  /* margin: 0 1rem 1rem 2rem; */
   overflow: hidden;
   height: auto;
   padding: 1rem 0 5rem 1rem;
@@ -918,7 +915,6 @@ body {
   gap: 2%;
   flex-wrap: wrap;
   position: relative;
-  /* border: 1px solid #222; Add a border around the catalog */
 }
 
 .catalog .product-card {
@@ -928,10 +924,8 @@ body {
   transition: transform 0.3s ease-in-out;
   height: auto;
   overflow: hidden;
-  /* justify-content:center;  */
   align-items: center;
   flex-direction: column;
-  /* border: 1px solid #D6C8A9; */
   width: fit-content;
   position: relative;
   padding: 0rem;
@@ -947,49 +941,43 @@ body {
   bottom: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
-  background: #ffffec; /* Replace with your gradient */
+  background: #ffffec;
   z-index: -1;
-  border-radius: inherit; /* If your .product-card has rounded corners */
+  border-radius: inherit;
 }
 .catalog .product-card:hover {
-  transform: scale(1.05); /* Add this */
+  transform: scale(1.05);
 }
 
 .catalog .product-card img {
   width: 17.62rem;
   height: 23.5rem;
   object-fit: cover;
-
   object-position: center;
-  border-top-left-radius: 15px; /* Add this */
+  border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
 .catalog .product-card .product-card-title {
   font-size: 1rem;
   width: 100%;
   text-align: left;
-  /* border: 1px solid #222; */
   color: var(--primary);
   font: fallback;
   font-weight: bolder;
   padding: 0.5rem 1rem;
-  /* padding: 0rem 1rem; */
 }
 .catalog .product-card .menu-card-price {
   font-size: 1rem;
   width: 100%;
   text-align: left;
-  /* border: 1px solid #222; */
   color: var(--primary);
   font-weight: bold;
   padding: 0.5rem 1rem;
-  /* padding: 0rem 1rem; */
 }
 .catalog .product-card .btdetail {
   font-size: 1rem;
   width: 100%;
   text-align: center;
-  /* border: 1px solid #222; */
   background: var(--primary);
   color: #ffffec;
   font-weight: bold;
@@ -1269,7 +1257,7 @@ html {
   #hamburger-menu {
     display: inline-block;
   }
-  .navbar .navbar-nav {
+  .navbar-nav {
     position: absolute;
     top: 100%;
     right: -100%;
@@ -1279,22 +1267,26 @@ html {
     transition: 0.5s;
   }
 
-  .navbar .navbar-nav.active {
+  .navbar-nav.active {
     right: 0;
   }
 
-  .navbar .navbar-nav a {
+  .navbar-nav a {
     color: var(--bg);
     display: block;
     margin: 1.5rem;
     padding: 0.5rem;
     font-size: 2rem;
   }
-  .navbar .navbar-nav a::after {
+  .navbar-nav a::after {
     transform-origin: 0 0;
   }
-  .navbar .navbar-nav a:hover::after {
+  .navbar-nav a:hover::after {
     transform: scaleX(0.75);
+  }
+  .hero .motto h1 {
+    font-size: 33px;
+    top: 22%;
   }
   .hero .content {
     bottom: 50px;
@@ -1313,7 +1305,7 @@ html {
     height: 50px;
   }
   .hero .block-brown {
-    height: 50px; /* adjust as needed */
+    height: 50px;
   }
   .hero .block-brown h1 {
     margin: auto;
@@ -1397,6 +1389,11 @@ html {
   }
   .navbar .navbar-nav a:hover::after {
     transform: scaleX(0.75);
+  }
+  .hero .motto h1 {
+    width: 70%;
+    font-size: 33px;
+    top: 22%;
   }
   .hero .content {
     display: flex;

@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>COCONUT OIL</title>
+    <title>Abila Indonesia</title>
+
+    <!-- Logo -->
+    <link rel="icon" type="image/svg+xml" href="image/Coconut.svg" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,7 +49,12 @@
       <div class="navbar-extra">
         <form action="">
           <div class="navbar-search">
-            <input type="text" placeholder="Search..." />
+            <input
+              type="text"
+              placeholder="Search..."
+              id="find"
+              onkeyup="search()"
+            />
             <a href=""><i data-feather="search" class="isearch"></i></a>
           </div>
         </form>

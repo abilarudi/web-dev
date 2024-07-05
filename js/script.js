@@ -27,6 +27,24 @@ window.onscroll = function () {
   });
 };
 
+//  Search Func
+function search() {
+  let filter = document.getElementById("find").value.toUpperCase();
+  let cards = document.querySelectorAll(".product-card");
+  let cardTitle = document.getElementsByTagName("h3");
+
+  for (let i = 0; i <= cardTitle.length; i++) {
+    let a = cardTitle[i].getElementsByTagName("h3")[0];
+    let title = a.innerHTML || a.innerText || a.textContent;
+
+    if (title.toUpperCase().indexOf(filter) > -1) {
+      cards[i].style.display = "";
+    } else {
+      cards[i].style.display = "none";
+    }
+  }
+}
+
 // Efek Scroll Smooth
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
