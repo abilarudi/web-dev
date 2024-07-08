@@ -3,15 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>COCONUT OIL</title>
+    <title>Abila Indonesia</title>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -20,25 +17,21 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-
+    <!-- Logo -->
+    <link rel="icon" type="image/svg+xml" href="image/Coconut.svg">
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
 
     <!-- My Style -->
     <link rel="Stylesheet" href="CSS/style.css?v=1" />
-
-    <!-- tailwind config -->
-     <link rel="stylesheet" href="CSS/output.css">
   </head>
   <body>
     <!-- Navbar Start -->
-    <nav class="navbar">
+    <nav class="navbar-alt">
       <div class="navbar-logo">
-      <img src="image/ABILA.svg" class= "abila" alt="">
-      <img src="image/Coconut.svg" alt="">
+        <img src="image/ABILA.svg" class="abila" alt="" />
+        <img src="image/Coconut.svg" alt="" />
       </div>
-      
 
       <div class="navbar-nav">
         <a href="#home">Home</a>
@@ -47,16 +40,14 @@
         <a href="#contact">Kontak</a>
         <a href="catalog.html">Katalog</a>
       </div>
-        
-      
 
       <div class="navbar-extra">
-          <form action="">
-            <div class="navbar-search">
-              <input type="text" placeholder="Search..." />
-              <a href=""><i data-feather="search" class="isearch"></i></a>
-            </div>
-          </form>
+        <form action="">
+          <div class="navbar-search">
+            <input type="text" placeholder="Search..." id="find" onkeyup="search()" />
+            <button type="button"><i data-feather="search" class="isearch"></i></button>
+          </div>
+        </form>
         <a href="login.html" class="logins"><i data-feather="user"></i></a>
         <a href="#" id="shopping"><i data-feather="shopping-cart"></i></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
@@ -66,48 +57,105 @@
 
     <!-- Hero Section Start -->
     <section class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="motto">
+        <h1>"Sustainibility, Healthy, and Happy</h1>
+      </div>
       <main class="content">
-        <h1>Get Your Coconut <span>OIL</span></h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates,
-          velit!
-        </p>
-        <a href="https://www.instagram.com/timkkn_mtkits/" class="cta"
-          >Buy Now</a
-        >
+        <img src="image/rudi.svg" alt="" class="rudi" />
+        <div class="content-hero">
+          <!-- <h1>Welcome to <span>Abila</span></h1> -->
+          <p>
+            “Kami percaya bahwa rezeki yang lapang, halal, dan berkah adalah
+            menjalankan bisnis yang dapat memberikan solusi atas permasalahan
+            yang ada, bermanfaat bagi khalayak umum dari hulu ke hilir, amanah,
+            dan profesional yang mengusung IMTAQ dan IPTEK. Abila hadir sebagai
+            produsen Virgin Coconut Oil, berkomitmen untuk menyediakan produk
+            berkualitas tinggi yang tidak hanya menyehatkan, tetapi juga
+            mendukung keberlanjutan lingkungan dan kesejahteraan masyarakat.”
+          </p>
+          <!-- <a href="https://www.instagram.com/timkkn_mtkits/" class="cta"
+          >Get Started</a
+        > -->
+        </div>
       </main>
+      <div class="block-orange"></div>
+      <div class="block-brown">
+        <img src="image/kelapa.svg" alt="" class="coco" />
+        <h1 class="slogan">
+          Rasakan Manfaat Kesehatan Alami dengan Virgin Coconut Oil
+        </h1>
+        <img src="image/pohon.svg" alt="" class="pohon" />
+      </div>
     </section>
     <!-- Hero Section End -->
 
     <!-- About Section Start -->
     <section id="about" class="about">
-      <h2><span>Tentang</span> Kami</h2>
+      <!-- <h2><span>Abila</span>Indonesia</h2> -->
+      <div class="row">
+        <div class="leftrow">
+          <div class="title">
+            <p>Hi, Choco!</p>
+            <h3>Ketahui Kami</h3>
+            <h3><span>di Abila Indonesia</span></h3>
+          </div>
+          <div class="content">
+            <p>
+              Abila Indonesia merupakan partner yang Anda butuhkan pada
+              penggunaan kebutuhan rumah tangga dengan produk unggulan yang kami
+              tawarkan berupa minyak kelapa olahan premium.
+            </p>
+            <p>
+              Kami tidak hanya menawarkan solusi praktis, tetapi juga berfokus
+              pada kebutuhan unik setiap klien. Dengan pendekatan yang
+              berorientasi pada hasil, kami memastikan setiap langkah yang
+              diambil memberikan nilai tambah yang signifikan bagi kepuasan
+              Anda.
+            </p>
+            <p>Jadi tunggu apalagi? Mari belanja di Abila Indonesia!</p>
+          </div>
+        </div>
+        <div class="about-img">
+          <img src="image/bg-aboutabila/decoration-produk.svg" class="dec1" />
+          <img
+            src="image/bg-aboutabila/Abila.svg"
+            alt="Gambar2"
+            class="abt-product"
+          />
+          <img src="image/bg-aboutabila/decoration-produk.svg" class="dec2" />
+        </div>
+      </div>
+      <h3 class="why-abila">Mengapa Harus Abila?</h3>
+      <div class="eminance">
+        <div class="em-content">
+          <div class="em-number">1023+</div>
+          <div class="em-title">Produk Tejual</div>
+          <div class="em-link">
+            <a href="#product"> Lihat Produk </a>
+          </div>
+        </div>
+        <div class="em-content">
+          <div class="em-number">1023+</div>
+          <div class="em-title">Produk Tejual</div>
+          <div class="em-link">
+            <a href="#product"> Lihat Produk </a>
+          </div>
+        </div>
+        <div class="em-content">
+          <div class="em-number">1023+</div>
+          <div class="em-title">Produk Tejual</div>
+          <div class="em-link">
+            <a href="#product"> Lihat Produk </a>
+          </div>
+        </div>
+      </div>
     </section>
-
-    <div class="row">
-      <div class="about-img">
-        <img src="image/Profil.png" alt="Tentang Kami" />
-        <img src="image/header-bg.png" alt="Gambar2" />
-        <img src="image/header-bg.png" alt="Gambar3" />
-      </div>
-
-      <div class="content">
-        <h3>Kenapa harus Coconut Oil?</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
-          veritatis ipsa quos tempore tenetur voluptatum!
-        </p>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae,
-          in. Obcaecati quis nam magnam laborum quos illo nihil, tenetur ex!
-        </p>
-      </div>
-    </div>
     <!-- About Section End -->
 
     <!-- Product Section Start -->
     <section id="product" class="product">
-      <h2><span>Produk</span> Kami</h2>
+      <h2><span>Produk</span> Unggulan</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
         veritatis, culpa exercitationem rerum atque quod!
@@ -115,51 +163,227 @@
 
       <div class="row">
         <div class="product-card">
+          <p class="top-tag">Produk Terlaris</p>
           <img
-            src="image/produk/menu-minyak.jpg"
+            src="image/bg-aboutabila/Abila.svg"
             alt="Minyak Kelapa"
             class="product-card-image"
           />
-          <h3 class="product-card-title">- Minyak Kelapa -</h3>
-          <p class="menu-card-price">IDR 90K</p>
+          <h3 class="product-card-title">MINYAK KELAPA</h3>
+          <p class="top-desk">
+            Produk ini sangat cocok untuk berbagai keperluan, mulai dari
+            memasak, menjaga perawatan kulit, dan rambut. Temukan keajaiban
+            minyak kelapa kami dan nikmati kebaikan alam dalam setiap tetesnya.
+          </p>
+          <div class="top-detail">
+            <p class="top-sell"><span>5432</span> produk terjual</p>
+            <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
+          </div>
         </div>
 
         <div class="product-card">
+          <p class="top-tag">Produk Terlaris</p>
           <img
-            src="image/produk/menu-minyak.jpg"
+            src="image/bg-aboutabila/Abila.svg"
             alt="Minyak Kelapa"
             class="product-card-image"
           />
-          <h3 class="product-card-title">- Minyak Kelapa -</h3>
-          <p class="menu-card-price">IDR 90K</p>
+          <h3 class="product-card-title">MINYAK KELAPA</h3>
+          <p class="top-desk">
+            Produk ini sangat cocok untuk berbagai keperluan, mulai dari
+            memasak, menjaga perawatan kulit, dan rambut. Temukan keajaiban
+            minyak kelapa kami dan nikmati kebaikan alam dalam setiap tetesnya.
+          </p>
+          <div class="top-detail">
+            <p class="top-sell"><span>5432</span> produk terjual</p>
+            <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
+          </div>
         </div>
 
         <div class="product-card">
+          <p class="top-tag">Produk Terlaris</p>
           <img
-            src="image/produk/menu-minyak.jpg"
+            src="image/bg-aboutabila/Abila.svg"
             alt="Minyak Kelapa"
             class="product-card-image"
           />
-          <h3 class="product-card-title">- Minyak Kelapa -</h3>
-          <p class="menu-card-price">IDR 90K</p>
+          <h3 class="product-card-title">MINYAK KELAPA</h3>
+          <p class="top-desk">
+            Produk ini sangat cocok untuk berbagai keperluan, mulai dari
+            memasak, menjaga perawatan kulit, dan rambut. Temukan keajaiban
+            minyak kelapa kami dan nikmati kebaikan alam dalam setiap tetesnya.
+          </p>
+          <div class="top-detail">
+            <p class="top-sell"><span>5432</span> produk terjual</p>
+            <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
+          </div>
         </div>
 
         <div class="product-card">
+          <p class="top-tag">Produk Terlaris</p>
           <img
-            src="image/produk/menu-minyak.jpg"
+            src="image/bg-aboutabila/Abila.svg"
             alt="Minyak Kelapa"
             class="product-card-image"
           />
-          <h3 class="product-card-title">- Minyak Kelapa -</h3>
-          <p class="menu-card-price">IDR 90K</p>
+          <h3 class="product-card-title">MINYAK KELAPA</h3>
+          <p class="top-desk">
+            Produk ini sangat cocok untuk berbagai keperluan, mulai dari
+            memasak, menjaga perawatan kulit, dan rambut. Temukan keajaiban
+            minyak kelapa kami dan nikmati kebaikan alam dalam setiap tetesnya.
+          </p>
+          <div class="top-detail">
+            <p class="top-sell"><span>5432</span> produk terjual</p>
+            <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
+          </div>
+        </div>
+      </div>
+      <h3 class="catalog-link">
+        <a href="catalog.html">DAPATKAN LAINNYA!</a>
+      </h3>
+    </section>
+    <!-- Product Section End -->
+
+    <!-- Blog Section Start -->
+    <section>
+      <div class="blog">
+        <h2><span>Keunggulan</span> Minyak Kelapa</h2>
+        <div class="blog-content">
+          <div class="blog1">
+            <div class="blog-img">
+              <img
+                src="image/abilahome1.png"
+                alt="Cococnut Oil1"
+                width="100%"
+              />
+            </div>
+            <div class="blog-isi">
+              <div class="blog-judul">Lorem ipsum dolor sit amet.</div>
+              <div class="blog-resume">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
+                voluptatibus.
+                <a
+                  href="http://ners.unair.ac.id/site/index.php/news-fkp-unair/30-lihat/1391-inilah-4-manfaat-minyak-kelapa-untuk-kesehatan-tubuh"
+                  >Baca selengkapnya></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="blog2">
+            <div class="blog-img">
+              <img
+                src="image/abilahome1.png"
+                alt="Cococnut Oil1"
+                width="100%"
+              />
+            </div>
+            <div class="blog-isi">
+              <div class="blog-judul">Lorem ipsum dolor sit amet.</div>
+              <div class="blog-resume">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
+                voluptatibus.
+                <a
+                  href="http://ners.unair.ac.id/site/index.php/news-fkp-unair/30-lihat/1391-inilah-4-manfaat-minyak-kelapa-untuk-kesehatan-tubuh"
+                  >Baca selengkapnya></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="blog1">
+            <div class="blog-img">
+              <img
+                src="image/abilahome1.png"
+                alt="Cococnut Oil1"
+                width="100%"
+              />
+            </div>
+            <div class="blog-isi">
+              <div class="blog-judul">Lorem ipsum dolor sit amet.</div>
+              <div class="blog-resume">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
+                voluptatibus.
+                <a
+                  href="http://ners.unair.ac.id/site/index.php/news-fkp-unair/30-lihat/1391-inilah-4-manfaat-minyak-kelapa-untuk-kesehatan-tubuh"
+                  >Baca selengkapnya></a
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <!-- Menu Section End -->
+
+    <!-- Blog Section End -->
+
+    <!-- FAQ Section Start -->
+    <section id="FAQ" class="FAQ">
+      <h2><span>Cari Tahu tentang</span> Abila</h2>
+      <div class="QnA-border">
+        <div class="QnA">
+          <button class="Question">Lorem ipsum dolor sit amet.?</button>
+          <div class="Answer">
+            <p>
+              ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+              odio quae iusto molestiae iure facilis aut aperiam cupiditate
+              inventore nihil.
+            </p>
+          </div>
+        </div>
+        <div class="QnA">
+          <button class="Question">Lorem ipsum dolor sit amet.?</button>
+          <div class="Answer">
+            <p>
+              ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+              odio quae iusto molestiae iure facilis aut aperiam cupiditate
+              inventore nihil.
+            </p>
+          </div>
+        </div>
+        <div class="QnA">
+          <button class="Question">Lorem ipsum dolor sit amet.?</button>
+          <div class="Answer">
+            <p>
+              ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+              odio quae iusto molestiae iure facilis aut aperiam cupiditate
+              inventore nihil.
+            </p>
+          </div>
+        </div>
+        <!-- ADD FAQ Baru -->
+        <!-- <div class="QnA">
+          <button class="Question">Lorem ipsum dolor sit amet.?</button>
+          <div class="Answer">
+            <p>
+              ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+              odio quae iusto molestiae iure facilis aut aperiam cupiditate
+              inventore nihil.
+            </p>
+          </div>
+        </div> -->
+
+        <script>
+          var acc = document.getElementsByClassName("Question");
+          var i;
+
+          for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+              this.classList.toggle("active");
+              var panel = this.nextElementSibling;
+              if (panel.style.display === "block") {
+                panel.style.display = "none";
+              } else {
+                panel.style.display = "block";
+              }
+            });
+          }
+        </script>
+      </div>
+    </section>
+    <!-- FAQ Section End -->
 
     <!-- Kontak Section Start -->
     <section id="contact" class="contact">
-      <h2><span>Kontak</span> Kami</h2>
+      <!-- <h2><span>Kontak</span> Kami</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis,
         sunt?
@@ -172,9 +396,9 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           class="map"
-        ></iframe>
+        ></iframe> -->
 
-        <form action="">
+      <!-- <form action="">
           <div class="input-group">
             <i data-feather="user"></i>
             <input type="text" placeholder="nama" />
@@ -189,25 +413,49 @@
           </div>
           <button type="submit" class="btn">Kirim pesan</button>
         </form>
+      </div> -->
+      <p>tanya</p>
+      <div class="contact-content">
+        <div class="contact-img">
+          <img src="image/element-ft.svg" alt="icon" />
+        </div>
+        <div class="contact-sentence">
+          <div class="contact-ask">Masih punya pertanyaan?</div>
+          <div class="contact-persue">Jangan ragu hubungi kami</div>
+        </div>
+        <div class="contact-link">
+          <a href="https://www.instagram.com/timkkn_mtkits/">
+            <i data-feather="message-square"></i> <span>Contact Us</span>
+          </a>
+        </div>
       </div>
     </section>
     <!-- Kontak Section End -->
 
     <!-- Footer Section Start -->
     <footer>
-      <div class="socials">
-        <a href="https://www.instagram.com/timkkn_mtkits/"
-          ><i data-feather="instagram"></i
-        ></a>
-        <a href="a"><i data-feather="facebook"></i></a>
+      <div class="foot-content">
+        <div class="none"></div>
+        <div class="title-quick"><p>Quick Links</p></div>
+        <div class="title-contact"><p>Contact Us</p></div>
+        <div class="foot-motto">
+          Temukan jawabannya hanya di Abila Indonesia dengan produk-produk
+          unggulan yang berkualitas.
+        </div>
+        <div class="links">
+          <a href="#home">Home</a>
+          <a href="#about">Tentang Kami</a>
+          <a href="#product">Produk</a>
+          <a href="#contact">Kontak</a>
+        </div>
+        <div class="socials">
+          <a href="a"><i data-feather="phone"></i> +62 777-7777-7777</a>
+            <a href="https://www.instagram.com/timkkn_mtkits/"
+              ><i data-feather="instagram"></i
+            >     @abila_indonesia</a>
+            <a href="a"><i data-feather="mail"></i> abilarudi@gmail.com</a>
+            <a href="a"><i data-feather="facebook"></i>     @fb</a>
       </div>
-      <div class="links">
-        <a href="#home">Home</a>
-        <a href="#about">Tentang Kami</a>
-        <a href="#product">Produk</a>
-        <a href="#contact">Kontak</a>
-      </div>
-
       <div class="credit">
         <p>
           Created by
