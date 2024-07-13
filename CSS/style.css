@@ -1154,15 +1154,15 @@ body {
   padding-left: 20px;
 }
 /* Footer Section */
-footer {
+/* footer {
   background-color: rgba(3, 72, 74, 0.5);
   text-align: center;
   padding: 1rem 3rem;
   /* margin-top: 3rem; */
-  padding-top: 5rem;
+  /* padding-top: 5rem;
   display: block;
-}
-footer .foot-content {
+} */
+/* footer .foot-content {
   text-align: center;
   display: grid;
   grid-template-columns: 2.5fr 1fr 1fr;
@@ -1170,46 +1170,46 @@ footer .foot-content {
   padding: 2rem;
   align-content: center;
   padding-left: 2rem;
-}
-footer .foot-content p {
+} */
+/* footer .foot-content p {
   font-weight: 700;
   color: #ffffff;
   font-size: larger;
   text-align: left;
-}
-footer .foot-content .foot-motto {
+} */
+/* footer .foot-content .foot-motto {
   text-align: justify;
   color: #ffffff;
   padding: 3rem;
   /* padding-top: none; */
-}
+/* } */ */
 
-footer .socials {
+/* footer .socials {
   /* padding: 1rem; */
-  display: block;
-}
+  /* display: block;
+} */ */
 
-footer .socials a {
+/* footer .socials a {
   color: #fff;
   display: block;
   font-size: 14px;
   text-align: justify;
   padding-bottom: 1rem;
-}
+} */
 
-footer .socials a:hover {
+/* footer .socials a:hover {
   color: var(--bg);
-}
-
+} */
+/* 
 footer .links {
   display: grid;
   grid-template-columns: auto;
-  gap: 1rem;
+  gap: 1rem; */
 
   /* margin-bottom: 1.6rem; */
-}
+/* } */
 
-footer .links a {
+/* footer .links a {
   color: #fff;
   text-align: left;
   display: inline-block;
@@ -1231,7 +1231,7 @@ footer .credit a {
 
 footer .credit a:hover {
   color: #fff;
-}
+} */ */
 
 html {
   scroll-behavior: smooth;
