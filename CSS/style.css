@@ -706,7 +706,7 @@ body {
 /* FAQ Section */
 .FAQ {
   background-color: #ede1d1;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 }
 .FAQ .QnA-border {
   border: 2px solid var(--primary);
