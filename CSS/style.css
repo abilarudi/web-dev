@@ -1,7 +1,3 @@
-
-
-
-
 :root {
   --primary: #03484a;
   --bg: #f1e4c3;
@@ -613,6 +609,7 @@ body {
 .product .row .product-card .top-desk {
   margin: 1rem;
   color: #a25b1d;
+  font-weight: 400;
   font-size: smaller;
   text-align: justify;
   padding-bottom: 1.5rem;
@@ -629,6 +626,7 @@ body {
   color: #000000;
   text-align: left;
   font-size: smaller;
+  font-weight: 400;
 }
 .product .row .top-sell span {
   font-weight: 700;
@@ -708,6 +706,7 @@ body {
 /* FAQ Section */
 .FAQ {
   background-color: #ede1d1;
+  padding-bottom: 3rem;
 }
 .FAQ .QnA-border {
   border: 2px solid var(--primary);
@@ -1159,7 +1158,7 @@ body {
   text-align: center;
   padding: 1rem 3rem;
   /* margin-top: 3rem; */
-  /* padding-top: 5rem;
+/* padding-top: 5rem;
   display: block;
 } */
 /* footer .foot-content {
@@ -1182,7 +1181,8 @@ body {
   color: #ffffff;
   padding: 3rem;
   /* padding-top: none; */
-/* } */ */
+/* } */
+*/
 
 /* footer .socials {
   /* padding: 1rem; */
@@ -1334,6 +1334,39 @@ html {
   .product p {
     font-size: 1.2rem;
   }
+  .product .row {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .product .row .product-card {
+    margin: 10rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+  .product .row .product-card .top-tag {
+    font-size: 1.2rem;
+  }
+  .product .row .product-card img {
+    width: 60%;
+  }
+  .product .row .product-card .top-desk {
+    font-size: 1rem;
+  }
+  .product .row .top-detail {
+    font-size: 1rem;
+  }
+  .product .row .top-sell {
+    color: #000000;
+    text-align: left;
+    font-size: 1rem;
+  }
+  .product .row .top-sell span {
+    font-weight: 700;
+    color: #a25b1d;
+  }
+  .product .row .top-link a {
+    font-size: 1.2rem;
+  }
 
   .contact .row {
     flex-wrap: wrap;
@@ -1435,6 +1468,39 @@ html {
   }
   .hero .block-orange {
     height: 35px;
+  }
+  .product .row {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .product .row .product-card {
+    margin: 10rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+  .product .row .product-card .top-tag {
+    font-size: 1.2rem;
+  }
+  .product .row .product-card img {
+    width: 60%;
+  }
+  .product .row .product-card .top-desk {
+    font-size: 1rem;
+  }
+  .product .row .top-detail {
+    font-size: 1rem;
+  }
+  .product .row .top-sell {
+    color: #000000;
+    text-align: left;
+    font-size: 1rem;
+  }
+  .product .row .top-sell span {
+    font-weight: 700;
+    color: #a25b1d;
+  }
+  .product .row .top-link a {
+    font-size: 1.2rem;
   }
   .catalog-row {
     grid-template-columns: repeat(1, 1fr);
