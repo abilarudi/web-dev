@@ -6,9 +6,12 @@
     <title>Abila Indonesia</title>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -17,18 +20,19 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Logo -->
-    <link rel="icon" type="image/svg+xml" href="image/Coconut.svg">
+    <!--  -->
+    <!-- Logo  -->
+    <link rel="icon" type="image/svg+xml" href="image/Coconut.svg" />
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
 
     <!-- My Style -->
     <link rel="Stylesheet" href="CSS/style.css" />
-    <link rel="stylesheet" href="CSS/output.css">
+    <link rel="stylesheet" href="CSS/output.css" />
   </head>
-  
+
   <body>
-    <!-- Navbar Start -->
+    <!-- Navbar Start  -->
     <nav class="navbar-alt">
       <div class="navbar-logo">
         <img src="image/ABILA.svg" class="abila" alt="" />
@@ -36,38 +40,63 @@
       </div>
 
       <div class="navbar-nav">
-        <a href="#home">Home</a>
-        <a href="#about">Tentang Kami</a>
-        <a href="#product">Produk</a>
-        <a href="#contact">Kontak</a>
-        <a href="catalog.html">Katalog</a>
+        <a href="#home" data-key="home">Beranda</a>
+        <a href="#about" data-key="about">Tentang Kami</a>
+        <a href="#product" data-key="product">Produk</a>
+        <a href="#contact" data-key="contact">Kontak</a>
+        <a href="catalog.html" data-key="catalog">Katalog</a>
       </div>
 
       <div class="navbar-extra">
         <form action="">
           <div class="navbar-search">
-            <input type="text" placeholder="Search..." id="find" onkeyup="search()" />
-            <button type="button"><i data-feather="search" class="isearch"></i></button>
+            <input
+              type="text"
+              placeholder="Search..."
+              id="find"
+              onkeyup="search()"
+            />
+            <button type="button">
+              <i data-feather="search" class="isearch"></i>
+            </button>
           </div>
         </form>
-        <a href="login.html" class="logins"><i data-feather="user"></i></a>
+        <div class="flex flex-wrap language-toggle">
+          <div class="px-0 w-16 border-yellow-400 text-center ml-3">
+            <button
+              id="lang-in"
+              class="text-xl text-white hover:text-bg border-white px-1"
+              onclick="changeLanguage('id')"
+            >
+              In</button
+            >|
+            <button
+              id="lang-en"
+              class="text-xl text-white border-white hover:text-bg"
+              onclick="changeLanguage('en')"
+            >
+              En
+            </button>
+          </div>
+        </div>
+
         <a href="#" id="shopping"><i data-feather="shopping-cart"></i></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
     </nav>
+
     <!-- Navbar End -->
 
     <!-- Hero Section Start -->
     <section class="hero" id="home">
       <div class="hero-bg"></div>
       <div class="motto">
-        <h1>"Sustainibility, Healthy, and Happy</h1>
+        <h1>Sustainibility, Healthy, and Happy</h1>
       </div>
       <main class="content">
         <img src="image/rudi.svg" alt="" class="rudi" />
         <div class="content-hero">
-          <!-- <h1>Welcome to <span>Abila</span></h1> -->
-          <p>
+          <p data-key="home1">
             “Kami percaya bahwa rezeki yang lapang, halal, dan berkah adalah
             menjalankan bisnis yang dapat memberikan solusi atas permasalahan
             yang ada, bermanfaat bagi khalayak umum dari hulu ke hilir, amanah,
@@ -76,15 +105,12 @@
             berkualitas tinggi yang tidak hanya menyehatkan, tetapi juga
             mendukung keberlanjutan lingkungan dan kesejahteraan masyarakat.”
           </p>
-          <!-- <a href="https://www.instagram.com/timkkn_mtkits/" class="cta"
-          >Get Started</a
-        > -->
         </div>
       </main>
       <div class="block-orange"></div>
       <div class="block-brown">
         <img src="image/kelapa.svg" alt="" class="coco" />
-        <h1 class="slogan">
+        <h1 class="slogan" data-key="home2">
           Rasakan Manfaat Kesehatan Alami dengan Virgin Coconut Oil
         </h1>
         <img src="image/pohon.svg" alt="" class="pohon" />
@@ -99,23 +125,25 @@
         <div class="leftrow">
           <div class="title">
             <p>Hi, Choco!</p>
-            <h3>Ketahui Kami</h3>
-            <h3><span>di Abila Indonesia</span></h3>
+            <h3 data-key="about1">Ketahui Kami</h3>
+            <h3 data-key="about2"><span>di Abila Indonesia</span></h3>
           </div>
           <div class="content">
-            <p>
+            <p data-key="about3">
               Abila Indonesia merupakan partner yang Anda butuhkan pada
               penggunaan kebutuhan rumah tangga dengan produk unggulan yang kami
               tawarkan berupa minyak kelapa olahan premium.
             </p>
-            <p>
+            <p data-key="about4">
               Kami tidak hanya menawarkan solusi praktis, tetapi juga berfokus
               pada kebutuhan unik setiap klien. Dengan pendekatan yang
               berorientasi pada hasil, kami memastikan setiap langkah yang
               diambil memberikan nilai tambah yang signifikan bagi kepuasan
               Anda.
             </p>
-            <p>Jadi tunggu apalagi? Mari belanja di Abila Indonesia!</p>
+            <p data-key="about5">
+              Jadi tunggu apalagi? Mari belanja di Abila Indonesia!
+            </p>
           </div>
         </div>
         <div class="about-img">
@@ -128,27 +156,27 @@
           <img src="image/bg-aboutabila/decoration-produk.svg" class="dec2" />
         </div>
       </div>
-      <h3 class="why-abila">Mengapa Harus Abila?</h3>
+      <h3 class="why-abila" data-key="about6">Mengapa Harus Abila?</h3>
       <div class="eminance">
         <div class="em-content">
           <div class="em-number">1023+</div>
-          <div class="em-title">Produk Tejual</div>
+          <div class="em-title" data-key="terjual">Produk Tejual</div>
           <div class="em-link">
-            <a href="#product"> Lihat Produk </a>
+            <a href="#product" data-key="lihat"> Lihat Produk </a>
           </div>
         </div>
         <div class="em-content">
           <div class="em-number">1023+</div>
-          <div class="em-title">Produk Tejual</div>
+          <div class="em-title" data-key="terjual">Produk Tejual</div>
           <div class="em-link">
-            <a href="#product"> Lihat Produk </a>
+            <a href="#product" data-key="lihat"> Lihat Produk </a>
           </div>
         </div>
         <div class="em-content">
           <div class="em-number">1023+</div>
-          <div class="em-title">Produk Tejual</div>
+          <div class="em-title" data-key="terjual">Produk Tejual</div>
           <div class="em-link">
-            <a href="#product"> Lihat Produk </a>
+            <a href="#product" data-key="lihat"> Lihat Produk </a>
           </div>
         </div>
       </div>
@@ -157,8 +185,8 @@
 
     <!-- Product Section Start -->
     <section id="product" class="product">
-      <h2><span>Produk</span> Unggulan</h2>
-      <p>
+      <h2 data-key="unggulan"><span>Produk</span> Unggulan</h2>
+      <p data-key="product">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
         veritatis, culpa exercitationem rerum atque quod!
       </p>
@@ -469,100 +497,145 @@
       </div>
     </footer> -->
 
-    <footer class="w-full h-max bg-teal-800 text-white ">
-      <div class="container  flex flex-col items-center justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-          <div class="lg:w-1/3 flex flex-col items-center lg:items-start">
-              <a rel="noopener noreferrer" href="#" class="flex justify-center space-x-3 lg:justify-start">
-                  <div class="flex items-center justify-center w-16 h-16">
-                      <img src="image/ABILA.svg" alt="">
-                  </div>
-                  <div class="flex items-center justify-center w-12 h-12">
-                      <img src="image/Coconut.svg" alt="">
-                  </div>
-              </a>
-              <p class="mt-4 text-sm flex justify-center space-x-3 lg:justify-start">Perum. Bumi Asri Blok E-10 Kec Kota, kediri, 64126</p>
+    <footer class="w-full h-max bg-teal-800 text-white">
+      <div
+        class="container flex flex-col items-center justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0"
+      >
+        <div class="lg:w-1/3 flex flex-col items-center lg:items-start">
+          <a
+            rel="noopener noreferrer"
+            href="#"
+            class="flex justify-center space-x-3 lg:justify-start"
+          >
+            <div class="flex items-center justify-center w-16 h-16">
+              <img src="image/ABILA.svg" alt="" />
+            </div>
+            <div class="flex items-center justify-center w-12 h-12">
+              <img src="image/Coconut.svg" alt="" />
+            </div>
+          </a>
+          <p
+            class="mt-4 text-sm flex justify-center space-x-3 lg:justify-start"
+          >
+            Perum. Bumi Asri Blok E-10 Kec Kota, kediri, 64126
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-2 text-sm gap-x-36 md:gap-x-28 gap-y-8 lg:w-2/3 sm:grid-cols-4"
+        >
+          <div class="space-y-3">
+            <h3
+              class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit"
+            >
+              Tentang
+            </h3>
+            <div class="flex justify-start p-1">
+              <ul class="space-y-1">
+                <li>
+                  <a rel="noopener noreferrer" href="#">Abila</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">Founder</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">Factory</a>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div class="grid grid-cols-2 text-sm gap-x-36 md:gap-x-28 gap-y-8 lg:w-2/3 sm:grid-cols-4">
-              <div class="space-y-3">
-                  <h3 class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit">Tentang</h3>
-                  <div class="flex justify-start p-1">
-                      <ul class="space-y-1 ">
-                          <li>
-                              <a rel="noopener noreferrer" href="#">Abila</a>
-                          </li>
-                          <li>
-                              <a rel="noopener noreferrer" href="#">Founder</a>
-                          </li>
-                          <li>
-                              <a rel="noopener noreferrer" href="#">Factory</a>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-
-              <div class="space-y-3 ">
-                  <h3 class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit">Navigasi</h3>
-                  <div class="flex justify-start p-1">
-                      <ul class="space-y-1">
-                          <li>
-                              <a rel="noopener noreferrer" href="#">Home</a>
-                          </li>
-                          <li>
-                              <a rel="noopener noreferrer" href="#">Product</a>
-                          </li>
-                          <li>
-                              <a rel="noopener noreferrer" href="#">Message</a>
-                          </li>
-                          <li>
-                              <a rel="noopener noreferrer" href="#">Catalog</a>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-
-              <div class="space-y-3">
-                  <div class="uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit">Social media</div>
-                  <div class="flex justify-start">
-                      <div class="flex justify-start space-x-3">
-                          <a rel="noopener noreferrer" href="#" title="Tiktok" class="flex items-center p-1">
-                              <img src="image/logo-tt.svg" alt="">
-                          </a>
-                          <a rel="noopener noreferrer" href="#" title="Instagram" class="flex items-center p-1">
-                              <img src="image/logo-ig.svg" alt="">
-                          </a>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="space-y-3 ">
-                  <h3 class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit">Contact</h3>
-                  <div class="flex justify-start p-1">
-                      <ul class="space-y-1">
-                          <li>
-                              <p>
-                                  <img src="image/telepon.svg" alt="" class="p-1">
-                                  <a rel="noopener noreferrer" href="#" class="p-1 w-max">+6283856909114</a>
-                              </p>
-                          </li>
-                          <li>
-                              <p>
-                                  <img src="image/email.svg" alt="" class="p-1">
-                                  <a rel="noopener noreferrer" href="#" class="p-1">abilarudi@.com</a>
-                              </p>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-
+          <div class="space-y-3">
+            <h3
+              class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit"
+            >
+              Navigasi
+            </h3>
+            <div class="flex justify-start p-1">
+              <ul class="space-y-1">
+                <li>
+                  <a rel="noopener noreferrer" href="#">Home</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">Product</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">Message</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">Catalog</a>
+                </li>
+              </ul>
+            </div>
           </div>
+
+          <div class="space-y-3">
+            <div
+              class="uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit"
+            >
+              Social media
+            </div>
+            <div class="flex justify-start">
+              <div class="flex justify-start space-x-3">
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  title="Tiktok"
+                  class="flex items-center p-1"
+                >
+                  <img src="image/logo-tt.svg" alt="" />
+                </a>
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  title="Instagram"
+                  class="flex items-center p-1"
+                >
+                  <img src="image/logo-ig.svg" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <h3
+              class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit"
+            >
+              Contact
+            </h3>
+            <div class="flex justify-start p-1">
+              <ul class="space-y-1">
+                <li>
+                  <p>
+                    <img src="image/telepon.svg" alt="" class="p-1" />
+                    <a rel="noopener noreferrer" href="#" class="p-1 w-max"
+                      >+6283856909114</a
+                    >
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <img src="image/email.svg" alt="" class="p-1" />
+                    <a rel="noopener noreferrer" href="#" class="p-1"
+                      >abilarudi@.com</a
+                    >
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="space-y-3 w-full block md:hidden">
-          <h1 class="text-center p-1 text-xl font-bold">“Sustainability, Healthy, and Happy”</h1>
+        <h1 class="text-center p-1 text-xl font-bold">
+          “Sustainability, Healthy, and Happy”
+        </h1>
       </div>
-      <hr class="w-full border-t-2 p-0 border-teal-950">
-      <div class="py-6 text-sm text-center dark:text-white">© 2024 ABILA INDONESIA. All Right Reserved</div>
-</footer>
+      <hr class="w-full border-t-2 p-0 border-teal-950" />
+      <div class="py-6 text-sm text-center dark:text-white">
+        © 2024 ABILA INDONESIA. All Right Reserved
+      </div>
+    </footer>
 
     <!-- Footer Section End -->
 
