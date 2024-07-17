@@ -1335,7 +1335,7 @@ html {
     font-size: 1.2rem;
   }
 
-  .contact .row {
+  /* .contact .row {
     flex-wrap: wrap;
   }
 
@@ -1345,7 +1345,7 @@ html {
 
   .contact .row form {
     padding-top: 0;
-  }
+  } */
   .catalog-row {
     grid-template-columns: repeat(2, 1fr);
   }
