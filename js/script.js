@@ -91,3 +91,43 @@ document.addEventListener("click", function () {
 //     }
 //   });
 // }
+
+// Translate (Paling Bawah Taruhnya)
+// Define translations
+
+function changeLanguage(lang) {
+  const translations = {
+    en: {
+      home: "Home",
+      about: "About Us",
+      product: "Product",
+      contact: "Contact",
+      catalog: "Catalog",
+      phome:
+        " “We believe that a wide, halal, and blessed sustenance is to run a business that can provide solutions to existing problems, beneficial to the general public from upstream to downstream, trustworthy, and professional that carries IMTAQ and IPTEK. Abila present as a producer of Virgin Coconut Oil, committed to providing high-quality products that not only nourish, but also support environmental sustainability and community welfare.”",
+      taghome: "Experience Natural Health Benefits with Virgin Coconut Oil ",
+    },
+    id: {
+      home: "Beranda",
+      about: "Tentang Kami",
+      product: "Produk",
+      contact: "Kontak",
+      catalog: "Katalog",
+      phome:
+        "“Kami percaya bahwa rezeki yang lapang, halal, dan berkah adalah menjalankan bisnis yang dapat memberikan solusi atas permasalahan yang ada, bermanfaat bagi khalayak umum dari hulu ke hilir, amanah, dan profesional yang mengusung IMTAQ dan IPTEK. Abila hadir sebagai produsen Virgin Coconut Oil, berkomitmen untuk menyediakan produk berkualitas tinggi yang tidak hanya menyehatkan, tetapi juga mendukung keberlanjutan lingkungan dan kesejahteraan masyarakat.”",
+      taghome: "Rasakan Manfaat Kesehatan Alami dengan Virgin Coconut Oil",
+      
+    },
+  };
+  console.log("translations: " + translations);
+  document.querySelectorAll("[data-key]").forEach((elem) => {
+    const key = elem.getAttribute("data-key");
+    if (translations[lang] && translations[lang].hasOwnProperty(key)) {
+      elem.textContent = translations[lang][key];
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  changeLanguage("en"); // Or detect the user's language to set it dynamically
+});
