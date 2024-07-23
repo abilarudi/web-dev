@@ -288,8 +288,7 @@ body {
 .contact,
 .catalog,
 .category,
-.FAQ,
-.blog-content {
+.FAQ {
   padding: 8rem 7% 1.4rem;
 }
 
@@ -759,7 +758,7 @@ body {
     margin: 3rem;
     vertical-align: middle;
     text-align: center;
-    padding: 0rem;
+    padding: 3rem;
     background-color: #ffffef;
   }
 }
