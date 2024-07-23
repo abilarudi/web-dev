@@ -252,9 +252,9 @@
     <!-- Product Section Start -->
     <section id="product" class="product">
       <h2 data-key="unggulan"><span>Produk</span> Unggulan</h2>
-      <p data-key="product">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-        veritatis, culpa exercitationem rerum atque quod!
+      <p data-key="desunggulan">
+        Jelajahi produk unggulan kami, favorit pelanggan dengan kualitas premium
+        dan hasil nyata, dirancang untuk kecantikan dan kesehatan Anda
       </p>
 
       <div class="row">
@@ -276,7 +276,7 @@
               <span>5432</span> produk terjual
             </p>
             <p class="top-link" data-key="detail">
-              <a href="cat1pro1.html">Detail Produk</a>
+              <a href="cat1pro1.html" data-key="detail">Detail Produk</a>
             </p>
           </div>
         </div>
@@ -299,7 +299,7 @@
               <span>5432</span> produk terjual
             </p>
             <p class="top-link" data-key="detail">
-              <a href="cat1pro1.html">Detail Produk</a>
+              <a href="cat1pro1.html" data-key="detail">Detail Produk</a>
             </p>
           </div>
         </div>
@@ -321,8 +321,8 @@
             <p class="top-sell" data-key="terjualproduct3">
               <span>5432</span> produk terjual
             </p>
-            <p class="top-link" data-key="detail">
-              <a href="cat1pro1.html">Detail Produk</a>
+            <p class="top-link">
+              <a href="cat1pro1.html" data-key="detail">Detail Produk</a>
             </p>
           </div>
         </div>
@@ -345,7 +345,7 @@
               <span>5432</span> produk terjual
             </p>
             <p class="top-link" data-key="detail">
-              <a href="cat1pro1.html">Detail Produk</a>
+              <a href="cat1pro1.html" data-key="detail">Detail Produk</a>
             </p>
           </div>
         </div>
@@ -512,7 +512,7 @@
         <div class="relative z-20 py-6 md:py-0 md:px-6">
           <h1 class="text-4xl font-bold" data-key="contact1">Hubungi Kami</h1>
           <p class="pt-2 pb-4" data-key="contact2">
-            Berikut Contact dan alamat Abilarudi
+            Berikut Kontak dan Alamat Abila Indonesia
           </p>
           <div class="space-y-4">
             <p class="flex items-center">
@@ -543,7 +543,7 @@
                   d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
                 ></path>
               </svg>
-              <span data-key="telp">083856909114</span>
+              <span data-key="telp">+62 838 5690 9114</span>
             </p>
             <p class="flex items-center">
               <svg
@@ -570,7 +570,7 @@
         >
           <label class="block">
             <span class="mb-1 font-semibold" data-key="formname"
-              >Full name</span
+              >Nama Lengkap</span
             >
             <input
               type="text"
@@ -580,7 +580,7 @@
           </label>
           <label class="block">
             <span class="mb-1 font-semibold" data-key="formemail"
-              >Email address</span
+              >Alamat Email</span
             >
             <input
               type="email"
@@ -589,7 +589,7 @@
             />
           </label>
           <label class="block">
-            <span class="mb-1 font-semibold" data-key="formmsg">Message</span>
+            <span class="mb-1 font-semibold" data-key="formmsg">Pesan</span>
             <textarea
               rows="3"
               placeholder="Input your Message"
@@ -601,7 +601,7 @@
             class="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-yellow-800 hover:ring-white"
             data-key="submit"
           >
-            Submit
+            Kirim
           </button>
         </form>
       </div>
@@ -627,6 +627,7 @@
           </a>
           <p
             class="mt-4 text-sm flex justify-center space-x-3 lg:justify-start"
+            data-key="alamat"
           >
             Perum. Bumi Asri Blok E-10 Kec Kota, kediri, 64126
           </p>
@@ -645,13 +646,27 @@
             <div class="flex justify-start p-1">
               <ul class="space-y-1">
                 <li>
-                  <a rel="noopener noreferrer" href="#">Abila</a>
+                  <a rel="noopener noreferrer" class="hover:text-bg" href="#"
+                    >Abila</a
+                  >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Founder</a>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="#"
+                    data-key="founder"
+                    >Pendiri</a
+                  >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Factory</a>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="#"
+                    data-key="factory"
+                    >Perusahaan</a
+                  >
                 </li>
               </ul>
             </div>
@@ -660,22 +675,56 @@
           <div class="space-y-3">
             <h3
               class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit"
+              data-key="navigasi"
             >
               Navigasi
             </h3>
             <div class="flex justify-start p-1">
               <ul class="space-y-1">
                 <li>
-                  <a rel="noopener noreferrer" href="#">Home</a>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="#home"
+                    data-key="home"
+                    >Beranda</a
+                  >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Product</a>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="#about"
+                    data-key="home"
+                    >Tentang Kami</a
+                  >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Message</a>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="#product"
+                    data-key="product"
+                    >Produk</a
+                  >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Catalog</a>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="#contact"
+                    data-key="contact"
+                    >Kontak</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="catalog.html"
+                    data-key="catalog"
+                    >Catalog</a
+                  >
                 </li>
               </ul>
             </div>
@@ -684,8 +733,9 @@
           <div class="space-y-3">
             <div
               class="uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit"
+              data-key="social"
             >
-              Social media
+              Media Sosial
             </div>
             <div class="flex justify-start">
               <div class="flex justify-start space-x-3">
@@ -693,17 +743,17 @@
                   rel="noopener noreferrer"
                   href="#"
                   title="Tiktok"
-                  class="flex items-center p-1"
+                  class="flex items-center p-1 hover:text-bg text-white text-2xl"
                 >
-                  <img src="image/logo-tt.svg" alt="" />
+                  <i class="fa-brands fa-tiktok"></i>
                 </a>
                 <a
                   rel="noopener noreferrer"
                   href="#"
                   title="Instagram"
-                  class="flex items-center p-1"
+                  class="flex items-center p-1 text-white hover:text-bg text-3xl"
                 >
-                  <img src="image/logo-ig.svg" alt="" />
+                  <i class="fa-brands fa-instagram"></i>
                 </a>
               </div>
             </div>
@@ -712,23 +762,32 @@
           <div class="space-y-3">
             <h3
               class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit"
+              data-key="contact"
             >
-              Contact
+              Kontak
             </h3>
             <div class="flex justify-start p-1">
               <ul class="space-y-1">
                 <li>
-                  <p>
-                    <img src="image/telepon.svg" alt="" class="p-1" />
-                    <a rel="noopener noreferrer" href="#" class="p-1 w-max"
-                      >+6283856909114</a
+                  <p class="hover:text-bg">
+                    <i data-feather="phone" class="w-5"></i>
+                    <a
+                      rel="noopener noreferrer"
+                      href="https://wa.me/6283856909114"
+                      class="p-1 w-max"
+                      data-key="telp"
+                      >+62 838 5690 9114</a
                     >
                   </p>
                 </li>
                 <li>
-                  <p>
-                    <img src="image/email.svg" alt="" class="p-1" />
-                    <a rel="noopener noreferrer" href="#" class="p-1"
+                  <p class="hover:text-bg">
+                    <i data-feather="mail" class="w-5"></i>
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      class="p-1"
+                      data-key="email"
                       >abilarudi@gmail.com</a
                     >
                   </p>

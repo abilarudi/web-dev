@@ -98,11 +98,11 @@ document.addEventListener("click", function () {
 function changeLanguage(lang) {
   const translations = {
     en: {
-      home: "home",
-      about: "about us",
-      product: "product",
-      contact: "contact",
-      catalogue: "catalogue",
+      home: "Home",
+      about: "About Us",
+      product: "Product",
+      contact: "Contact",
+      catalog: "Catalog",
       home1:
         "Discover natural goodness with ABILA, a leading manufacturer of Pure Coconut Oil. Developed with love and dedication to quality, our products provide direct benefits from nature for your health and beauty. Experience Abila's natural touch, a wise choice for your body health and skin beauty.",
       home2: "Experience Natural Health Benefits with Virgin Coconut Oil",
@@ -132,34 +132,51 @@ function changeLanguage(lang) {
       about16: "5. Environmentally Friendly Choice",
       about17:
         "Made with sustainability and quality in mind, Abila ensures that every drop of coconut oil supports a better environment.",
-      sold: "Sold Products",
-      view: "View Product",
-      featured: "Featured Product",
+      terjual: "Sold Products",
+      lihat: "View Product",
+      unggulan: "Featured Products",
+      desunggulan:
+        "Explore our featured products, customer favourites with premium quality and actual results, formulated for your beauty and health.",
+      terlaris: "Top Selling Products",
       product1: "COCONUT OIL",
       despro1:
         "This product is perfect for a variety of purposes, from cooking, maintaining skincare, and hair. Discover the magic of our coconut oil and savour the goodness of nature in every drop.",
-      soldproduct1: "5432 products sold",
+      terjualproduct1: "5432 products sold", // Urus Span
       product2: "COCONUT OIL",
       despro2:
         "This product is perfect for a variety of purposes, from cooking, maintaining skincare, and hair. Discover the magic of our coconut oil and enjoy the goodness of nature in every drop.",
-      soldproduct2: "5432 products sold",
+      terjualproduct2: "5432 products sold",
       product3: "COCONUT OIL",
       despro3:
         "This product is perfect for a variety of purposes, from cooking, maintaining skincare, and hair. Discover the magic of our coconut oil and enjoy the goodness of nature in every drop.",
-      soldproduct3: "5432 products sold",
+      terjualproduct3: "5432 products sold",
       product4: "COCONUT OIL",
       despro4:
         "This product is perfect for a variety of purposes, from cooking, maintaining skincare, and hair. Discover the magic of our coconut oil and enjoy the goodness of nature in every drop.",
-      soldproduct4: "5432 products sold",
-      more: "GET MORE!",
-      advantages: "Coconut Oil Advantage",
-      faq: "Find out about Abila",
+      terjualproduct4: "5432 products sold",
+      detail: "Detail Products",
+      lainnya: "GET MORE!",
+      keunggulan: "Coconut Oil Advantage", // Urus Span
+      faq: "Find Out About Abila",
       q1: "Lorem ipsum dolor sit amet",
       a1: "ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio quae iusto molestiae iure facilis aut aperiam cupiditate inventore nihil.",
       q2: "Lorem ipsum dolor sit amet.",
       a2: "ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio quae iusto molestiae iure facilis aut aperiam cupiditate inventore nihil.",
       q3: "Lorem ipsum dolor sit amet.",
       a3: "ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio quae iusto molestiae iure facilis aut aperiam cupiditate inventore nihil.",
+      contact1: "Contact Us",
+      contact2: "Here's Abila Indonesia's Contact and Address",
+      alamat: "Perum. Bumi Asri Blok E-10 Kec Kota, kediri, 64126",
+      telp: "+62 838 5690 9114",
+      email: "abilarudi@gmail.com",
+      formname: "Full Name",
+      formemail: "Email Address",
+      formmsg: "Message",
+      submit: "Submit",
+      founder: "Founder",
+      factory: "Factory",
+      navigasi: "Navigation",
+      social: "Social Media",
     },
     id: {
       home: "Beranda",
@@ -199,10 +216,13 @@ function changeLanguage(lang) {
       terjual: "Produk Terjual",
       lihat: "Lihat Produk",
       unggulan: "Produk Unggulan",
+      desunggulan:
+        "Jelajahi produk unggulan kami, favorit pelanggan dengan kualitas premium dan hasil nyata, dirancang untuk kecantikan dan kesehatan Anda",
+      terlaris: "Produk Terlaris",
       product1: "MINYAK KELAPA",
       despro1:
         "Produk ini sangat cocok untuk berbagai keperluan, mulai dari memasak, menjaga perawatan kulit, dan rambut. Temukan keajaiban minyak kelapa kami dan nikmati kebaikan alam dalam setiap tetesnya.",
-      terjualproduct1: "5432 produk terjual",
+      terjualproduct1: "5432 produk terjual", // Urus Span
       product2: "MINYAK KELAPA",
       despro2:
         "Produk ini sangat cocok untuk berbagai keperluan, mulai dari memasak, menjaga perawatan kulit, dan rambut. Temukan keajaiban minyak kelapa kami dan nikmati kebaikan alam dalam setiap tetesnya.",
@@ -215,8 +235,9 @@ function changeLanguage(lang) {
       despro4:
         "Produk ini sangat cocok untuk berbagai keperluan, mulai dari memasak, menjaga perawatan kulit, dan rambut. Temukan keajaiban minyak kelapa kami dan nikmati kebaikan alam dalam setiap tetesnya.",
       terjualproduct4: "5432 produk terjual",
+      detail: "Detail Produk",
       lainnya: "DAPATKAN LAINNYA!",
-      keunggulan: "Keunggulan Minyak Kelapa",
+      keunggulan: "Keunggulan Minyak Kelapa", // Urus span
       faq: "Cari Tahu tentang Abila",
       q1: "Lorem ipsum dolor sit amet.?",
       a1: "ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio quae iusto molestiae iure facilis aut aperiam cupiditate inventore nihil.",
@@ -224,6 +245,19 @@ function changeLanguage(lang) {
       a2: "ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio quae iusto molestiae iure facilis aut aperiam cupiditate inventore nihil.",
       q3: "Lorem ipsum dolor sit amet.?",
       a3: "ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio quae iusto molestiae iure facilis aut aperiam cupiditate inventore nihil.",
+      contact1: "Hubungi Kami",
+      contact2: "Berikut Kontak dan Alamat Abila Indonesia",
+      alamat: "Perum. Bumi Asri Blok E-10 Kec Kota, kediri, 64126",
+      telp: "+62 838 5690 9114",
+      email: "abilarudi@gmail.com",
+      formname: "Nama Lengkap",
+      formemail: "Alamat Email",
+      formmsg: "Pesan",
+      submit: "Kirim",
+      founder: "Pendiri",
+      factory: "Perusahaan",
+      navigasi: "Navigasi",
+      social: "Media Sosial",
     },
   };
   console.log("translations: " + translations);
