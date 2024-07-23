@@ -178,9 +178,9 @@ body {
 .hero .motto h1 {
   font-family: "Inter", sans-serif;
   position: absolute;
-  top: 25%;
+  top: 22%;
   left: 50%;
-  font-weight: 400;
+  font-weight: 300;
   transform: translate(-50%, -50%);
   color: #fff;
   font-size: 50px;
@@ -208,10 +208,13 @@ body {
 
 .hero .content {
   position: absolute;
-  top: 40%;
+  top: 32%;
   width: 100%;
   bottom: 90px;
-  background: rgba(237, 225, 209, 0.5);
+  background: rgba(237, 225, 209, 0.8);
+}
+.hero .phome {
+  text-align: justify;
 }
 
 .hero .content .rudi {
@@ -1141,8 +1144,8 @@ html {
     transform: scaleX(0.75);
   }
   .hero .motto h1 {
-    font-size: 33px;
-    top: 22%;
+    font-size: 38px;
+    top: 18%;
   }
   .hero .content {
     bottom: 50px;
@@ -1232,14 +1235,15 @@ html {
     transform: scaleX(0.75);
   }
   .hero .motto h1 {
-    width: 70%;
-    font-size: 33px;
     top: 22%;
+    width: 70%;
+    font-size: 30px;
   }
   .hero .content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    top: 40%;
     bottom: 35px;
   }
 

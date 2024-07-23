@@ -103,8 +103,12 @@ function changeLanguage(lang) {
       product: "Product",
       contact: "Contact",
       catalog: "Catalog",
-      home1:
-        "Discover natural goodness with ABILA, a leading manufacturer of Pure Coconut Oil. Developed with love and dedication to quality, our products provide direct benefits from nature for your health and beauty. Experience Abila's natural touch, a wise choice for your body health and skin beauty.",
+      home1: "Discover Natural Goodness",
+      home12: "with Abila Indonesia",
+      home13:
+        "Leading manufacturer of Pure Coconut Oil. Developed with love and dedication to quality, our products provide direct benefits from nature for your health and beauty.",
+      home14:
+        "Experience Abila's natural touch, a wise choice for your body's health and skin's beauty.",
       home2: "Experience Natural Health Benefits with Virgin Coconut Oil",
       about1: "Get to know us",
       about2: "at Abila Indonesia",
@@ -184,8 +188,12 @@ function changeLanguage(lang) {
       product: "Produk",
       contact: "Kontak",
       catalog: "Katalog",
-      home1:
-        "Temukan kebaikan alami dengan ABILA, produsen terkemuka Minyak Kelapa Murni. Dikembangkan dengan cinta dan dedikasi untuk kualitas, produk kami memberikan manfaat langsung dari alam untuk kesehatan dan kecantikan Anda. Segera rasakan sentuhan alami Abila, pilihan bijak untuk kesehatan tubuh dan kecantikan kulit Anda.",
+      home1: "Temukan kebaikan alami",
+      home12: "dengan ABILA",
+      home13:
+        "Produsen terkemuka Minyak Kelapa Murni. Dikembangkan dengan cinta dan dedikasi untuk kualitas, produk kami memberikan manfaat langsung dari alam untuk kesehatan dan kecantikan Anda.",
+      home14:
+        "Segera rasakan sentuhan alami Abila, pilihan bijak untuk kesehatan tubuh dan kecantikan kulit Anda.",
       home2: "Rasakan Manfaat Kesehatan Alami dengan Virgin Coconut Oil",
       about1: "Ketahui Kami",
       about2: "di Abila Indonesia",
