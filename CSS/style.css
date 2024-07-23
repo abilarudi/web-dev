@@ -779,11 +779,13 @@ body {
   margin: 2rem;
   border-radius: 3rem;
   display: -webkit- flex;
-  background-color: #ffffef;
+  background-color: var(--primary);
   .blog-item {
     margin: 3rem;
+    vertical-align: middle;
     text-align: center;
-    padding: 1rem;
+    padding: 3rem;
+    background-color: #ffffef;
   }
 }
 .blog .blog-item {
