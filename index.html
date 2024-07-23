@@ -4,11 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Abila Indonesia</title>
+    <!-- Slick Slider CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <!-- Slick Slider Theme CSS (optional) -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <!-- Carousel -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -18,15 +44,15 @@
       referrerpolicy="no-referrer"
     />
     <!-- Logo -->
-    <link rel="icon" type="image/svg+xml" href="image/Coconut.svg">
+    <link rel="icon" type="image/svg+xml" href="image/Coconut.svg" />
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
 
     <!-- My Style -->
     <link rel="Stylesheet" href="CSS/style.css" />
-    <link rel="stylesheet" href="CSS/output.css">
+    <link rel="stylesheet" href="CSS/output.css" />
   </head>
-  
+
   <body>
     <!-- Navbar Start -->
     <nav class="navbar-alt">
@@ -46,12 +72,39 @@
       <div class="navbar-extra">
         <form action="">
           <div class="navbar-search">
-            <input type="text" placeholder="Search..." id="find" onkeyup="search()" />
-            <button type="button"><i data-feather="search" class="isearch"></i></button>
+            <input
+              type="text"
+              placeholder="Search..."
+              id="find"
+              onkeyup="search()"
+            />
+            <button type="button">
+              <i data-feather="search" class="isearch"></i>
+            </button>
           </div>
         </form>
-        <a href="login.html" class="logins"><i data-feather="user"></i></a>
-        <a href="#" id="shopping"><i data-feather="shopping-cart"></i></a>
+        <div class="flex flex-wrap language-toggle">
+          <div class="px-0 w-16 border-yellow-400 text-center ml-3">
+            <button
+              id="lang-in"
+              class="text-xl text-white hover:text-bg border-white px-1"
+              onclick="changeLanguage('id')"
+            >
+              In</button
+            >|
+            <button
+              id="lang-en"
+              class="text-xl text-white border-white hover:text-bg"
+              onclick="changeLanguage('en')"
+            >
+              En
+            </button>
+          </div>
+        </div>
+
+        <a href="#" id="shopping"
+          ><i data-feather="shopping-cart" class="w-7"></i
+        ></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
     </nav>
@@ -61,40 +114,92 @@
     <section class="hero" id="home">
       <div class="hero-bg"></div>
       <div class="motto">
-        <h1>"Sustainibility, Healthy, and Happy</h1>
+        <h1>"Sustainibility, Healthy, and Happy"</h1>
       </div>
-      <main class="content">
-        <img src="image/rudi.svg" alt="" class="rudi" />
+      <main class="content px-10">
+        <!-- <img src="image/rudi.svg" alt="" class="rudi" />
         <div class="content-hero">
-          <!-- <h1>Welcome to <span>Abila</span></h1> -->
-          <p>
-            “Kami percaya bahwa rezeki yang lapang, halal, dan berkah adalah
-            menjalankan bisnis yang dapat memberikan solusi atas permasalahan
-            yang ada, bermanfaat bagi khalayak umum dari hulu ke hilir, amanah,
-            dan profesional yang mengusung IMTAQ dan IPTEK. Abila hadir sebagai
-            produsen Virgin Coconut Oil, berkomitmen untuk menyediakan produk
-            berkualitas tinggi yang tidak hanya menyehatkan, tetapi juga
-            mendukung keberlanjutan lingkungan dan kesejahteraan masyarakat.”
+          <p data-key="home1">
+            Temukan kebaikan alami dengan ABILA, produsen terkemuka Minyak
+            Kelapa Murni. Dikembangkan dengan cinta dan dedikasi untuk kualitas,
+            produk kami memberikan manfaat langsung dari alam untuk kesehatan
+            dan kecantikan Anda. Segera rasakan sentuhan alami Abila, pilihan
+            bijak untuk kesehatan tubuh dan kecantikan kulit Anda.
           </p>
-          <!-- <a href="https://www.instagram.com/timkkn_mtkits/" class="cta"
-          >Get Started</a
-        > -->
+        </div> -->
+        <div class="container">
+          <div class="flex flew-wrap">
+            <div class="md:w-2/5 lg:py-10 lg:px-10">
+              <img
+                src="image/kelapahome.svg"
+                alt=""
+                class="w-full hidden md:block"
+              />
+            </div>
+            <div class="md:w-3/5 text-center lg:px-20 w-full">
+              <div class="mt-12 text-left">
+                <p class="text-bg2 text-lg">Hi, Choco!</p>
+                <p
+                  class="text-primary text-4xl font-bold tracking-wider mb-2"
+                  data-key="home1"
+                >
+                  Temukan Kebaikan Alami
+                </p>
+                <p
+                  class="text-yellow-700 text-4xl font-bold mb-10 tracking-wider"
+                  data-key="home12"
+                >
+                  dengan Abila Indonesia
+                </p>
+                <div class="bg-bg2 rounded-xl p-2 lg:mr-20">
+                  <p class="text-bg font-light text-xl phome">
+                    <span data-key="home13"
+                      >Produsen terkemuka Minyak Kelapa Murni. Dikembangkan
+                      dengan cinta dan dedikasi untuk kualitas, produk kami
+                      memberikan manfaat langsung dari alam untuk kesehatan dan
+                      kecantikan Anda.</span
+                    >
+
+                    <span class="font-semibold" data-key="home14"
+                      >Segera rasakan sentuhan alami Abila, pilihan bijak untuk
+                      kesehatan tubuh dan kecantikan kulit Anda.</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
       <div class="block-orange"></div>
-      <div class="block-brown">
-        <img src="image/kelapa.svg" alt="" class="coco" />
-        <h1 class="slogan">
+      <div
+        class="block-brown absolute bottom-0 w-full flex items-center justify-center"
+      >
+        <img
+          src="image/pohon.svg"
+          alt=""
+          class="absolute left-0 bottom-0 lg:h-40 sm:h-36 h-24"
+        />
+        <h1
+          class="text-center text-white lg:text-2xl sm:text-2xl text-xl font-semibold italic sm:mx-40 mx-36"
+          data-key="home2"
+        >
           Rasakan Manfaat Kesehatan Alami dengan Virgin Coconut Oil
         </h1>
-        <img src="image/pohon.svg" alt="" class="pohon" />
+        <img
+          src="image/kelapa.svg"
+          alt=""
+          class="overflow-hidden absolute right-0 bottom-0 sm:h-32 h-24"
+        />
       </div>
     </section>
     <!-- Hero Section End -->
 
     <!-- About Section Start -->
-    <section id="about" class="about">
-      <!-- <h2><span>Abila</span>Indonesia</h2> -->
+    <section id="about" class="about relative">
+      <div class="absolute -top-48 left-0 -z-10">
+        <img src="image/bg-aboutabila/left.svg" alt="" />
+      </div>
       <div class="row">
         <div class="leftrow">
           <div class="title">
@@ -103,19 +208,19 @@
             <h3><span>di Abila Indonesia</span></h3>
           </div>
           <div class="content">
-            <p>
-              Abila Indonesia merupakan partner yang Anda butuhkan pada
-              penggunaan kebutuhan rumah tangga dengan produk unggulan yang kami
-              tawarkan berupa minyak kelapa olahan premium.
+            <p data-key="about3">
+              Minyak Kelapa Murni Abila, adalah solusi lengkap untuk kesehatan
+              dan kecantikan keluarga Anda. Dibutuhkan untuk menyelesaikan
+              masalah sekaligus menjaga tubuh tetap sehat dan cantik.
             </p>
-            <p>
-              Kami tidak hanya menawarkan solusi praktis, tetapi juga berfokus
-              pada kebutuhan unik setiap klien. Dengan pendekatan yang
-              berorientasi pada hasil, kami memastikan setiap langkah yang
-              diambil memberikan nilai tambah yang signifikan bagi kepuasan
-              Anda.
+            <p data-key="about4">
+              Keajaiban alami Minyak Kelapa Murni Abila! Dirancang khusus untuk
+              merawat kecantikan dan kesehatan kulit juga tumbuh Anda secara
+              alami. Diperkaya dengan nutrisi kelapa murni yang membantu menjaga
+              kelembapan dan memperkuat rambut, produk ini adalah pilihan
+              terbaik untuk perawatan harian Anda. Rasakan sentuhan lembutnya
+              dan buktikan keunggulannya hari ini!
             </p>
-            <p>Jadi tunggu apalagi? Mari belanja di Abila Indonesia!</p>
           </div>
         </div>
         <div class="about-img">
@@ -128,27 +233,85 @@
           <img src="image/bg-aboutabila/decoration-produk.svg" class="dec2" />
         </div>
       </div>
-      <h3 class="why-abila">Mengapa Harus Abila?</h3>
-      <div class="eminance">
-        <div class="em-content">
-          <div class="em-number">1023+</div>
-          <div class="em-title">Produk Tejual</div>
-          <div class="em-link">
-            <a href="#product"> Lihat Produk </a>
+      <h3 class="why-abila" data-key="about6">Mengapa Harus Abila?</h3>
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="justify-center w-full bg-bg2 mb-10 p-8 rounded-md">
+            <p class="text-text2 font-thin text-xl">
+              <span data-key="about7" class="mb-4 inline-block font-medium">
+                Berikut adalah kutipan dari para pakar kesehatan tentang manfaat
+                minyak kelapa murni untuk kesehatan dan kecantikan tubuh
+              </span>
+              <span data-key="about8" class="font-semibold inline-block"
+                >1. ⁠Kulit yang Sehat dan Bersinar</span
+              >
+              <span class="inline-block mb-4" data-key="about9">
+                Diperkaya dengan vitamin E dan asam lemak esensial, minyak
+                kelapa Abila memberikan kelembapan mendalam untuk kulit yang
+                halus dan bercahaya.</span
+              >
+              <span class="font-semibold inline-block" data-key="about10"
+                >2.⁠ ⁠Rambut Kuat dan Berkilau :
+              </span>
+              <span class="inline-block mb-4" data-key="about11">
+                Gunakan sebagai masker rambut atau serum penata rambut alami,
+                minyak kelapa *Abila memperkuat helai rambut Anda, menjadikannya
+                lembut dan berkilau.
+              </span>
+              <span class="font-semibold inline-block" data-key="about12">
+                3.⁠ ⁠Antioksidan untuk Perlindungan
+              </span>
+              <span class="inline-block mb-4" data-key="about13">
+                Perlindungan alami dari radikal bebas, membantu melawan penuaan
+                dini dan menjaga kulit tetap muda dan sehat.</span
+              >
+              <span class="font-semibold inline-block" data-key="about14">
+                4.⁠ ⁠Kemurnian yang Dijamin
+              </span>
+              <span class="inline-block mb-4" data-key="about15">
+                Diproses dengan standar ketat untuk memastikan kemurnian
+                tertinggi, tanpa tambahan bahan kimia yang merugikan.
+              </span>
+              <span class="font-semibold inline-block" data-key="about16">
+                5. ⁠Pilihan Ramah Lingkungan</span
+              >
+              <span class="inline-block mb-4" data-key="about17">
+                Dibuat dengan memperhatikan keberlanjutan dan kualitas, Abila
+                memastikan bahwa setiap tetes minyak kelapa mendukung lingkungan
+                yang lebih baik.
+              </span>
+              <span class="inline-block font-medium" data-key="about5">
+                Jadikan minyak kelapa murni Abila bagian dari rutinitas
+                kecantikan dan kesehatan Anda serta rasakan perbedaannya. Dengan
+                penggunaan yang konsisten, Anda tidak hanya merawat diri tetapi
+                juga menikmati hasil yang nyata. Optimalisasi kecantikan juga
+                kesehatan Anda dengan keajaiban alami dari minyak kelapa Abila
+                hari ini.
+              </span>
+            </p>
           </div>
         </div>
-        <div class="em-content">
-          <div class="em-number">1023+</div>
-          <div class="em-title">Produk Tejual</div>
-          <div class="em-link">
-            <a href="#product"> Lihat Produk </a>
+        <div class="eminance">
+          <div class="em-content">
+            <div class="em-number">1023+</div>
+            <div class="em-title" data-key="terjual">Produk Tejual</div>
+            <div class="em-link">
+              <a href="#product" data-key="lihat"> Lihat Produk </a>
+            </div>
           </div>
-        </div>
-        <div class="em-content">
-          <div class="em-number">1023+</div>
-          <div class="em-title">Produk Tejual</div>
-          <div class="em-link">
-            <a href="#product"> Lihat Produk </a>
+          <div class="em-content">
+            <div class="em-number">1023+</div>
+            <div class="em-title" data-key="terjual">Produk Tejual</div>
+            <div class="em-link">
+              <a href="#product" data-key="lihat"> Lihat Produk </a>
+            </div>
+          </div>
+          <div class="em-content">
+            <div class="em-number">1023+</div>
+            <div class="em-title" data-key="terjual">Produk Tejual</div>
+            <div class="em-link">
+              <a href="#product" data-key="lihat"> Lihat Produk </a>
+            </div>
           </div>
         </div>
       </div>
@@ -159,85 +322,92 @@
     <section id="product" class="product">
       <h2><span>Produk</span> Unggulan</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-        veritatis, culpa exercitationem rerum atque quod!
+        Jelajahi produk unggulan kami, favorit pelanggan dengan kualitas premium
+        dan hasil nyata, dirancang untuk kecantikan dan kesehatan Anda.
       </p>
 
-      <div class="row">
+      <div class="row-product">
         <div class="product-card">
-          <p class="top-tag">Produk Terlaris</p>
-          <img
-            src="image/bg-aboutabila/Abila.svg"
-            alt="Minyak Kelapa"
-            class="product-card-image"
-          />
+          <div class="container">
+            <img
+              src="image/bg-aboutabila/Abila.svg"
+              alt="Minyak Kelapa"
+              class="product-card-image"
+            />
+            <div class="top-detail">
+              <p class="top-sell"><span>5432</span> produk terjual</p>
+              <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
+            </div>
+          </div>
           <h3 class="product-card-title">MINYAK KELAPA</h3>
+          <p class="top-tag" data-key="terlaris">Produk Terlaris</p>
           <p class="top-desk">
             Produk ini sangat cocok untuk berbagai keperluan, mulai dari
             memasak, menjaga perawatan kulit, dan rambut. Temukan keajaiban
             minyak kelapa kami dan nikmati kebaikan alam dalam setiap tetesnya.
           </p>
-          <div class="top-detail">
-            <p class="top-sell"><span>5432</span> produk terjual</p>
-            <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
-          </div>
         </div>
 
         <div class="product-card">
-          <p class="top-tag">Produk Terlaris</p>
-          <img
-            src="image/bg-aboutabila/Abila.svg"
-            alt="Minyak Kelapa"
-            class="product-card-image"
-          />
+          <div class="container">
+            <img
+              src="image/bg-aboutabila/Abila.svg"
+              alt="Minyak Kelapa"
+              class="product-card-image"
+            />
+            <div class="top-detail">
+              <p class="top-sell"><span>5432</span> produk terjual</p>
+              <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
+            </div>
+          </div>
           <h3 class="product-card-title">MINYAK KELAPA</h3>
+          <p class="top-tag" data-key="terlaris">Produk Terlaris</p>
           <p class="top-desk">
             Produk ini sangat cocok untuk berbagai keperluan, mulai dari
             memasak, menjaga perawatan kulit, dan rambut. Temukan keajaiban
             minyak kelapa kami dan nikmati kebaikan alam dalam setiap tetesnya.
           </p>
-          <div class="top-detail">
-            <p class="top-sell"><span>5432</span> produk terjual</p>
-            <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
+        </div>
+        <div class="product-card">
+          <div class="container">
+            <img
+              src="image/bg-aboutabila/Abila.svg"
+              alt="Minyak Kelapa"
+              class="product-card-image"
+            />
+            <div class="top-detail">
+              <p class="top-sell"><span>5432</span> produk terjual</p>
+              <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
+            </div>
           </div>
+          <h3 class="product-card-title">MINYAK KELAPA</h3>
+          <p class="top-tag" data-key="terlaris">Produk Terlaris</p>
+          <p class="top-desk">
+            Produk ini sangat cocok untuk berbagai keperluan, mulai dari
+            memasak, menjaga perawatan kulit, dan rambut. Temukan keajaiban
+            minyak kelapa kami dan nikmati kebaikan alam dalam setiap tetesnya.
+          </p>
         </div>
 
         <div class="product-card">
-          <p class="top-tag">Produk Terlaris</p>
-          <img
-            src="image/bg-aboutabila/Abila.svg"
-            alt="Minyak Kelapa"
-            class="product-card-image"
-          />
+          <div class="container">
+            <img
+              src="image/bg-aboutabila/Abila.svg"
+              alt="Minyak Kelapa"
+              class="product-card-image"
+            />
+            <div class="top-detail">
+              <p class="top-sell"><span>5432</span> produk terjual</p>
+              <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
+            </div>
+          </div>
           <h3 class="product-card-title">MINYAK KELAPA</h3>
+          <p class="top-tag" data-key="terlaris">Produk Terlaris</p>
           <p class="top-desk">
             Produk ini sangat cocok untuk berbagai keperluan, mulai dari
             memasak, menjaga perawatan kulit, dan rambut. Temukan keajaiban
             minyak kelapa kami dan nikmati kebaikan alam dalam setiap tetesnya.
           </p>
-          <div class="top-detail">
-            <p class="top-sell"><span>5432</span> produk terjual</p>
-            <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <p class="top-tag">Produk Terlaris</p>
-          <img
-            src="image/bg-aboutabila/Abila.svg"
-            alt="Minyak Kelapa"
-            class="product-card-image"
-          />
-          <h3 class="product-card-title">MINYAK KELAPA</h3>
-          <p class="top-desk">
-            Produk ini sangat cocok untuk berbagai keperluan, mulai dari
-            memasak, menjaga perawatan kulit, dan rambut. Temukan keajaiban
-            minyak kelapa kami dan nikmati kebaikan alam dalam setiap tetesnya.
-          </p>
-          <div class="top-detail">
-            <p class="top-sell"><span>5432</span> produk terjual</p>
-            <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
-          </div>
         </div>
       </div>
       <h3 class="catalog-link">
@@ -249,9 +419,210 @@
     <!-- Blog Section Start -->
     <section>
       <div class="blog">
-        <h2><span>Keunggulan</span> Minyak Kelapa</h2>
+        <div class="h-9 bg-unggul w-full"></div>
+        <div class="bg-bg relative w-full py-5">
+          <img
+            src="image/kelapaunggulkiri.svg"
+            alt=""
+            class="absolute top-1/2 transform -translate-y-1/2 left-0 lg:w-60 w-52"
+          />
+          <h2
+            data-key="keunggulan"
+            class="text-center font-bold lg:text-4xl md:text-3xl text-2xl"
+          >
+            <span class="text-primary drop-shadow-2xl" data-key="keunggulan1"
+              >KEUNGGULAN </span
+            ><span
+              class="text-yellow-700 drop-shadow-2xl"
+              data-key="keunggulan2"
+              >MINYAK
+            </span>
+            <span class="text-yellow-700 drop-shadow-2xl" data-key="keunggulan3"
+              >KELAPA
+            </span>
+          </h2>
+          <img
+            src="image/kelapaunggulkanan.svg"
+            alt=""
+            class="absolute top-1/2 transform -translate-y-1/2 right-0 lg:w-60 w-52"
+          />
+        </div>
+
+        <div class="h-9 bg-unggul w-full"></div>
         <div class="blog-content">
-          <div class="blog1">
+          <div class="blog-item">
+            <div class="kutipan">
+              <div class="mark-top">''</div>
+              <div class="content">
+                VCO (virgin coconut oil) memang telah diteliti memiliki banyak
+                manfaat bagi kesehatan, di antaranya untuk membantu menurunkan
+                berat badan, mencegah serangan jantung, mengatasi resistensi
+                insulin pada penderita diabetes, dan menjaga kesehatan kulit.
+              </div>
+              <div class="mark-bot">''</div>
+              <div class="sumber">
+                <div class="tokoh">dr. Nadia Nurotul Fuadah</div>
+                <div class="link">
+                  <a
+                    href="https://alodokter.com
+                  "
+                    >alodokter.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="blog-item">
+            <div class="kutipan">
+              <div class="mark-top">''</div>
+              <div class="content">
+                Manfaat minyak kelapa untuk ibu hamil 6 bulan ke atas bisa
+                digunakan sebagai minyat pijat. Bagus untuk kulit, sekaligus
+                mengurasi rasa sakit dan nyeri otot yang biasanya datang pada
+                trimester ke 3 kehamilan.
+              </div>
+              <div class="mark-bot">''</div>
+              <div class="sumber">
+                <div class="tokoh">" "</div>
+                <div class="link"><a href=""> </a></div>
+              </div>
+            </div>
+          </div>
+          <div class="blog-item">
+            <div class="kutipan">
+              <div class="mark-top">''</div>
+              <div class="content">
+                Virgin Coconut Oil (VCO) aman-aman saja untuk dikonsumsi wanita
+                yang sedang hamil dan hingga saat ini tidak terbukti ada dampak
+                negatif tertentu terhadap kehamilan dan janin dalam kandungan.
+                VCO diketahui memiliki banyak manfaat bagi kesehatan, antara
+                lain meningkatkan kerja sistem imunitas tubuh, mencegah dan
+                membantu mengatasi infeksi bakteri ataupun virus, dapat
+                menurunkan kadar kolesterol jahat dan meningkatkan kadar
+                kolesterol baik, dan lain sebagainya.
+              </div>
+              <div class="mark-bot">''</div>
+              <div class="sumber">
+                <div class="tokoh">"dr. Irna Cecilia"</div>
+                <div class="link">
+                  <a href="https://alodokter.com ">Alodokter.com </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="blog-item">
+            <div class="kutipan">
+              <div class="mark-top">''</div>
+              <div class="content">
+                Minyak kelapa murni mampu mengembalikan pancaran kulit dalam
+                waktu singkat
+              </div>
+              <div class="mark-bot">''</div>
+              <div class="sumber">
+                <div class="tokoh">
+                  "Debra Rose Wilson – PhD, MSN, RN, IBCLC, AHN-BC, CHT : Herbal
+                  Medicine, Complementary and Alternative Medicine.
+                </div>
+                <div class="link"><a href=""> </a></div>
+              </div>
+            </div>
+          </div>
+          <div class="blog-item">
+            <div class="kutipan">
+              <div class="mark-top">''</div>
+              <div class="content">
+                Minyak kelapa adalah minyak yang paling penting karena
+                mengandung Asam Lemak laurat. Lemak laurat memiliki sifat unik
+                untuk digunakan dalam industri makanan serta penggunaan sabun
+                dan industri kosmetik.
+              </div>
+              <div class="mark-bot">''</div>
+              <div class="sumber">
+                <div class="tokoh">
+                  "Mary G. Enig – PhD, F.A.C.N. Penulis Buku ‘Coconut in Support
+                  of Good Health in the 21st Century’. "
+                </div>
+                <div class="link"><a href=""> </a></div>
+              </div>
+            </div>
+          </div>
+          <div class="blog-item">
+            <div class="kutipan">
+              <div class="mark-top">''</div>
+              <div class="content">
+                minyak kelapa murni bukanlah hal baru. Penggunaannya telah
+                digunakan oleh praktisi pengobatan Ayurveda di India sejak 3
+                hingga 4 ribu tahun yang lalu. ini karena minyak kelapa murni
+                adalah obat untuk berbagai penyakit.
+              </div>
+              <div class="mark-bot">''</div>
+              <div class="sumber">
+                <div class="tokoh">
+                  "Dr Conrado S. Darit – Professor Emeritus of pharmology,
+                  university of philiphines. "
+                </div>
+                <div class="link"><a href=""> </a></div>
+              </div>
+            </div>
+          </div>
+          <div class="blog-item">
+            <div class="kutipan">
+              <div class="mark-top">''</div>
+              <div class="content">
+                Minyak kelapa membantu mencegah obesitas, meningkatkan
+                kekebalan, melindungi dari bakteri, virus dan jamur sekaligus
+                memastikan jantung yang sehat
+              </div>
+              <div class="mark-bot">''</div>
+              <div class="sumber">
+                <div class="tokoh">
+                  " Dr. Vermen M. Verallo Rowell. American Fellow Dermatologist,
+                  Author & Medical Researcher "
+                </div>
+                <div class="link"><a href=""> </a></div>
+              </div>
+            </div>
+          </div>
+          <div class="blog-item">
+            <div class="kutipan">
+              <div class="mark-top">''</div>
+              <div class="content">
+                VJika ada minyak yang bisa digunakan setiap hari untuk makan
+                yang membantu masalah jantung, kanker dan penyakit kritis
+                lainnya serta membantu proses pencernaan dan sistem kekebalan
+                tubuh, apakah Anda tertarik? Jika demikian, saya sarankan
+                mengambil minyak kelapa
+              </div>
+              <div class="mark-bot">''</div>
+              <div class="sumber">
+                <div class="tokoh">
+                  " Bruce Fife – Direktur Coconut Research Center, Colorado USA.
+                  "
+                </div>
+                <div class="link"><a href=""> </a></div>
+              </div>
+            </div>
+          </div>
+          <div class="blog-item">
+            <div class="kutipan">
+              <div class="mark-top">''</div>
+              <div class="content">
+                minyak kelapa meningkatkan pencernaan yang sehat dan
+                anti-inflamasi. Keduanya penting dalam membantu meredakan
+                refluks alias asam lambung naik yang menyakitkan selama akhir
+                kehamilan.
+              </div>
+              <div class="mark-bot">''</div>
+              <div class="sumber">
+                <div class="tokoh">
+                  "Dr. Josh Axe, DC, DNM, CNS, dokter pengobatan alami
+                  dari Amerika Serikat"
+                </div>
+                <div class="link"><a href=""> </a></div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="blog1">
             <div class="blog-img">
               <img
                 src="image/abilahome1.png"
@@ -310,7 +681,7 @@
                 >
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -319,12 +690,14 @@
 
     <!-- FAQ Section Start -->
     <section id="FAQ" class="FAQ">
-      <h2><span>Cari Tahu tentang</span> Abila</h2>
+      <h2 data-key="faq"><span>Cari Tahu tentang</span> Abila</h2>
       <div class="QnA-border">
         <div class="QnA">
-          <button class="Question">Lorem ipsum dolor sit amet.?</button>
+          <button class="Question" data-key="q1">
+            Lorem ipsum dolor sit amet.?
+          </button>
           <div class="Answer">
-            <p>
+            <p data-key="a1">
               ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
               odio quae iusto molestiae iure facilis aut aperiam cupiditate
               inventore nihil.
@@ -332,9 +705,11 @@
           </div>
         </div>
         <div class="QnA">
-          <button class="Question">Lorem ipsum dolor sit amet.?</button>
+          <button class="Question" data-key="q2">
+            Lorem ipsum dolor sit amet.?
+          </button>
           <div class="Answer">
-            <p>
+            <p data-key="a2">
               ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
               odio quae iusto molestiae iure facilis aut aperiam cupiditate
               inventore nihil.
@@ -342,26 +717,17 @@
           </div>
         </div>
         <div class="QnA">
-          <button class="Question">Lorem ipsum dolor sit amet.?</button>
+          <button class="Question" data-key="q3">
+            Lorem ipsum dolor sit amet.?
+          </button>
           <div class="Answer">
-            <p>
+            <p data-key="a3">
               ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
               odio quae iusto molestiae iure facilis aut aperiam cupiditate
               inventore nihil.
             </p>
           </div>
         </div>
-        <!-- ADD FAQ Baru -->
-        <!-- <div class="QnA">
-          <button class="Question">Lorem ipsum dolor sit amet.?</button>
-          <div class="Answer">
-            <p>
-              ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-              odio quae iusto molestiae iure facilis aut aperiam cupiditate
-              inventore nihil.
-            </p>
-          </div>
-        </div> -->
 
         <script>
           var acc = document.getElementsByClassName("Question");
@@ -384,236 +750,324 @@
     <!-- FAQ Section End -->
 
     <!-- Kontak Section Start -->
-    <section class="py-6 w-full h-max mt-28" style="background-image: url('/image/contact/bg.svg');">
-      <div class="relative grid grid-cols-1 px-6 py-6 mx-auto lg:px-8 md:grid-cols-2 text-yellow-50">
-
+    <section
+      id="contact"
+      class="py-6 w-full h-max mt-28"
+      style="background-image: url('/image/contact/bg.svg')"
+    >
+      <div
+        class="relative grid grid-cols-1 px-6 py-6 mx-auto lg:px-8 md:grid-cols-2 text-yellow-50"
+      >
         <!-- img design -->
-        <img src="image/contact/kelapa.svg" alt="phone" class="w-[15%] md:w-[8%] absolute z-0 bottom-0 left-0">
-        <img src="image/contact/pohon kelapa.svg" alt="phone" class="w-[35%] md:w-[15%] absolute z-0 bottom-0 right-0">
+        <img
+          src="image/contact/kelapa.svg"
+          alt="phone"
+          class="w-[15%] md:w-[8%] absolute z-0 bottom-0 left-0"
+        />
+        <img
+          src="image/contact/pohon kelapa.svg"
+          alt="phone"
+          class="w-[35%] md:w-[15%] absolute z-0 bottom-0 right-0"
+        />
 
         <div class="relative z-20 py-6 md:py-0 md:px-6">
-          <h1 class="text-4xl font-bold">Hubungi Kami</h1>
-          <p class="pt-2 pb-4">Berikut Contact dan alamat Abilarudi</p>
+          <h1 class="text-4xl font-bold" data-key="contact1">Hubungi Kami</h1>
+          <p class="pt-2 pb-4" data-key="contact2">
+            Berikut Kontak dan Alamat Abila Indonesia
+          </p>
           <div class="space-y-4">
             <p class="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2 sm:mr-6">
-                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="w-5 h-5 mr-2 sm:mr-6"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                  clip-rule="evenodd"
+                ></path>
               </svg>
-              <span>Perum. Bumi Asri Blok E-10 Kec Kota, kediri, 64126</span>
+              <span data-key="alamat"
+                >Perum. Bumi Asri Blok E-10 Kec Kota, kediri, 64126</span
+              >
             </p>
             <p class="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2 sm:mr-6">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="w-5 h-5 mr-2 sm:mr-6"
+              >
+                <path
+                  d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+                ></path>
               </svg>
-              <span>083856909114</span>
+              <span data-key="telp">+62 838 5690 9114</span>
             </p>
             <p class="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2 sm:mr-6">
-                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="w-5 h-5 mr-2 sm:mr-6"
+              >
+                <path
+                  d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                ></path>
+                <path
+                  d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                ></path>
               </svg>
-              <span>abilarudi@gmail.com</span>
+              <span data-key="email">abilarudi@gmail.com</span>
             </p>
           </div>
         </div>
 
-        <form novalidate="" class="relative z-20 flex flex-col py-6 space-y-6 md:py-0 md:px-6">
+        <form
+          novalidate=""
+          class="relative z-20 flex flex-col py-6 space-y-6 md:py-0 md:px-6"
+        >
           <label class="block">
-            <span class="mb-1 font-semibold ">Full name</span>
-            <input type="text" placeholder="Input your Name" class="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100">
+            <span class="mb-1 font-semibold" data-key="formname"
+              >Nama Lengkap</span
+            >
+            <input
+              type="text"
+              placeholder="Input your Name"
+              class="block px-3 w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100 text-yellow-950"
+            />
           </label>
           <label class="block">
-            <span class="mb-1 font-semibold ">Email address</span>
-            <input type="email" placeholder="Input your Email" class="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100">
+            <span class="mb-1 font-semibold" data-key="formemail"
+              >Alamat Email</span
+            >
+            <input
+              type="email"
+              placeholder="Input your Email"
+              class="block px-3 w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100 text-yellow-950"
+            />
           </label>
           <label class="block">
-            <span class="mb-1 font-semibold ">Message</span>
-            <textarea rows="3" placeholder="Input your Message" class="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100"></textarea>
+            <span class="mb-1 font-semibold" data-key="formmsg">Pesan</span>
+            <textarea
+              rows="3"
+              placeholder="Input your Message"
+              class="block px-3 w-full rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100 text-yellow-950"
+            ></textarea>
           </label>
-          <button type="button" class="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-yellow-800 hover:ring-white">Submit</button>
+          <button
+            type="button"
+            class="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-yellow-800 hover:ring-white"
+            data-key="submit"
+          >
+            Kirim
+          </button>
         </form>
       </div>
     </section>
-      <!-- <h2><span>Kontak</span> Kami</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis,
-        sunt?
-      </p>
+    <!-- Footer -->
 
-      <div class="row">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.568271889335!2d112.0123543741661!3d-7.8354322921857005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857a6ffe19ebf%3A0x720dd7b9465be7c4!2sBlk.%20E%20No.2%2C%20Kaliombo%2C%20Kec.%20Kota%2C%20Kabupaten%20Kediri%2C%20Jawa%20Timur%2064129!5e0!3m2!1sid!2sid!4v1714874528582!5m2!1sid!2sid"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          class="map"
-        ></iframe> -->
-
-      <!-- <form action="">
-          <div class="input-group">
-            <i data-feather="user"></i>
-            <input type="text" placeholder="nama" />
-          </div>
-          <div class="input-group">
-            <i data-feather="mail"></i>
-            <input type="text" placeholder="email" />
-          </div>
-          <div class="input-group">
-            <i data-feather="phone"></i>
-            <input type="text" placeholder="No HP" />
-          </div>
-          <button type="submit" class="btn">Kirim pesan</button>
-        </form>
-      </div> -->
-      <!-- <p>tanya</p>
-      <div class="contact-content">
-        <div class="contact-img">
-          <img src="image/element-ft.svg" alt="icon" />
-        </div>
-        <div class="contact-sentence">
-          <div class="contact-ask">Masih punya pertanyaan?</div>
-          <div class="contact-persue">Jangan ragu hubungi kami</div>
-        </div>
-        <div class="contact-link">
-          <a href="https://www.instagram.com/timkkn_mtkits/">
-            <i data-feather="message-square"></i> <span>Contact Us</span>
-          </a>
-        </div>
-      </div> -->
-
-
-    
-    <!-- Kontak Section End -->
-
-    <!-- Footer Section Start -->
-    <!-- <footer>
-      <div class="foot-content">
-        <div class="none"></div>
-        <div class="title-quick"><p>Quick Links</p></div>
-        <div class="title-contact"><p>Contact Us</p></div>
-        <div class="foot-motto">
-          Temukan jawabannya hanya di Abila Indonesia dengan produk-produk
-          unggulan yang berkualitas.
-        </div>
-        <div class="links">
-          <a href="#home">Home</a>
-          <a href="#about">Tentang Kami</a>
-          <a href="#product">Produk</a>
-          <a href="#contact">Kontak</a>
-        </div>
-        <div class="socials">
-          <a href="a"><i data-feather="phone"></i> +62 777-7777-7777</a>
-            <a href="https://www.instagram.com/timkkn_mtkits/"
-              ><i data-feather="instagram"></i
-            >     @abila_indonesia</a>
-            <a href="a"><i data-feather="mail"></i> abilarudi@gmail.com</a>
-            <a href="a"><i data-feather="facebook"></i>     @fb</a>
-      </div>
-      <div class="credit">
-        <p>
-          Created by
-          <a href="https://www.instagram.com/timkkn_mtkits/"
-            >KKN MATEMATIKA ITS</a
+    <footer class="w-full h-max bg-teal-800 text-white">
+      <div
+        class="container flex flex-col items-center justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0"
+      >
+        <div class="lg:w-1/3 flex flex-col items-center lg:items-start">
+          <a
+            rel="noopener noreferrer"
+            href="#"
+            class="flex justify-center space-x-3 lg:justify-start"
           >
-          | &copy;2024
-        </p>
-      </div>
-    </footer> -->
+            <div class="flex items-center justify-center w-16 h-16">
+              <img src="image/ABILA.svg" alt="" />
+            </div>
+            <div class="flex items-center justify-center w-12 h-12">
+              <img src="image/Coconut.svg" alt="" />
+            </div>
+          </a>
+          <p
+            class="mt-4 text-sm flex justify-center space-x-3 lg:justify-start"
+            data-key="alamat"
+          >
+            Perum. Bumi Asri Blok E-10 Kec Kota, kediri, 64126
+          </p>
+        </div>
 
-    <footer class="w-full h-max bg-teal-800 text-white ">
-      <div class="container  flex flex-col items-center justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-          <div class="lg:w-1/3 flex flex-col items-center lg:items-start">
-              <a rel="noopener noreferrer" href="#" class="flex justify-center space-x-3 lg:justify-start">
-                  <div class="flex items-center justify-center w-16 h-16">
-                      <img src="image/ABILA.svg" alt="">
-                  </div>
-                  <div class="flex items-center justify-center w-12 h-12">
-                      <img src="image/Coconut.svg" alt="">
-                  </div>
-              </a>
-              <p class="mt-4 text-sm flex justify-center space-x-3 lg:justify-start">Perum. Bumi Asri Blok E-10 Kec Kota, kediri, 64126</p>
+        <div
+          class="grid grid-cols-2 text-sm gap-x-36 md:gap-x-28 gap-y-8 lg:w-2/3 sm:grid-cols-4"
+        >
+          <div class="space-y-3">
+            <h3
+              class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit"
+              data-key="about"
+            >
+              Tentang
+            </h3>
+            <div class="flex justify-start p-1">
+              <ul class="space-y-1">
+                <li>
+                  <a rel="noopener noreferrer" class="hover:text-bg" href="#"
+                    >Abila</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="#"
+                    data-key="founder"
+                    >Pendiri</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="#"
+                    data-key="factory"
+                    >Perusahaan</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div class="grid grid-cols-2 text-sm gap-x-36 md:gap-x-28 gap-y-8 lg:w-2/3 sm:grid-cols-4">
-              <div class="space-y-3">
-                  <h3 class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit">Tentang</h3>
-                  <div class="flex justify-start p-1">
-                      <ul class="space-y-1 ">
-                          <li>
-                              <a rel="noopener noreferrer" href="#">Abila</a>
-                          </li>
-                          <li>
-                              <a rel="noopener noreferrer" href="#">Founder</a>
-                          </li>
-                          <li>
-                              <a rel="noopener noreferrer" href="#">Factory</a>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-
-              <div class="space-y-3 ">
-                  <h3 class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit">Navigasi</h3>
-                  <div class="flex justify-start p-1">
-                      <ul class="space-y-1">
-                          <li>
-                              <a rel="noopener noreferrer" href="#">Home</a>
-                          </li>
-                          <li>
-                              <a rel="noopener noreferrer" href="#">Product</a>
-                          </li>
-                          <li>
-                              <a rel="noopener noreferrer" href="#">Message</a>
-                          </li>
-                          <li>
-                              <a rel="noopener noreferrer" href="#">Catalog</a>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-
-              <div class="space-y-3">
-                  <div class="uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit">Social media</div>
-                  <div class="flex justify-start">
-                      <div class="flex justify-start space-x-3">
-                          <a rel="noopener noreferrer" href="#" title="Tiktok" class="flex items-center p-1">
-                              <img src="image/logo-tt.svg" alt="">
-                          </a>
-                          <a rel="noopener noreferrer" href="#" title="Instagram" class="flex items-center p-1">
-                              <img src="image/logo-ig.svg" alt="">
-                          </a>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="space-y-3 ">
-                  <h3 class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit">Contact</h3>
-                  <div class="flex justify-start p-1">
-                      <ul class="space-y-1">
-                          <li>
-                              <p>
-                                  <img src="image/telepon.svg" alt="" class="p-1">
-                                  <a rel="noopener noreferrer" href="#" class="p-1 w-max">+6283856909114</a>
-                              </p>
-                          </li>
-                          <li>
-                              <p>
-                                  <img src="image/email.svg" alt="" class="p-1">
-                                  <a rel="noopener noreferrer" href="#" class="p-1">abilarudi@.com</a>
-                              </p>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-
+          <div class="space-y-3">
+            <h3
+              class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit"
+              data-key="navigasi"
+            >
+              Navigasi
+            </h3>
+            <div class="flex justify-start p-1">
+              <ul class="space-y-1">
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="#home"
+                    data-key="home"
+                    >Beranda</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="#about"
+                    data-key="home"
+                    >Tentang Kami</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="#product"
+                    data-key="product"
+                    >Produk</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="#contact"
+                    data-key="contact"
+                    >Kontak</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="catalog.html"
+                    data-key="catalog"
+                    >Catalog</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
+
+          <div class="space-y-3">
+            <div
+              class="uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit"
+              data-key="social"
+            >
+              Media Sosial
+            </div>
+            <div class="flex justify-start">
+              <div class="flex justify-start space-x-3">
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  title="Tiktok"
+                  class="flex items-center p-1 hover:text-bg text-white text-2xl"
+                >
+                  <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  title="Instagram"
+                  class="flex items-center p-1 text-white hover:text-bg text-3xl"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <h3
+              class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit"
+              data-key="contact"
+            >
+              Kontak
+            </h3>
+            <div class="flex justify-start p-1">
+              <ul class="space-y-1">
+                <li>
+                  <p class="hover:text-bg">
+                    <i data-feather="phone" class="w-5"></i>
+                    <a
+                      rel="noopener noreferrer"
+                      href="https://wa.me/6283856909114"
+                      class="p-1 w-max"
+                      data-key="telp"
+                      >+62 838 5690 9114</a
+                    >
+                  </p>
+                </li>
+                <li>
+                  <p class="hover:text-bg">
+                    <i data-feather="mail" class="w-5"></i>
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      class="p-1"
+                      data-key="email"
+                      >abilarudi@gmail.com</a
+                    >
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="space-y-3 w-full block md:hidden">
-          <h1 class="text-center p-1 text-xl font-bold">“Sustainability, Healthy, and Happy”</h1>
+        <h1 class="text-center p-1 text-xl font-bold">
+          “Sustainability, Healthy, and Happy”
+        </h1>
       </div>
-      <hr class="w-full border-t-2 p-0 border-teal-950">
-      <div class="py-6 text-sm text-center dark:text-white">© 2024 ABILA INDONESIA. All Right Reserved</div>
-</footer>
+      <hr class="w-full border-t-2 p-0 border-teal-950" />
+      <div class="py-6 text-sm text-center dark:text-white">
+        © 2024 ABILA INDONESIA. All Right Reserved
+      </div>
+    </footer>
 
     <!-- Footer Section End -->
 
@@ -624,5 +1078,62 @@
 
     <!-- My Javascript -->
     <script src="js/script.js"></script>
+    <!-- jQuery (required for Slick Slider) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- Custom JS to initialize Slick Slider -->
+    <script>
+      $(document).ready(function () {
+        $(".row-product").slick({
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "0",
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
+        });
+        $(".product .row-product .product-card-image").click(function () {
+          $(".product .row-product .product-card-image")
+            .not($(this))
+            .removeClass("active");
+          $(this).toggleClass("active");
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $(".blog-content").slick({
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        });
+        $(".blog .blog-content .blog-item").click(function () {
+          $(".blog .blog-content .blog-item").not(this).removeClass("active");
+          $(this).toggleClass("active");
+        });
+      });
+    </script>
+
+    <!-- <script>
+      $(".row-product").owlCarousel({
+        autoWidth: true,
+        loop: true,
+      });
+      $(document).ready(function () {
+        $(".row-product .product-card-image").click(function () {
+          $(".custom-carousel .item").not($(this)).removeClass("active");
+          $(this).toggleClass("active");
+        });
+      }); -->
   </body>
 </html>
