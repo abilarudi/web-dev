@@ -751,7 +751,7 @@ body {
 /* NEW */
 .blog .blog-content {
   display: flex;
-  margin: 2rem;
+  margin: 3rem;
   border-radius: 3rem;
   display: -webkit- flex;
   background-color: var(--primary);
@@ -759,7 +759,7 @@ body {
     margin: 3rem;
     vertical-align: middle;
     text-align: center;
-    padding: 3rem;
+    padding: 0rem;
     background-color: #ffffef;
   }
 }
