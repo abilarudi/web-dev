@@ -10,6 +10,7 @@ module.exports = {
         bg2: "#84563c",
         text: "#808080",
         text2: "#fff9d0",
+        unggul: "#feaa37",
       },
     },
   },

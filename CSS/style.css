@@ -289,7 +289,7 @@ body {
 .catalog,
 .category,
 .FAQ,
-.blog {
+.blog-content {
   padding: 8rem 7% 1.4rem;
 }
 
@@ -298,8 +298,7 @@ body {
 .contact h2,
 .catalog h2,
 .category h3,
-.FAQ h2,
-.blog h2 {
+.FAQ h2 {
   text-align: center;
   font-size: 2.6rem;
   margin: 3rem;
@@ -315,18 +314,17 @@ body {
 .contact h2 span,
 .catalog h2 span,
 .category h3 span,
-.FAQ h2 span,
-.blog h2 span {
+.FAQ h2 span {
   color: var(--primary);
 }
 /* pengertian tentang flex box sangat penting */
 .about {
-  background-image: url("../image/bg-aboutabila/left.svg"),
+  /* background-image: url("../image/bg-aboutabila/left.svg"),
     url("../image/bg-aboutabila/right.svg");
   background-position: left top, right top;
   background-repeat: no-repeat, no-repeat;
   background-size: 30% 80%, 70% 90%;
-  background-color: #ede1d1;
+  background-color: #ede1d1; */
 }
 
 .about .row {
@@ -1023,7 +1021,6 @@ body {
 .category .border-sum {
   background-color: #ffffec;
   border: #ffffec;
-  /* border-top: 2px solid var(--primary); */
   padding: 1rem;
 }
 

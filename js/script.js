@@ -160,7 +160,9 @@ function changeLanguage(lang) {
       terjualproduct4: "5432 products sold",
       detail: "Detail Products",
       lainnya: "GET MORE!",
-      keunggulan: "Coconut Oil Advantage", // Urus Span
+      keunggulan1: "COCONUT ",
+      keunggulan2: "OIL ",
+      keunggulan3: "ADVANTAGE ", // Urus Span
       faq: "Find Out About Abila",
       q1: "Lorem ipsum dolor sit amet",
       a1: "ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio quae iusto molestiae iure facilis aut aperiam cupiditate inventore nihil.",
@@ -245,7 +247,9 @@ function changeLanguage(lang) {
       terjualproduct4: "5432 produk terjual",
       detail: "Detail Produk",
       lainnya: "DAPATKAN LAINNYA!",
-      keunggulan: "Keunggulan Minyak Kelapa", // Urus span
+      keunggulan1: "KEUNGGULAN ",
+      keunggulan2: "MINYAK ",
+      keunggulan3: "KELAPA",
       faq: "Cari Tahu tentang Abila",
       q1: "Lorem ipsum dolor sit amet.?",
       a1: "ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus odio quae iusto molestiae iure facilis aut aperiam cupiditate inventore nihil.",
