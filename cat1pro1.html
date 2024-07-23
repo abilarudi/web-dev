@@ -224,6 +224,7 @@
           </a>
           <p
             class="mt-4 text-sm flex justify-center space-x-3 lg:justify-start"
+            data-key="alamat"
           >
             Perum. Bumi Asri Blok E-10 Kec Kota, kediri, 64126
           </p>
@@ -235,19 +236,34 @@
           <div class="space-y-3">
             <h3
               class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit"
+              data-key="about"
             >
               Tentang
             </h3>
             <div class="flex justify-start p-1">
               <ul class="space-y-1">
                 <li>
-                  <a rel="noopener noreferrer" href="#">Abila</a>
+                  <a rel="noopener noreferrer" class="hover:text-bg" href="#"
+                    >Abila</a
+                  >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Founder</a>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="#"
+                    data-key="founder"
+                    >Pendiri</a
+                  >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Factory</a>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="#"
+                    data-key="factory"
+                    >Perusahaan</a
+                  >
                 </li>
               </ul>
             </div>
@@ -256,22 +272,56 @@
           <div class="space-y-3">
             <h3
               class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit"
+              data-key="navigasi"
             >
               Navigasi
             </h3>
             <div class="flex justify-start p-1">
               <ul class="space-y-1">
                 <li>
-                  <a rel="noopener noreferrer" href="#">Home</a>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="index.html#home"
+                    data-key="home"
+                    >Beranda</a
+                  >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Product</a>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="index.html#about"
+                    data-key="home"
+                    >Tentang Kami</a
+                  >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Message</a>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="index.html#product"
+                    data-key="product"
+                    >Produk</a
+                  >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">Catalog</a>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="index.html#contact"
+                    data-key="contact"
+                    >Kontak</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    class="hover:text-bg"
+                    href="catalog.html"
+                    data-key="catalog"
+                    >Catalog</a
+                  >
                 </li>
               </ul>
             </div>
@@ -280,8 +330,9 @@
           <div class="space-y-3">
             <div
               class="uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit"
+              data-key="social"
             >
-              Social media
+              Media Sosial
             </div>
             <div class="flex justify-start">
               <div class="flex justify-start space-x-3">
@@ -289,17 +340,17 @@
                   rel="noopener noreferrer"
                   href="#"
                   title="Tiktok"
-                  class="flex items-center p-1"
+                  class="flex items-center p-1 hover:text-bg text-white text-2xl"
                 >
-                  <img src="image/logo-tt.svg" alt="" />
+                  <i class="fa-brands fa-tiktok"></i>
                 </a>
                 <a
                   rel="noopener noreferrer"
                   href="#"
                   title="Instagram"
-                  class="flex items-center p-1"
+                  class="flex items-center p-1 text-white hover:text-bg text-3xl"
                 >
-                  <img src="image/logo-ig.svg" alt="" />
+                  <i class="fa-brands fa-instagram"></i>
                 </a>
               </div>
             </div>
@@ -308,24 +359,33 @@
           <div class="space-y-3">
             <h3
               class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit"
+              data-key="contact"
             >
-              Contact
+              Kontak
             </h3>
             <div class="flex justify-start p-1">
               <ul class="space-y-1">
                 <li>
-                  <p>
-                    <img src="image/telepon.svg" alt="" class="p-1" />
-                    <a rel="noopener noreferrer" href="#" class="p-1 w-max"
-                      >+6283856909114</a
+                  <p class="hover:text-bg">
+                    <i data-feather="phone" class="w-5"></i>
+                    <a
+                      rel="noopener noreferrer"
+                      href="https://wa.me/6283856909114"
+                      class="p-1 w-max"
+                      data-key="telp"
+                      >+62 838 5690 9114</a
                     >
                   </p>
                 </li>
                 <li>
-                  <p>
-                    <img src="image/email.svg" alt="" class="p-1" />
-                    <a rel="noopener noreferrer" href="#" class="p-1"
-                      >abilarudi@.com</a
+                  <p class="hover:text-bg">
+                    <i data-feather="mail" class="w-5"></i>
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      class="p-1"
+                      data-key="email"
+                      >abilarudi@gmail.com</a
                     >
                   </p>
                 </li>

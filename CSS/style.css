@@ -14,6 +14,10 @@
   text-decoration: none;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--newbg);
@@ -174,9 +178,9 @@ body {
 .hero .motto h1 {
   font-family: "Inter", sans-serif;
   position: absolute;
-  top: 25%;
+  top: 22%;
   left: 50%;
-  font-weight: 400;
+  font-weight: 300;
   transform: translate(-50%, -50%);
   color: #fff;
   font-size: 50px;
@@ -203,14 +207,14 @@ body {
 }
 
 .hero .content {
-  /* padding: 1.4rem 7%; */
   position: absolute;
-  top: 40%; /* start from the center */
+  top: 32%;
   width: 100%;
   bottom: 90px;
-  background: rgba(237, 225, 209, 0.5);
-  display: flex;
-  /* justify-content: space-around; */
+  background: rgba(237, 225, 209, 0.8);
+}
+.hero .phome {
+  text-align: justify;
 }
 
 .hero .content .rudi {
@@ -274,35 +278,8 @@ body {
   /* z-index: 1; */
 }
 .hero .block-brown {
-  position: relative;
-  bottom: 0;
-  width: 120%;
-  height: 90px;
-  color: #fff;
-  position: absolute;
   background-color: rgb(162, 91, 29);
-  display: flex;
-  box-sizing: border-box;
-  padding: 0 20%;
-}
-.block-brown .coco img {
-  flex: 1 1 auto;
-  width: 100px;
-}
-
-.block-brown h1 {
-  flex: 1 1 auto;
-  margin: 1.5rem;
-  font-style: italic;
-}
-
-.block-brown .pohon {
-  flex: 1 1 auto;
-  position: absolute;
-  right: 0;
-  width: 9rem;
-  bottom: 0;
-  /* add your styles for .pohon */
+  height: 90px;
 }
 
 /* About Section */
@@ -312,7 +289,7 @@ body {
 .catalog,
 .category,
 .FAQ,
-.blog {
+.blog-content {
   padding: 8rem 7% 1.4rem;
 }
 
@@ -321,8 +298,7 @@ body {
 .contact h2,
 .catalog h2,
 .category h3,
-.FAQ h2,
-.blog h2 {
+.FAQ h2 {
   text-align: center;
   font-size: 2.6rem;
   margin: 3rem;
@@ -338,18 +314,17 @@ body {
 .contact h2 span,
 .catalog h2 span,
 .category h3 span,
-.FAQ h2 span,
-.blog h2 span {
+.FAQ h2 span {
   color: var(--primary);
 }
 /* pengertian tentang flex box sangat penting */
 .about {
-  background-image: url("../image/bg-aboutabila/left.svg"),
+  /* background-image: url("../image/bg-aboutabila/left.svg"),
     url("../image/bg-aboutabila/right.svg");
   background-position: left top, right top;
   background-repeat: no-repeat, no-repeat;
   background-size: 30% 80%, 70% 90%;
-  background-color: #ede1d1;
+  background-color: #ede1d1; */
 }
 
 .about .row {
@@ -945,48 +920,8 @@ body {
   font-size: 14px;
 }
 
-/* .contact .row .map {
-  flex: 1 1 45rem;
-  width: 100%;
-  object-fit: cover;
-}
-
-.contact .row form {
-  flex: 1 1 45rem;
-  padding: 5rem 2rem;
-  text-align: center;
-}
-
-.contact .row form .input-group {
-  display: flex;
-  align-items: center;
-  margin-top: 2rem;
-  background-color: var(--bg);
-  border: 1px solid #eee;
-  padding-left: 2rem;
-}
-
-.contact .row form .input-group input {
-  width: 100%;
-  padding: 2rem;
-  font-size: 1.7rem;
-  background: none;
-  color: #fff;
-}
-
-.contact .row form .btn {
-  margin-top: 3rem;
-  display: inline-block;
-  padding: 1rem 3rem;
-  font-size: 1.7rem;
-  color: #fff;
-  background-color: var(--primary);
-  cursor: pointer;
-} */
-
 .catalog {
   display: block;
-  /* border: 1px solid #222; Add a border around the catalog */
   gap: 0;
 }
 .catalog-header {
@@ -1245,7 +1180,6 @@ body {
 .category .border-sum {
   background-color: #ffffec;
   border: #ffffec;
-  /* border-top: 2px solid var(--primary); */
   padding: 1rem;
 }
 
@@ -1308,86 +1242,6 @@ body {
 .category .sumcontent .product-review .content-review {
   padding-left: 20px;
 }
-/* Footer Section */
-/* footer {
-  background-color: rgba(3, 72, 74, 0.5);
-  text-align: center;
-  padding: 1rem 3rem;
-  /* margin-top: 3rem; */
-/* padding-top: 5rem;
-  display: block;
-} */
-/* footer .foot-content {
-  text-align: center;
-  display: grid;
-  grid-template-columns: 2.5fr 1fr 1fr;
-  gap: 3rem;
-  padding: 2rem;
-  align-content: center;
-  padding-left: 2rem;
-} */
-/* footer .foot-content p {
-  font-weight: 700;
-  color: #ffffff;
-  font-size: larger;
-  text-align: left;
-} */
-/* footer .foot-content .foot-motto {
-  text-align: justify;
-  color: #ffffff;
-  padding: 3rem;
-  /* padding-top: none; */
-/* } */
-*/
-
-/* footer .socials {
-  /* padding: 1rem; */
-  /* display: block;
-} */ */
-
-/* footer .socials a {
-  color: #fff;
-  display: block;
-  font-size: 14px;
-  text-align: justify;
-  padding-bottom: 1rem;
-} */
-
-/* footer .socials a:hover {
-  color: var(--bg);
-} */
-/* 
-footer .links {
-  display: grid;
-  grid-template-columns: auto;
-  gap: 1rem; */
-
-  /* margin-bottom: 1.6rem; */
-/* } */
-
-/* footer .links a {
-  color: #fff;
-  text-align: left;
-  display: inline-block;
-}
-
-footer .links a:hover {
-  color: var(--bg);
-}
-
-footer .credit {
-  font-size: 0.8rem;
-  text-align: center;
-}
-
-footer .credit a {
-  color: var(--bg);
-  font-weight: 700;
-}
-
-footer .credit a:hover {
-  color: #fff;
-} */ */
 
 html {
   scroll-behavior: smooth;
@@ -1417,6 +1271,7 @@ html {
   #hamburger-menu {
     display: inline-block;
   }
+
   .navbar-nav {
     position: absolute;
     top: 100%;
@@ -1445,8 +1300,8 @@ html {
     transform: scaleX(0.75);
   }
   .hero .motto h1 {
-    font-size: 33px;
-    top: 22%;
+    font-size: 38px;
+    top: 18%;
   }
   .hero .content {
     bottom: 50px;
@@ -1467,9 +1322,7 @@ html {
   .hero .block-brown {
     height: 50px;
   }
-  .hero .block-brown h1 {
-    margin: auto;
-  }
+
   .about .row {
     flex-wrap: wrap;
   }
@@ -1486,7 +1339,6 @@ html {
     margin-top: 1rem;
     font-size: 1.6rem;
   }
-
   .product p {
     font-size: 1.2rem;
   }
@@ -1584,20 +1436,20 @@ html {
     transform: scaleX(0.75);
   }
   .hero .motto h1 {
-    width: 70%;
-    font-size: 33px;
     top: 22%;
+    width: 70%;
+    font-size: 30px;
   }
   .hero .content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    top: 40%;
     bottom: 35px;
   }
 
   .hero .content .rudi {
     height: 20rem;
-    /* object-fit: cover; */
     object-position: left;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -1685,11 +1537,3 @@ titik lebar layar css akan berubah*/
     url("../Font/Giddelham-Bold/Giddelham-Bold.woff2") format("woff2");
   font-weight: bold;
 }
-/* @font-face {
-  font-family: "Gi";
-  src: url('fonts/fira/eot/FiraSans-Regular.eot');
-  src: url('fonts/fira/eot/FiraSans-Regular.eot') format('embedded-opentype'),
-       url('fonts/fira/woff2/FiraSans-Regular.woff2') format('woff2'),
-       url('fonts/fira/woff/FiraSans-Regular.woff') format('woff'),
-       url('fonts/fira/woff2/FiraSans-Regular.ttf') format('truetype');
-} */
