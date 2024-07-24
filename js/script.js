@@ -1,9 +1,33 @@
 //Toggle class active
 const navbarNav = document.querySelector(".navbar-nav");
+let overlay = document.querySelector(".dark-overlay");
+
+if (!overlay) {
+  overlay = document.createElement("div");
+  overlay.className = "dark-overlay";
+  document.body.appendChild(overlay);
+}
+
+// Input search bar responsive
+function toggleInputVisibility() {
+  var input = document.getElementById("find");
+  if (input.classList.contains("input-visible")) {
+    input.classList.remove("input-visible");
+    setTimeout(() => {
+      input.classList.add("input-transition");
+    }, 300); // Ensure transition completes
+  } else {
+    input.classList.remove("input-transition");
+    setTimeout(() => {
+      input.classList.add("input-visible");
+    }, 300);
+  }
+}
 
 //ketika humburger menu diklik
 document.querySelector("#hamburger-menu").onclick = () => {
   navbarNav.classList.toggle("active");
+  overlay.classList.toggle("active"); // Show or hide the overlay
 };
 
 //klik di luar sidebar untuk menghilangkan nav
@@ -12,12 +36,20 @@ const hamburger = document.querySelector("#hamburger-menu");
 document.addEventListener("click", function (e) {
   if (!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
     navbarNav.classList.remove("active");
+    overlay.classList.remove("active");
   }
 });
 
+// Prevent the event listener on #hamburger-menu from triggering the document's click event
+// hamburger.addEventListener("click", function (e) {
+//   e.stopPropagation();
+// });
+
 // Efek Bg Navbar saat di scroll
 window.onscroll = function () {
-  const navbars = document.querySelectorAll(".navbar, .navbar-alt");
+  const navbars = document.querySelectorAll(
+    ".navbar, .navbar-alt, .lang-en, .lang-in"
+  );
   navbars.forEach((navbar) => {
     if (window.scrollY > 400) {
       navbar.classList.add("scrolled");
@@ -190,7 +222,7 @@ function changeLanguage(lang) {
       product: "Produk",
       contact: "Kontak",
       catalog: "Katalog",
-      home1: "Temukan kebaikan alami",
+      home1: "Temukan Kebaikan Alami",
       home12: "dengan ABILA",
       home13:
         "Produsen terkemuka Minyak Kelapa Murni. Dikembangkan dengan cinta dan dedikasi untuk kualitas, produk kami memberikan manfaat langsung dari alam untuk kesehatan dan kecantikan Anda.",
@@ -272,13 +304,30 @@ function changeLanguage(lang) {
       social: "Media Sosial",
     },
   };
-  console.log("translations: " + translations);
   document.querySelectorAll("[data-key]").forEach((elem) => {
     const key = elem.getAttribute("data-key");
     if (translations[lang] && translations[lang].hasOwnProperty(key)) {
       elem.textContent = translations[lang][key];
     }
   });
+
+  // Change Style
+  const langIn = document.getElementById("lang-in");
+  const langEn = document.getElementById("lang-en");
+
+  if (lang === "id") {
+    // Set Indonesian to active
+    langIn.classList.add("not-lang");
+    langIn.classList.remove("scrolled");
+    langEn.classList.add("scrolled");
+    langEn.classList.remove("not-lang");
+  } else if (lang === "en") {
+    // Set English to active
+    langIn.classList.add("scrolled");
+    langIn.classList.remove("not-lang");
+    langEn.classList.add("not-lang");
+    langEn.classList.remove("scrolled");
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
