@@ -77,6 +77,23 @@ function search() {
   }
 }
 
+// Readmore About Us
+document
+  .querySelectorAll(".read-more-btn, .read-less-btn")
+  .forEach((button) => {
+    button.addEventListener("click", function () {
+      var moreText = document.querySelector('[data-key="about4"]');
+      var readMoreBtn = document.querySelector(".read-more-btn");
+      var readLessBtn = document.querySelector(".read-less-btn");
+
+      // Toggle the "about-4" text visibility
+      moreText.classList.toggle("hidden");
+
+      // Toggle the buttons visibility
+      if (readMoreBtn) readMoreBtn.classList.toggle("hidden");
+      if (readLessBtn) readLessBtn.classList.toggle("hidden");
+    });
+  });
 // Efek Scroll Smooth
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
@@ -150,7 +167,8 @@ function changeLanguage(lang) {
         "The natural wonders of Abila Pure Coconut Oil! Specially designed to care for the beauty and health of your skin and grow naturally. Enriched with pure coconut nutrients that help to retain moisture and strengthen hair, this product is the best choice for your daily care. Feel its gentle touch and prove its superiority today!",
       about5:
         "Make Abila virgin coconut oil part of your beauty and wellness routine and feel the difference. With consistent use, you not only take care of yourself but also enjoy tangible results. Optimise your beauty as well as your health with the natural wonders of Abila coconut oil today.",
-      about6: "Why Abila?",
+      about6: "Why",
+      about61: "Abila?",
       about7:
         "Here are quotes from health experts on the health and beauty benefits of virgin coconut oil",
       about8: "1. Healthy and Glowing Skin",
@@ -237,7 +255,8 @@ function changeLanguage(lang) {
         "Keajaiban alami Minyak Kelapa Murni Abila! Dirancang khusus untuk merawat kecantikan dan kesehatan kulit juga tumbuh Anda secara alami. Diperkaya dengan nutrisi kelapa murni yang membantu menjaga kelembapan dan memperkuat rambut, produk ini adalah pilihan terbaik untuk perawatan harian Anda. Rasakan sentuhan lembutnya dan buktikan keunggulannya hari ini!",
       about5:
         "Jadikan minyak kelapa murni Abila bagian dari rutinitas kecantikan dan kesehatan Anda serta rasakan perbedaannya. Dengan penggunaan yang konsisten, Anda tidak hanya merawat diri tetapi juga menikmati hasil yang nyata. Optimalisasi kecantikan juga kesehatan Anda dengan keajaiban alami dari minyak kelapa Abila hari ini.",
-      about6: "Mengapa Harus Abila?",
+      about6: "Kenapa Harus",
+      about61: "Abila ?",
       about7:
         "Berikut adalah kutipan dari para pakar kesehatan tentang manfaat minyak kelapa murni untuk kesehatan dan kecantikan tubuh Anda.",
       about8: "1. ⁠Kulit yang Sehat dan Bersinar",

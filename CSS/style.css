@@ -55,8 +55,7 @@ body {
   color: var(--bg);
 }
 
-
-.not-lang{
+.not-lang {
   background-color: var(--bg);
   color: var(--primary);
 }
@@ -447,10 +446,6 @@ body {
   color: #fff9d0;
 }
 .about .why-abila {
-  color: #4f3220;
-  font-size: 2rem;
-  text-align: center;
-  padding: 1.5rem;
   animation: 5s anim-lineBottom ease-out;
 }
 .about .eminance {
@@ -1307,10 +1302,10 @@ html {
   }
 
   .hero .block-orange {
-    height: 50px;
+    height: 70px;
   }
   .hero .block-brown {
-    height: 50px;
+    height: 70px;
   }
 
   .about .row {
@@ -1441,14 +1436,14 @@ html {
   .hero .motto h1 {
     top: 22%;
     width: 70%;
-    font-size: 30px;
+    font-size: 40px;
   }
   .hero .content {
     display: flex;
     flex-direction: column;
     align-items: center;
     top: 40%;
-    bottom: 35px;
+    bottom: 40px;
   }
 
   .hero .content .rudi {
@@ -1468,17 +1463,14 @@ html {
     font-size: 1.3rem;
   }
   .hero .block-brown {
-    height: 35px;
+    height: 70px;
   }
-  .hero .block-brown h1 {
-    font-size: 1rem;
-    margin: auto;
-  }
+
   .hero .block-brown .pohon {
     right: -10px;
   }
   .hero .block-orange {
-    height: 35px;
+    height: 70px;
   }
   .product .row-product {
     display: grid;
