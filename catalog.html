@@ -32,10 +32,10 @@
   </head>
   <body>
     <!-- Navbar Start -->
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <img src="image/ABILA.svg" class="abila" alt="" />
-        <img src="image/Coconut.svg" alt="" />
+    <nav class="navbar py-7 md:py-4">
+      <div class="navbar-logo flex -top-3">
+        <img src="image/ABILA.svg" class="abila lg:w-32 w-36" alt="" />
+        <img src="image/Coconut.svg" class="w-20 lg:w-16" alt="" />
       </div>
 
       <div class="navbar-nav">
@@ -43,23 +43,49 @@
         <a href="index.html#about">Tentang Kami</a>
         <a href="index.html#product">Produk</a>
         <a href="index.html#contact">Kontak</a>
-        <a href="catalog.html">Katalog</a>
+        <a href="#catalog">Katalog</a>
       </div>
 
-      <div class="navbar-extra">
+      <div class="navbar-extra flex my-4">
         <form action="">
-          <div class="navbar-search">
+          <div class="navbar-search rounded-md p-0 flex bg-[#D9D9D9]">
             <input
               type="text"
               placeholder="Search..."
               id="find"
               onkeyup="search()"
+              class="bg-[#D9D9D9] h-full rounded-md text-lg pl-2 text-bg2 w-full max-[450px]:hidden input-transition"
             />
-            <a href=""><i data-feather="search" class="isearch"></i></a>
+            <button
+              type="button"
+              class="bg-bg rounded-md pl-1 pr-1"
+              onclick="toggleInputVisibility()"
+            >
+              <i
+                class="fa-solid fa-magnifying-glass text-3xl sm:text-2xl text-[#a25b1d]"
+              ></i>
+            </button>
           </div>
         </form>
-        <a href="login.html" class="logins"><i data-feather="user"></i></a>
-        <a href="#" id="shopping"><i data-feather="shopping-cart"></i></a>
+        <div class="w-fit px-0 ml-3 language text-start md:text-2xl text-4xl">
+          <button
+            id="lang-in"
+            class="not-lang hover:bg-[#7A9687] px-1 rounded-l-md lang-in"
+            onclick="changeLanguage('id')"
+          >
+            In</button
+          ><button
+            id="lang-en"
+            class="border-white px-1 rounded-r-md lang-en hover:bg-[#7A9687] scrolled"
+            onclick="changeLanguage('en')"
+          >
+            En
+          </button>
+        </div>
+
+        <a href="#" id="shopping"
+          ><i data-feather="shopping-cart" class="md:w-7 w-8"></i
+        ></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
     </nav>
