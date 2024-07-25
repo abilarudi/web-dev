@@ -448,6 +448,10 @@ body {
 .about .why-abila {
   animation: 5s anim-lineBottom ease-out;
 }
+.about .why p span{
+   line-height: 0.3rem; /* Reduced line spacing */
+  display: inline;
+}
 .about .eminance {
   background-color: #84563c;
   opacity: 85%;
