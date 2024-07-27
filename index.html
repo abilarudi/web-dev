@@ -62,16 +62,16 @@
       </div>
 
       <div class="navbar-nav">
-        <a href="#home">Home</a>
-        <a href="#about">Tentang Kami</a>
-        <a href="#product">Produk</a>
-        <a href="#contact">Kontak</a>
-        <a href="catalog.html">Katalog</a>
+        <a href="index.html#home" data-key="home">Beranda</a>
+        <a href="index.html#about" data-key="about">Tentang Kami</a>
+        <a href="index.html#product" data-key="product">Produk</a>
+        <a href="index.html#contact" data-key="contact">Kontak</a>
+        <a href="catalog.html#catalog" data-key="catalog">Katalog</a>
       </div>
 
       <div class="navbar-extra flex my-4">
         <form action="">
-          <div class="navbar-search rounded-md p-0 flex bg-[#D9D9D9]">
+          <div class="navbar-search rounded-md bg-[#D9D9D9] flex">
             <input
               type="text"
               placeholder="Search..."
@@ -79,28 +79,29 @@
               onkeyup="search()"
               class="bg-[#D9D9D9] h-full rounded-md text-lg pl-2 text-bg2 w-full max-[450px]:hidden input-transition"
             />
-            <button
-              type="button"
+            <a
+              href="#"
               class="bg-bg rounded-md pl-1 pr-1"
+              id="search-button"
               onclick="toggleInputVisibility()"
             >
               <i
-                class="fa-solid fa-magnifying-glass text-3xl sm:text-2xl text-[#a25b1d]"
+                class="fa-solid fa-magnifying-glass text-3xl sm:text-2xl md:text-xl text-[#a25b1d]"
               ></i>
-            </button>
+            </a>
           </div>
         </form>
         <div class="w-fit px-0 ml-3 language text-start md:text-2xl text-4xl">
           <button
             id="lang-in"
             class="not-lang hover:bg-[#7A9687] px-1 rounded-l-md lang-in"
-            onclick="changeLanguage('id')"
+            onclick="setLanguage('id')"
           >
             In</button
           ><button
             id="lang-en"
             class="border-white px-1 rounded-r-md lang-en hover:bg-[#7A9687] scrolled"
-            onclick="changeLanguage('en')"
+            onclick="setLanguage('en')"
           >
             En
           </button>
@@ -110,6 +111,25 @@
           ><i data-feather="shopping-cart" class="md:w-7 w-8"></i
         ></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+      <!-- Search Panel -->
+      <div
+        id="search-panel"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 items-center justify-center"
+      >
+        <div
+          class="p-4 bg-newbg rounded-lg shadow-lg w-3/4 max-w-lg"
+          id="search-container"
+        >
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search..."
+            class="w-full p-2 border placeholder-bg2 border-bg2 bg-newbg text-bg2 rounded-md"
+            onkeyup="performSearch()"
+          />
+          <ul id="search-results" class="mt-2 text-bg2"></ul>
+        </div>
       </div>
     </nav>
     <!-- Navbar End -->
@@ -293,10 +313,10 @@
               </span>
             </p>
           </div>
-          
-          <div class="why  md:w-2/3">
+
+          <div class="why md:w-2/3">
             <p
-              class="flex shadow-slate-500 shadow-md flex-wrap items-center w-full h-14 bg-white px-2 mb-7  rounded-r-full"
+              class="flex shadow-slate-500 shadow-md flex-wrap items-center w-full h-14 bg-white px-2 mb-7 rounded-r-full"
             >
               <span class="inline text-black mr-1">Membantu Perawatan</span>
               <span class="inline text-bg2">
@@ -304,7 +324,7 @@
               >
             </p>
             <p
-              class="flex shadow-slate-500 shadow-md flex-wrap items-center w-full h-14 bg-white px-2 mb-7  rounded-r-full"
+              class="flex shadow-slate-500 shadow-md flex-wrap items-center w-full h-14 bg-white px-2 mb-7 rounded-r-full"
             >
               <span class="inline text-black mr-1"
                 >Tersertifikasi Halal Republik Indonesia dengan</span
@@ -315,7 +335,8 @@
               class="flex shadow-slate-500 shadow-md flex-wrap items-center w-full h-14 bg-white px-2 mb-7 rounded-r-full"
             >
               <span class="inline text-black mr-1">Diperkaya dengan</span
-              ><span class="text-bg2 mr-1">Vitamin E</span> <span class="text-black mr-1">dan</span>
+              ><span class="text-bg2 mr-1">Vitamin E</span>
+              <span class="text-black mr-1">dan</span>
               <span class="text-bg2 mr-1">Asam Lemak Esensial</span>
               <span class="text-black"
                 >Untuk Membuat Kulit yang Sehat dan Bersinar</span

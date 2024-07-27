@@ -133,6 +133,9 @@ body {
   color: var(--bg);
   transition: 0.2s linear;
 }
+.highlight {
+  background-color: #f6e05e; /* Yellow highlight */
+}
 
 #hamburger-menu {
   display: none;
@@ -448,8 +451,8 @@ body {
 .about .why-abila {
   animation: 5s anim-lineBottom ease-out;
 }
-.about .why p span{
-   line-height: 0.3rem; /* Reduced line spacing */
+.about .why p span {
+  line-height: 0.3rem; /* Reduced line spacing */
   display: inline;
 }
 .about .eminance {
