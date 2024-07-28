@@ -8,24 +8,24 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css?v=22b245b23ea9175d4f2a4b3f2778f11b6fa46809"
     />
     <!-- Slick Slider Theme CSS (optional) -->
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css?v=22b245b23ea9175d4f2a4b3f2778f11b6fa46809"
     />
     <!-- Carousel -->
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css?v=22b245b23ea9175d4f2a4b3f2778f11b6fa46809"
     />
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css?v=22b245b23ea9175d4f2a4b3f2778f11b6fa46809"
     />
 
     <!-- Fonts -->
@@ -55,57 +55,81 @@
 
   <body>
     <!-- Navbar Start -->
-    <nav class="navbar-alt">
-      <div class="navbar-logo">
-        <img src="image/ABILA.svg" class="abila" alt="" />
-        <img src="image/Coconut.svg" alt="" />
+    <nav class="navbar-alt py-7 md:py-4">
+      <div class="navbar-logo flex -top-3">
+        <img src="image/ABILA.svg" class="abila lg:w-32 w-36" alt="" />
+        <img src="image/Coconut.svg" class="w-20 lg:w-16" alt="" />
       </div>
 
       <div class="navbar-nav">
-        <a href="#home">Home</a>
-        <a href="#about">Tentang Kami</a>
-        <a href="#product">Produk</a>
-        <a href="#contact">Kontak</a>
-        <a href="catalog.html">Katalog</a>
+        <a href="index.html#home" data-key="home">Beranda</a>
+        <a href="index.html#about" data-key="about">Tentang Kami</a>
+        <a href="index.html#product" data-key="product">Produk</a>
+        <a href="index.html#contact" data-key="contact">Kontak</a>
+        <a href="catalog.html#catalog" data-key="catalog">Katalog</a>
       </div>
 
-      <div class="navbar-extra">
+      <div class="navbar-extra flex my-4">
         <form action="">
-          <div class="navbar-search">
+          <div class="navbar-search rounded-md bg-[#D9D9D9] flex">
             <input
               type="text"
               placeholder="Search..."
               id="find"
               onkeyup="search()"
+              class="bg-[#D9D9D9] h-full rounded-md text-lg pl-2 text-bg2 w-full max-[450px]:hidden input-transition"
             />
-            <button type="button">
-              <i data-feather="search" class="isearch"></i>
-            </button>
+            <a
+              href="#"
+              class="bg-bg rounded-md pl-1 pr-1"
+              id="search-button"
+              onclick="toggleInputVisibility()"
+            >
+              <i
+                class="fa-solid fa-magnifying-glass text-3xl sm:text-2xl md:text-xl text-[#a25b1d]"
+              ></i>
+            </a>
           </div>
         </form>
-        <div class="flex flex-wrap language-toggle">
-          <div class="px-0 w-16 border-yellow-400 text-center ml-3">
-            <button
-              id="lang-in"
-              class="text-xl text-white hover:text-bg border-white px-1"
-              onclick="changeLanguage('id')"
-            >
-              In</button
-            >|
-            <button
-              id="lang-en"
-              class="text-xl text-white border-white hover:text-bg"
-              onclick="changeLanguage('en')"
-            >
-              En
-            </button>
-          </div>
+        <div class="w-fit px-0 ml-3 language text-start md:text-2xl text-4xl">
+          <button
+            id="lang-in"
+            class="not-lang hover:bg-[#7A9687] px-1 rounded-l-md lang-in"
+            onclick="setLanguage('id')"
+          >
+            In</button
+          ><button
+            id="lang-en"
+            class="border-white px-1 rounded-r-md lang-en hover:bg-[#7A9687] scrolled"
+            onclick="setLanguage('en')"
+          >
+            En
+          </button>
         </div>
 
         <a href="#" id="shopping"
-          ><i data-feather="shopping-cart" class="w-7"></i
+          ><i data-feather="shopping-cart" class="md:w-7 w-8"></i
         ></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+      <!-- Search Panel -->
+      <div
+        id="search-panel"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 items-center justify-center"
+      >
+        <div
+          class="p-4 bg-newbg rounded-lg shadow-lg w-3/4 max-w-lg"
+          id="search-container"
+        >
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search..."
+            class="w-full p-2 border placeholder-bg2 border-bg2 bg-newbg text-bg2 rounded-md"
+            onkeyup="performSearch()"
+          />
+          <ul id="search-results" class="mt-2 text-bg2"></ul>
+        </div>
       </div>
     </nav>
     <!-- Navbar End -->
@@ -117,16 +141,6 @@
         <h1>"Sustainibility, Healthy, and Happy"</h1>
       </div>
       <main class="content px-10">
-        <!-- <img src="image/rudi.svg" alt="" class="rudi" />
-        <div class="content-hero">
-          <p data-key="home1">
-            Temukan kebaikan alami dengan ABILA, produsen terkemuka Minyak
-            Kelapa Murni. Dikembangkan dengan cinta dan dedikasi untuk kualitas,
-            produk kami memberikan manfaat langsung dari alam untuk kesehatan
-            dan kecantikan Anda. Segera rasakan sentuhan alami Abila, pilihan
-            bijak untuk kesehatan tubuh dan kecantikan kulit Anda.
-          </p>
-        </div> -->
         <div class="container">
           <div class="flex flew-wrap">
             <div class="md:w-2/5 lg:py-10 lg:px-10">
@@ -137,22 +151,22 @@
               />
             </div>
             <div class="md:w-3/5 text-center lg:px-20 w-full">
-              <div class="mt-12 text-left">
-                <p class="text-bg2 text-lg">Hi, Choco!</p>
+              <div class="mt-12 text-left md:py-0 py-9">
+                <p class="text-bg2 md:text-lg text-2xl">Hi, Choco!</p>
                 <p
-                  class="text-primary text-4xl font-bold tracking-wider mb-2"
+                  class="text-primary md:text-4xl text-5xl font-bold md:tracking-wider mb-2"
                   data-key="home1"
                 >
                   Temukan Kebaikan Alami
                 </p>
                 <p
-                  class="text-yellow-700 text-4xl font-bold mb-10 tracking-wider"
+                  class="text-yellow-700 md:text-4xl text-5xl font-bold mb-10 tracking-wider"
                   data-key="home12"
                 >
-                  dengan Abila Indonesia
+                  Abila Indonesia
                 </p>
-                <div class="bg-bg2 rounded-xl p-2 lg:mr-20">
-                  <p class="text-bg font-light text-xl phome">
+                <div class="bg-bg2 rounded-xl md:p-2 p-5 lg:mr-20">
+                  <p class="text-bg font-light md:text-xl text-2xl phome">
                     <span data-key="home13"
                       >Produsen terkemuka Minyak Kelapa Murni. Dikembangkan
                       dengan cinta dan dedikasi untuk kualitas, produk kami
@@ -178,10 +192,10 @@
         <img
           src="image/pohon.svg"
           alt=""
-          class="absolute left-0 bottom-0 lg:h-40 sm:h-36 h-24"
+          class="absolute left-0 bottom-0 h-40"
         />
         <h1
-          class="text-center text-white lg:text-2xl sm:text-2xl text-xl font-semibold italic sm:mx-40 mx-36"
+          class="text-center text-white lg:text-2xl sm:text-2xl text-3xl font-semibold italic sm:w-4/6 w-7/12"
           data-key="home2"
         >
           Rasakan Manfaat Kesehatan Alami dengan Virgin Coconut Oil
@@ -189,7 +203,7 @@
         <img
           src="image/kelapa.svg"
           alt=""
-          class="overflow-hidden absolute right-0 bottom-0 sm:h-32 h-24"
+          class="overflow-hidden absolute right-0 bottom-0 sm:h-32 h-28"
         />
       </div>
     </section>
@@ -212,14 +226,20 @@
               Minyak Kelapa Murni Abila, adalah solusi lengkap untuk kesehatan
               dan kecantikan keluarga Anda. Dibutuhkan untuk menyelesaikan
               masalah sekaligus menjaga tubuh tetap sehat dan cantik.
+              <button class="read-more-btn font-medium hover:underline">
+                Baca Selengkapnya
+              </button>
             </p>
-            <p data-key="about4">
+            <p data-key="about4" class="hidden">
               Keajaiban alami Minyak Kelapa Murni Abila! Dirancang khusus untuk
               merawat kecantikan dan kesehatan kulit juga tumbuh Anda secara
               alami. Diperkaya dengan nutrisi kelapa murni yang membantu menjaga
               kelembapan dan memperkuat rambut, produk ini adalah pilihan
               terbaik untuk perawatan harian Anda. Rasakan sentuhan lembutnya
               dan buktikan keunggulannya hari ini!
+              <button class="read-less-btn font-medium hover:underline hidden">
+                Baca Lebih Sedikit
+              </button>
             </p>
           </div>
         </div>
@@ -233,7 +253,10 @@
           <img src="image/bg-aboutabila/decoration-produk.svg" class="dec2" />
         </div>
       </div>
-      <h3 class="why-abila" data-key="about6">Mengapa Harus Abila?</h3>
+      <h3 class="why-abila text-center text-4xl p-7 font-semibold">
+        <span class="text-bg2" data-key="about6">Kenapa Harus</span>
+        <span data-key="about61" class="text-unggul"> Abila ?</span>
+      </h3>
       <div class="container">
         <div class="flex flex-wrap">
           <div class="justify-center w-full bg-bg2 mb-10 p-8 rounded-md">
@@ -290,27 +313,62 @@
               </span>
             </p>
           </div>
+
+          <div class="why md:w-2/3">
+            <p
+              class="flex shadow-slate-500 shadow-md flex-wrap items-center w-full h-14 bg-white px-2 mb-7 rounded-r-full"
+            >
+              <span class="inline text-black mr-1">Membantu Perawatan</span>
+              <span class="inline text-bg2">
+                Untuk Kesehatan dan Kecantikan Anda</span
+              >
+            </p>
+            <p
+              class="flex shadow-slate-500 shadow-md flex-wrap items-center w-full h-14 bg-white px-2 mb-7 rounded-r-full"
+            >
+              <span class="inline text-black mr-1"
+                >Tersertifikasi Halal Republik Indonesia dengan</span
+              >
+              <span class="inline text-bg2"> ID00110000440040622</span>
+            </p>
+            <p
+              class="flex shadow-slate-500 shadow-md flex-wrap items-center w-full h-14 bg-white px-2 mb-7 rounded-r-full"
+            >
+              <span class="inline text-black mr-1">Diperkaya dengan</span
+              ><span class="text-bg2 mr-1">Vitamin E</span>
+              <span class="text-black mr-1">dan</span>
+              <span class="text-bg2 mr-1">Asam Lemak Esensial</span>
+              <span class="text-black"
+                >Untuk Membuat Kulit yang Sehat dan Bersinar</span
+              >
+            </p>
+          </div>
         </div>
         <div class="eminance">
           <div class="em-content">
-            <div class="em-number">1023+</div>
+            <div class="em-number">1624+</div>
             <div class="em-title" data-key="terjual">Produk Tejual</div>
             <div class="em-link">
               <a href="#product" data-key="lihat"> Lihat Produk </a>
             </div>
           </div>
+
           <div class="em-content">
-            <div class="em-number">1023+</div>
-            <div class="em-title" data-key="terjual">Produk Tejual</div>
+            <div class="em-number">3+</div>
+            <div class="em-title" data-key="Mitra">Mitra Kami</div>
             <div class="em-link">
-              <a href="#product" data-key="lihat"> Lihat Produk </a>
+              <a href="#product" data-key="lihatmitra"> Lihat Mitra </a>
             </div>
           </div>
           <div class="em-content">
-            <div class="em-number">1023+</div>
-            <div class="em-title" data-key="terjual">Produk Tejual</div>
+            <div class="em-number">1024+</div>
+            <div class="em-title" data-key="komunitas">
+              Pengikut dan Komunitas
+            </div>
             <div class="em-link">
-              <a href="#product" data-key="lihat"> Lihat Produk </a>
+              <a href="#product" data-key="lihatkomunitas">
+                Gabung Komunitas
+              </a>
             </div>
           </div>
         </div>

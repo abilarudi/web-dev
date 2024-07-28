@@ -32,49 +32,113 @@
   </head>
   <body>
     <!-- Navbar Start -->
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <img src="image/ABILA.svg" class="abila" alt="" />
-        <img src="image/Coconut.svg" alt="" />
+    <nav class="navbar py-7 md:py-4">
+      <div class="navbar-logo flex -top-3">
+        <img src="image/ABILA.svg" class="abila lg:w-32 w-36" alt="" />
+        <img src="image/Coconut.svg" class="w-20 lg:w-16" alt="" />
       </div>
 
       <div class="navbar-nav">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#about">Tentang Kami</a>
-        <a href="index.html#product">Produk</a>
-        <a href="index.html#contact">Kontak</a>
-        <a href="catalog.html">Katalog</a>
+        <a href="index.html#home" data-key="home">Beranda</a>
+        <a href="index.html#about" data-key="about">Tentang Kami</a>
+        <a href="index.html#product" data-key="product">Produk</a>
+        <a href="index.html#contact" data-key="contact">Kontak</a>
+        <a href="catalog.html#catalog" data-key="catalog">Katalog</a>
       </div>
 
-      <div class="navbar-extra">
+      <div class="navbar-extra flex my-4">
         <form action="">
-          <div class="navbar-search">
+          <div class="navbar-search rounded-md bg-[#D9D9D9] flex">
             <input
               type="text"
               placeholder="Search..."
               id="find"
               onkeyup="search()"
+              class="bg-[#D9D9D9] h-full rounded-md text-lg pl-2 text-bg2 w-full max-[450px]:hidden input-transition"
             />
-            <a href=""><i data-feather="search" class="isearch"></i></a>
+            <a
+              href="#"
+              class="bg-bg rounded-md pl-1 pr-1"
+              id="search-button"
+              onclick="toggleInputVisibility()"
+            >
+              <i
+                class="fa-solid fa-magnifying-glass text-3xl sm:text-2xl md:text-xl text-[#a25b1d]"
+              ></i>
+            </a>
           </div>
         </form>
-        <a href="login.html" class="logins"><i data-feather="user"></i></a>
-        <a href="#" id="shopping"><i data-feather="shopping-cart"></i></a>
+        <div class="w-fit px-0 ml-3 language text-start md:text-2xl text-4xl">
+          <button
+            id="lang-in"
+            class="not-lang hover:bg-[#7A9687] px-1 rounded-l-md lang-in"
+            onclick="setLanguage('id')"
+          >
+            In</button
+          ><button
+            id="lang-en"
+            class="border-white px-1 rounded-r-md lang-en hover:bg-[#7A9687] scrolled"
+            onclick="setLanguage('en')"
+          >
+            En
+          </button>
+        </div>
+
+        <a href="#" id="shopping"
+          ><i data-feather="shopping-cart" class="md:w-7 w-8"></i
+        ></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+      <!-- Search Panel -->
+      <div
+        id="search-panel"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 items-center justify-center"
+      >
+        <div
+          class="p-4 bg-newbg rounded-lg shadow-lg w-3/4 max-w-lg"
+          id="search-container"
+        >
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search..."
+            class="w-full p-2 border placeholder-bg2 border-bg2 bg-newbg text-bg2 rounded-md"
+            onkeyup="performSearch()"
+          />
+          <ul id="search-results" class="mt-2 text-bg2"></ul>
+        </div>
       </div>
     </nav>
     <!-- Navbar End -->
 
     <!-- bg -->
-    <div class=" relative  w-full h-max" style="background-image: url('/image/catalog/bg.svg');">
+    <div
+      class="relative w-full h-max"
+      style="background-image: url('/image/catalog/bg.svg')"
+    >
+      <img
+        src="image/catalog/daun1.svg"
+        alt=""
+        class="absolute z-10 top-0 left-0 w-[20%] lg:w-[15%]"
+      />
+      <img
+        src="image/catalog/daun2.svg"
+        alt=""
+        class="absolute z-10 top-0 right-0 w-[20%] lg:w-[15%]"
+      />
+      <img
+        src="image/catalog/daun3.svg"
+        alt=""
+        class="absolute z-0 bottom-0 left-0 w-[20%] lg:w-[15%]"
+      />
+      <img
+        src="image/catalog/daun4.svg"
+        alt=""
+        class="absolute z-0 bottom-0 right-0 w-[20%] lg:w-[15%]"
+      />
 
-      <img src="image/catalog/daun1.svg" alt="" class="absolute z-10 top-0 left-0 w-[20%] lg:w-[15%]">
-      <img src="image/catalog/daun2.svg" alt="" class="absolute z-10 top-0 right-0 w-[20%] lg:w-[15%]">
-      <img src="image/catalog/daun3.svg" alt="" class="absolute z-0 bottom-0 left-0 w-[20%] lg:w-[15%]">
-      <img src="image/catalog/daun4.svg" alt="" class="absolute z-0 bottom-0 right-0 w-[20%] lg:w-[15%]">
-
-      <section class="catalog " id="catalog">
-      <!-- <img src="" alt=""> -->
+      <section class="catalog" id="catalog">
+        <!-- <img src="" alt=""> -->
 
         <div class="relative z-20 container w-full h-max">
           <h2><span>Katalog</span> Abila</h2>
@@ -85,14 +149,15 @@
               accusantium iste iusto at quia dicta.
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum facilis
-              ullam molestiae? Adipisci assumenda tenetur eius ea atque a nihil?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+              facilis ullam molestiae? Adipisci assumenda tenetur eius ea atque
+              a nihil?
             </p>
           </div>
         </div>
 
         <div class="catalog-name">
-          <h3>Kategori : Minyak Kelapa</h3>                                                           
+          <h3>Kategori : Minyak Kelapa</h3>
           <i class="fa-regular fa-filter">
             <div class="dropdown-menu">
               <a href="#">Urutkan: A - Z</a>
@@ -105,191 +170,291 @@
         </div>
       </section>
 
+<<<<<<< HEAD
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full h-max p-10">
+=======
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full p-10"
+      >
+        <div class="relative mx-auto w-full">
+          <a
+            href="cat1pro1.html"
+            class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"
+          >
+            <div class="relative z-0 shadow p-4 rounded-lg bg-white">
+              <p
+                class="absolute z-10 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded"
+              >
+                Produk terlaris
+              </p>
+              <div
+                class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden h-56 w-56 mt-7"
+                style="background-image: url('/image/catalog/produk.svg')"
+              >
+                <div
+                  class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full"
+                >
+                  <div class="absolute inset-0 bg-black opacity-10"></div>
+                </div>
+              </div>
+>>>>>>> master
 
-          <div class="relative mx-auto w-full">
-            <a href="cat1pro1.html" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
-    
-              <div class="relative z-0 shadow p-4 rounded-lg bg-white">
-                <p class="absolute z-10 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded">Produk terlaris</p>
-                <div class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden h-56 w-56 mt-7" style="background-image: url('/image/catalog/produk.svg');">
-                  <div class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
-                    <div class="absolute inset-0 bg-black opacity-10"></div>
+              <div class="mt-4 border-b-2">
+                <h2
+                  class="font-bold text-base md:text-lg text-gray-800 line-clamp-1"
+                  title="New York"
+                >
+                  VCO Minyak Kelapa 100 ml
+                </h2>
+                <p
+                  class="mt-2 text-sm text-gray-800 line-clamp-4 mb-2"
+                  title="New York, NY 10004, United States"
+                >
+                  Minyak kelapa murni dalam kemasan 100 ml terbuat dari 100%
+                  santan kelapa segar pilihan yang diolah tanpa bahan kimia
+                  tambahan. Minyak ini kaya akan manfaat untuk kesehatan dan
+                  kecantikan, menjadikannya pilihan ideal untuk berbagai
+                  kebutuhan di rumah Anda.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 mt-8">
+                <div class="flex items-center">
+                  <div class="relative">
+                    <div class="">
+                      <span class="text-yellow-800 font-bold text-sm">524</span>
+                    </div>
+                    <span
+                      class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"
+                    ></span>
                   </div>
-                </div>
-            
-                <div class="mt-4 border-b-2">
-                  <h2 class="font-bold text-base md:text-lg text-gray-800 line-clamp-1" title="New York">
-                    VCO Minyak Kelapa 100 ml
-                  </h2>
-                  <p class="mt-2 text-sm text-gray-800 line-clamp-4 mb-2" title="New York, NY 10004, United States">
-                    Minyak kelapa murni dalam kemasan 100 ml terbuat dari 100% santan kelapa segar pilihan yang diolah tanpa bahan kimia tambahan. 
-                    Minyak ini kaya akan manfaat untuk kesehatan dan kecantikan, menjadikannya pilihan ideal untuk berbagai kebutuhan di rumah Anda.
+
+                  <p class="ml-2 text-gray-800 line-clamp-1 text-sm">
+                    Produk Terjual
                   </p>
                 </div>
-            
-                <div class="grid grid-cols-2 gap-3 mt-8">
-                  <div class="flex items-center">
-                    <div class="relative">
-                      <div class="">
-                        <span class="text-yellow-800 font-bold text-sm">524</span>
-                      </div>
-                      <span class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"></span>
-                    </div>
-              
-                    <p class="ml-2 text-gray-800 line-clamp-1 text-sm">
-                      Produk Terjual
-                    </p>
-                  </div>
-            
-                  <div class="flex justify-end">
-                    <p class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2">
-                      <span class="text-sm">Dapatkan Sekarang</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          
-          <div class="relative mx-auto w-full">
-            <a href="cat1pro1.html" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
-    
-              <div class="relative z-0 shadow p-4 rounded-lg bg-white">
-                <p class="absolute z-10 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded">Produk terlaris</p>
-                <div class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden h-56 w-56 mt-7" style="background-image: url('/image/catalog/produk.svg');">
-                  <div class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
-                    <div class="absolute inset-0 bg-black opacity-10"></div>
-                  </div>
-                </div>
-            
-                <div class="mt-4 border-b-2">
-                  <h2 class="font-bold text-base md:text-lg text-gray-800 line-clamp-1" title="New York">
-                    VCO Minyak Kelapa 100 ml
-                  </h2>
-                  <p class="mt-2 text-sm text-gray-800 line-clamp-4 mb-2" title="New York, NY 10004, United States">
-                    Minyak kelapa murni dalam kemasan 100 ml terbuat dari 100% santan kelapa segar pilihan yang diolah tanpa bahan kimia tambahan. 
-                    Minyak ini kaya akan manfaat untuk kesehatan dan kecantikan, menjadikannya pilihan ideal untuk berbagai kebutuhan di rumah Anda.
+
+                <div class="flex justify-end">
+                  <p
+                    class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2"
+                  >
+                    <span class="text-sm">Dapatkan Sekarang</span>
                   </p>
                 </div>
-            
-                <div class="grid grid-cols-2 gap-3 mt-8">
-                  <div class="flex items-center">
-                    <div class="relative">
-                      <div class="">
-                        <span class="text-yellow-800 font-bold text-sm">524</span>
-                      </div>
-                      <span class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"></span>
-                    </div>
-              
-                    <p class="ml-2 text-gray-800 line-clamp-1 text-sm">
-                      Produk Terjual
-                    </p>
-                  </div>
-            
-                  <div class="flex justify-end">
-                    <p class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2">
-                      <span class="text-sm">Dapatkan Sekarang</span>
-                    </p>
-                  </div>
-                </div>
               </div>
-            </a>
-          </div>
-    
-          <div class="relative mx-auto w-full">
-            <a href="cat1pro1.html" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
-    
-              <div class="relative z-0 shadow p-4 rounded-lg bg-white">
-                <p class="absolute z-10 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded">Produk terlaris</p>
-                <div class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden h-56 w-56 mt-7" style="background-image: url('/image/catalog/produk.svg');">
-                  <div class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
-                    <div class="absolute inset-0 bg-black opacity-10"></div>
-                  </div>
-                </div>
-            
-                <div class="mt-4 border-b-2">
-                  <h2 class="font-bold text-base md:text-lg text-gray-800 line-clamp-1" title="New York">
-                    VCO Minyak Kelapa 100 ml
-                  </h2>
-                  <p class="mt-2 text-sm text-gray-800 line-clamp-4 mb-2" title="New York, NY 10004, United States">
-                    Minyak kelapa murni dalam kemasan 100 ml terbuat dari 100% santan kelapa segar pilihan yang diolah tanpa bahan kimia tambahan. 
-                    Minyak ini kaya akan manfaat untuk kesehatan dan kecantikan, menjadikannya pilihan ideal untuk berbagai kebutuhan di rumah Anda.
-                  </p>
-                </div>
-            
-                <div class="grid grid-cols-2 gap-3 mt-8">
-                  <div class="flex items-center">
-                    <div class="relative">
-                      <div class="">
-                        <span class="text-yellow-800 font-bold text-sm">524</span>
-                      </div>
-                      <span class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"></span>
-                    </div>
-              
-                    <p class="ml-2 text-gray-800 line-clamp-1 text-sm">
-                      Produk Terjual
-                    </p>
-                  </div>
-            
-                  <div class="flex justify-end">
-                    <p class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2">
-                      <span class="text-sm">Dapatkan Sekarang</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-    
-          <div class="relative mx-auto w-full">
-            <a href="cat1pro1.html" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
-    
-              <div class="relative z-0 shadow p-4 rounded-lg bg-white">
-                <p class="absolute z-10 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded">Produk terlaris</p>
-                <div class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden h-56 w-56 mt-7" style="background-image: url('/image/catalog/produk.svg');">
-                  <div class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
-                    <div class="absolute inset-0 bg-black opacity-10"></div>
-                  </div>
-                </div>
-            
-                <div class="mt-4 border-b-2">
-                  <h2 class="font-bold text-base md:text-lg text-gray-800 line-clamp-1" title="New York">
-                    VCO Minyak Kelapa 100 ml
-                  </h2>
-                  <p class="mt-2 text-sm text-gray-800 line-clamp-4 mb-2" title="New York, NY 10004, United States">
-                    Minyak kelapa murni dalam kemasan 100 ml terbuat dari 100% santan kelapa segar pilihan yang diolah tanpa bahan kimia tambahan. 
-                    Minyak ini kaya akan manfaat untuk kesehatan dan kecantikan, menjadikannya pilihan ideal untuk berbagai kebutuhan di rumah Anda.
-                  </p>
-                </div>
-            
-                <div class="grid grid-cols-2 gap-3 mt-8">
-                  <div class="flex items-center">
-                    <div class="relative">
-                      <div class="">
-                        <span class="text-yellow-800 font-bold text-sm">524</span>
-                      </div>
-                      <span class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"></span>
-                    </div>
-              
-                    <p class="ml-2 text-gray-800 line-clamp-1 text-sm">
-                      Produk Terjual
-                    </p>
-                  </div>
-            
-                  <div class="flex justify-end">
-                    <p class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2">
-                      <span class="text-sm">Dapatkan Sekarang</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-         
+            </div>
+          </a>
         </div>
 
-      <section class="catalog " id="catalog">
+        <div class="relative mx-auto w-full">
+          <a
+            href="cat1pro1.html"
+            class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"
+          >
+            <div class="relative z-0 shadow p-4 rounded-lg bg-white">
+              <p
+                class="absolute z-10 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded"
+              >
+                Produk terlaris
+              </p>
+              <div
+                class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden h-56 w-56 mt-7"
+                style="background-image: url('/image/catalog/produk.svg')"
+              >
+                <div
+                  class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full"
+                >
+                  <div class="absolute inset-0 bg-black opacity-10"></div>
+                </div>
+              </div>
+
+              <div class="mt-4 border-b-2">
+                <h2
+                  class="font-bold text-base md:text-lg text-gray-800 line-clamp-1"
+                  title="New York"
+                >
+                  VCO Minyak Kelapa 100 ml
+                </h2>
+                <p
+                  class="mt-2 text-sm text-gray-800 line-clamp-4 mb-2"
+                  title="New York, NY 10004, United States"
+                >
+                  Minyak kelapa murni dalam kemasan 100 ml terbuat dari 100%
+                  santan kelapa segar pilihan yang diolah tanpa bahan kimia
+                  tambahan. Minyak ini kaya akan manfaat untuk kesehatan dan
+                  kecantikan, menjadikannya pilihan ideal untuk berbagai
+                  kebutuhan di rumah Anda.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 mt-8">
+                <div class="flex items-center">
+                  <div class="relative">
+                    <div class="">
+                      <span class="text-yellow-800 font-bold text-sm">524</span>
+                    </div>
+                    <span
+                      class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"
+                    ></span>
+                  </div>
+
+                  <p class="ml-2 text-gray-800 line-clamp-1 text-sm">
+                    Produk Terjual
+                  </p>
+                </div>
+
+                <div class="flex justify-end">
+                  <p
+                    class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2"
+                  >
+                    <span class="text-sm">Dapatkan Sekarang</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="relative mx-auto w-full">
+          <a
+            href="cat1pro1.html"
+            class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"
+          >
+            <div class="relative z-0 shadow p-4 rounded-lg bg-white">
+              <p
+                class="absolute z-10 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded"
+              >
+                Produk terlaris
+              </p>
+              <div
+                class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden h-56 w-56 mt-7"
+                style="background-image: url('/image/catalog/produk.svg')"
+              >
+                <div
+                  class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full"
+                >
+                  <div class="absolute inset-0 bg-black opacity-10"></div>
+                </div>
+              </div>
+
+              <div class="mt-4 border-b-2">
+                <h2
+                  class="font-bold text-base md:text-lg text-gray-800 line-clamp-1"
+                  title="New York"
+                >
+                  VCO Minyak Kelapa 100 ml
+                </h2>
+                <p
+                  class="mt-2 text-sm text-gray-800 line-clamp-4 mb-2"
+                  title="New York, NY 10004, United States"
+                >
+                  Minyak kelapa murni dalam kemasan 100 ml terbuat dari 100%
+                  santan kelapa segar pilihan yang diolah tanpa bahan kimia
+                  tambahan. Minyak ini kaya akan manfaat untuk kesehatan dan
+                  kecantikan, menjadikannya pilihan ideal untuk berbagai
+                  kebutuhan di rumah Anda.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 mt-8">
+                <div class="flex items-center">
+                  <div class="relative">
+                    <div class="">
+                      <span class="text-yellow-800 font-bold text-sm">524</span>
+                    </div>
+                    <span
+                      class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"
+                    ></span>
+                  </div>
+
+                  <p class="ml-2 text-gray-800 line-clamp-1 text-sm">
+                    Produk Terjual
+                  </p>
+                </div>
+
+                <div class="flex justify-end">
+                  <p
+                    class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2"
+                  >
+                    <span class="text-sm">Dapatkan Sekarang</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="relative mx-auto w-full">
+          <a
+            href="cat1pro1.html"
+            class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"
+          >
+            <div class="relative z-0 shadow p-4 rounded-lg bg-white">
+              <p
+                class="absolute z-10 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded"
+              >
+                Produk terlaris
+              </p>
+              <div
+                class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden h-56 w-56 mt-7"
+                style="background-image: url('/image/catalog/produk.svg')"
+              >
+                <div
+                  class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full"
+                >
+                  <div class="absolute inset-0 bg-black opacity-10"></div>
+                </div>
+              </div>
+
+              <div class="mt-4 border-b-2">
+                <h2
+                  class="font-bold text-base md:text-lg text-gray-800 line-clamp-1"
+                  title="New York"
+                >
+                  VCO Minyak Kelapa 100 ml
+                </h2>
+                <p
+                  class="mt-2 text-sm text-gray-800 line-clamp-4 mb-2"
+                  title="New York, NY 10004, United States"
+                >
+                  Minyak kelapa murni dalam kemasan 100 ml terbuat dari 100%
+                  santan kelapa segar pilihan yang diolah tanpa bahan kimia
+                  tambahan. Minyak ini kaya akan manfaat untuk kesehatan dan
+                  kecantikan, menjadikannya pilihan ideal untuk berbagai
+                  kebutuhan di rumah Anda.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 mt-8">
+                <div class="flex items-center">
+                  <div class="relative">
+                    <div class="">
+                      <span class="text-yellow-800 font-bold text-sm">524</span>
+                    </div>
+                    <span
+                      class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"
+                    ></span>
+                  </div>
+
+                  <p class="ml-2 text-gray-800 line-clamp-1 text-sm">
+                    Produk Terjual
+                  </p>
+                </div>
+
+                <div class="flex justify-end">
+                  <p
+                    class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2"
+                  >
+                    <span class="text-sm">Dapatkan Sekarang</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <section class="catalog" id="catalog">
         <div class="catalog-name mb-10">
           <h3>Kategori : Sabun Kelapa</h3>
           <i class="fa-regular fa-filter">
@@ -304,191 +469,291 @@
         </div>
       </section>
 
+<<<<<<< HEAD
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full h-max p-10 ">
+=======
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full p-10"
+      >
+        <div class="relative z-20 mx-auto w-full mb-10">
+          <a
+            href="cat1pro1.html"
+            class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"
+          >
+            <div class="relative z-20 shadow p-4 rounded-lg bg-white">
+              <p
+                class="absolute z-30 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded"
+              >
+                Produk terlaris
+              </p>
+              <div
+                class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden h-56 w-56 mt-7"
+                style="background-image: url('/image/catalog/produk.svg')"
+              >
+                <div
+                  class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full"
+                >
+                  <div class="absolute inset-0 bg-black opacity-10"></div>
+                </div>
+              </div>
+>>>>>>> master
 
-          <div class="relative z-20 mx-auto w-full mb-10">
-            <a href="cat1pro1.html" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
-    
-              <div class="relative z-20 shadow p-4 rounded-lg bg-white">
-                <p class="absolute z-30 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded">Produk terlaris</p>
-                <div class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden h-56 w-56 mt-7" style="background-image: url('/image/catalog/produk.svg');">
-                  <div class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
-                    <div class="absolute inset-0 bg-black opacity-10"></div>
+              <div class="mt-4 border-b-2">
+                <h2
+                  class="font-bold text-base md:text-lg text-gray-800 line-clamp-1"
+                  title="New York"
+                >
+                  VCO Minyak Kelapa 100 ml
+                </h2>
+                <p
+                  class="mt-2 text-sm text-gray-800 line-clamp-4 mb-2"
+                  title="New York, NY 10004, United States"
+                >
+                  Minyak kelapa murni dalam kemasan 100 ml terbuat dari 100%
+                  santan kelapa segar pilihan yang diolah tanpa bahan kimia
+                  tambahan. Minyak ini kaya akan manfaat untuk kesehatan dan
+                  kecantikan, menjadikannya pilihan ideal untuk berbagai
+                  kebutuhan di rumah Anda.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 mt-8">
+                <div class="flex items-center">
+                  <div class="relative">
+                    <div class="">
+                      <span class="text-yellow-800 font-bold text-sm">524</span>
+                    </div>
+                    <span
+                      class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"
+                    ></span>
                   </div>
-                </div>
-            
-                <div class="mt-4 border-b-2">
-                  <h2 class="font-bold text-base md:text-lg text-gray-800 line-clamp-1" title="New York">
-                    VCO Minyak Kelapa 100 ml
-                  </h2>
-                  <p class="mt-2 text-sm text-gray-800 line-clamp-4 mb-2" title="New York, NY 10004, United States">
-                    Minyak kelapa murni dalam kemasan 100 ml terbuat dari 100% santan kelapa segar pilihan yang diolah tanpa bahan kimia tambahan. 
-                    Minyak ini kaya akan manfaat untuk kesehatan dan kecantikan, menjadikannya pilihan ideal untuk berbagai kebutuhan di rumah Anda.
+
+                  <p class="ml-2 text-gray-800 line-clamp-1 text-sm">
+                    Produk Terjual
                   </p>
                 </div>
-            
-                <div class="grid grid-cols-2 gap-3 mt-8">
-                  <div class="flex items-center">
-                    <div class="relative">
-                      <div class="">
-                        <span class="text-yellow-800 font-bold text-sm">524</span>
-                      </div>
-                      <span class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"></span>
-                    </div>
-              
-                    <p class="ml-2 text-gray-800 line-clamp-1 text-sm">
-                      Produk Terjual
-                    </p>
-                  </div>
-            
-                  <div class="flex justify-end">
-                    <p class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2">
-                      <span class="text-sm">Dapatkan Sekarang</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          
-          <div class="relative mx-auto w-full">
-            <a href="cat1pro1.html" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
-    
-              <div class="relative z-20 shadow p-4 rounded-lg bg-white">
-                <p class="absolute z-30 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded">Produk terlaris</p>
-                <div class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden h-56 w-56 mt-7" style="background-image: url('/image/catalog/produk.svg');">
-                  <div class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
-                    <div class="absolute inset-0 bg-black opacity-10"></div>
-                  </div>
-                </div>
-            
-                <div class="mt-4 border-b-2">
-                  <h2 class="font-bold text-base md:text-lg text-gray-800 line-clamp-1" title="New York">
-                    VCO Minyak Kelapa 100 ml
-                  </h2>
-                  <p class="mt-2 text-sm text-gray-800 line-clamp-4 mb-2" title="New York, NY 10004, United States">
-                    Minyak kelapa murni dalam kemasan 100 ml terbuat dari 100% santan kelapa segar pilihan yang diolah tanpa bahan kimia tambahan. 
-                    Minyak ini kaya akan manfaat untuk kesehatan dan kecantikan, menjadikannya pilihan ideal untuk berbagai kebutuhan di rumah Anda.
+
+                <div class="flex justify-end">
+                  <p
+                    class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2"
+                  >
+                    <span class="text-sm">Dapatkan Sekarang</span>
                   </p>
                 </div>
-            
-                <div class="grid grid-cols-2 gap-3 mt-8">
-                  <div class="flex items-center">
-                    <div class="relative">
-                      <div class="">
-                        <span class="text-yellow-800 font-bold text-sm">524</span>
-                      </div>
-                      <span class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"></span>
-                    </div>
-              
-                    <p class="ml-2 text-gray-800 line-clamp-1 text-sm">
-                      Produk Terjual
-                    </p>
-                  </div>
-            
-                  <div class="flex justify-end">
-                    <p class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2">
-                      <span class="text-sm">Dapatkan Sekarang</span>
-                    </p>
-                  </div>
-                </div>
               </div>
-            </a>
-          </div>
-    
-          <div class="relative mx-auto w-full">
-            <a href="cat1pro1.html" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
-    
-              <div class="relative z-20 shadow p-4 rounded-lg bg-white">
-                <p class="absolute z-30 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded">Produk terlaris</p>
-                <div class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden h-56 w-56 mt-7" style="background-image: url('/image/catalog/produk.svg');">
-                  <div class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
-                    <div class="absolute inset-0 bg-black opacity-10"></div>
-                  </div>
-                </div>
-            
-                <div class="mt-4 border-b-2">
-                  <h2 class="font-bold text-base md:text-lg text-gray-800 line-clamp-1" title="New York">
-                    VCO Minyak Kelapa 100 ml
-                  </h2>
-                  <p class="mt-2 text-sm text-gray-800 line-clamp-4 mb-2" title="New York, NY 10004, United States">
-                    Minyak kelapa murni dalam kemasan 100 ml terbuat dari 100% santan kelapa segar pilihan yang diolah tanpa bahan kimia tambahan. 
-                    Minyak ini kaya akan manfaat untuk kesehatan dan kecantikan, menjadikannya pilihan ideal untuk berbagai kebutuhan di rumah Anda.
-                  </p>
-                </div>
-            
-                <div class="grid grid-cols-2 gap-3 mt-8">
-                  <div class="flex items-center">
-                    <div class="relative">
-                      <div class="">
-                        <span class="text-yellow-800 font-bold text-sm">524</span>
-                      </div>
-                      <span class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"></span>
-                    </div>
-              
-                    <p class="ml-2 text-gray-800 line-clamp-1 text-sm">
-                      Produk Terjual
-                    </p>
-                  </div>
-            
-                  <div class="flex justify-end">
-                    <p class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2">
-                      <span class="text-sm">Dapatkan Sekarang</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-    
-          <div class="relative mx-auto w-full">
-            <a href="cat1pro1.html" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
-    
-              <div class="relative z-20 shadow p-4 rounded-lg bg-white">
-                <p class="absolute z-30 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded">Produk terlaris</p>
-                <div class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden h-56 w-56 mt-7" style="background-image: url('/image/catalog/produk.svg');">
-                  <div class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
-                    <div class="absolute inset-0 bg-black opacity-10"></div>
-                  </div>
-                </div>
-            
-                <div class="mt-4 border-b-2">
-                  <h2 class="font-bold text-base md:text-lg text-gray-800 line-clamp-1" title="New York">
-                    VCO Minyak Kelapa 100 ml
-                  </h2>
-                  <p class="mt-2 text-sm text-gray-800 line-clamp-4 mb-2" title="New York, NY 10004, United States">
-                    Minyak kelapa murni dalam kemasan 100 ml terbuat dari 100% santan kelapa segar pilihan yang diolah tanpa bahan kimia tambahan. 
-                    Minyak ini kaya akan manfaat untuk kesehatan dan kecantikan, menjadikannya pilihan ideal untuk berbagai kebutuhan di rumah Anda.
-                  </p>
-                </div>
-            
-                <div class="grid grid-cols-2 gap-3 mt-8">
-                  <div class="flex items-center">
-                    <div class="relative">
-                      <div class="">
-                        <span class="text-yellow-800 font-bold text-sm">524</span>
-                      </div>
-                      <span class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"></span>
-                    </div>
-              
-                    <p class="ml-2 text-gray-800 line-clamp-1 text-sm">
-                      Produk Terjual
-                    </p>
-                  </div>
-            
-                  <div class="flex justify-end">
-                    <p class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2">
-                      <span class="text-sm">Dapatkan Sekarang</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-         
+            </div>
+          </a>
         </div>
 
-        <!-- style cadangan -->
+        <div class="relative mx-auto w-full">
+          <a
+            href="cat1pro1.html"
+            class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"
+          >
+            <div class="relative z-20 shadow p-4 rounded-lg bg-white">
+              <p
+                class="absolute z-30 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded"
+              >
+                Produk terlaris
+              </p>
+              <div
+                class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden h-56 w-56 mt-7"
+                style="background-image: url('/image/catalog/produk.svg')"
+              >
+                <div
+                  class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full"
+                >
+                  <div class="absolute inset-0 bg-black opacity-10"></div>
+                </div>
+              </div>
+
+              <div class="mt-4 border-b-2">
+                <h2
+                  class="font-bold text-base md:text-lg text-gray-800 line-clamp-1"
+                  title="New York"
+                >
+                  VCO Minyak Kelapa 100 ml
+                </h2>
+                <p
+                  class="mt-2 text-sm text-gray-800 line-clamp-4 mb-2"
+                  title="New York, NY 10004, United States"
+                >
+                  Minyak kelapa murni dalam kemasan 100 ml terbuat dari 100%
+                  santan kelapa segar pilihan yang diolah tanpa bahan kimia
+                  tambahan. Minyak ini kaya akan manfaat untuk kesehatan dan
+                  kecantikan, menjadikannya pilihan ideal untuk berbagai
+                  kebutuhan di rumah Anda.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 mt-8">
+                <div class="flex items-center">
+                  <div class="relative">
+                    <div class="">
+                      <span class="text-yellow-800 font-bold text-sm">524</span>
+                    </div>
+                    <span
+                      class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"
+                    ></span>
+                  </div>
+
+                  <p class="ml-2 text-gray-800 line-clamp-1 text-sm">
+                    Produk Terjual
+                  </p>
+                </div>
+
+                <div class="flex justify-end">
+                  <p
+                    class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2"
+                  >
+                    <span class="text-sm">Dapatkan Sekarang</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="relative mx-auto w-full">
+          <a
+            href="cat1pro1.html"
+            class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"
+          >
+            <div class="relative z-20 shadow p-4 rounded-lg bg-white">
+              <p
+                class="absolute z-30 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded"
+              >
+                Produk terlaris
+              </p>
+              <div
+                class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden h-56 w-56 mt-7"
+                style="background-image: url('/image/catalog/produk.svg')"
+              >
+                <div
+                  class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full"
+                >
+                  <div class="absolute inset-0 bg-black opacity-10"></div>
+                </div>
+              </div>
+
+              <div class="mt-4 border-b-2">
+                <h2
+                  class="font-bold text-base md:text-lg text-gray-800 line-clamp-1"
+                  title="New York"
+                >
+                  VCO Minyak Kelapa 100 ml
+                </h2>
+                <p
+                  class="mt-2 text-sm text-gray-800 line-clamp-4 mb-2"
+                  title="New York, NY 10004, United States"
+                >
+                  Minyak kelapa murni dalam kemasan 100 ml terbuat dari 100%
+                  santan kelapa segar pilihan yang diolah tanpa bahan kimia
+                  tambahan. Minyak ini kaya akan manfaat untuk kesehatan dan
+                  kecantikan, menjadikannya pilihan ideal untuk berbagai
+                  kebutuhan di rumah Anda.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 mt-8">
+                <div class="flex items-center">
+                  <div class="relative">
+                    <div class="">
+                      <span class="text-yellow-800 font-bold text-sm">524</span>
+                    </div>
+                    <span
+                      class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"
+                    ></span>
+                  </div>
+
+                  <p class="ml-2 text-gray-800 line-clamp-1 text-sm">
+                    Produk Terjual
+                  </p>
+                </div>
+
+                <div class="flex justify-end">
+                  <p
+                    class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2"
+                  >
+                    <span class="text-sm">Dapatkan Sekarang</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="relative mx-auto w-full">
+          <a
+            href="cat1pro1.html"
+            class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"
+          >
+            <div class="relative z-20 shadow p-4 rounded-lg bg-white">
+              <p
+                class="absolute z-30 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded"
+              >
+                Produk terlaris
+              </p>
+              <div
+                class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden h-56 w-56 mt-7"
+                style="background-image: url('/image/catalog/produk.svg')"
+              >
+                <div
+                  class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full"
+                >
+                  <div class="absolute inset-0 bg-black opacity-10"></div>
+                </div>
+              </div>
+
+              <div class="mt-4 border-b-2">
+                <h2
+                  class="font-bold text-base md:text-lg text-gray-800 line-clamp-1"
+                  title="New York"
+                >
+                  VCO Minyak Kelapa 100 ml
+                </h2>
+                <p
+                  class="mt-2 text-sm text-gray-800 line-clamp-4 mb-2"
+                  title="New York, NY 10004, United States"
+                >
+                  Minyak kelapa murni dalam kemasan 100 ml terbuat dari 100%
+                  santan kelapa segar pilihan yang diolah tanpa bahan kimia
+                  tambahan. Minyak ini kaya akan manfaat untuk kesehatan dan
+                  kecantikan, menjadikannya pilihan ideal untuk berbagai
+                  kebutuhan di rumah Anda.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 mt-8">
+                <div class="flex items-center">
+                  <div class="relative">
+                    <div class="">
+                      <span class="text-yellow-800 font-bold text-sm">524</span>
+                    </div>
+                    <span
+                      class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"
+                    ></span>
+                  </div>
+
+                  <p class="ml-2 text-gray-800 line-clamp-1 text-sm">
+                    Produk Terjual
+                  </p>
+                </div>
+
+                <div class="flex justify-end">
+                  <p
+                    class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2"
+                  >
+                    <span class="text-sm">Dapatkan Sekarang</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- style cadangan -->
     </div>
 
     

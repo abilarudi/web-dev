@@ -1,9 +1,151 @@
 //Toggle class active
 const navbarNav = document.querySelector(".navbar-nav");
+let overlay = document.querySelector(".dark-overlay");
 
+if (!overlay) {
+  overlay = document.createElement("div");
+  overlay.className = "dark-overlay";
+  document.body.appendChild(overlay);
+}
+
+// Toggle the visibility of the search panel
+function toggleInputVisibility() {
+  const searchPanel = document.getElementById("search-panel");
+  if (searchPanel.classList.contains("hidden")) {
+    searchPanel.classList.remove("hidden");
+    searchPanel.classList.add("flex");
+  } else {
+    searchPanel.classList.remove("flex");
+    searchPanel.classList.add("hidden");
+  }
+  document.getElementById("search-input").focus();
+}
+
+// Close the search panel if clicked outside of it
+document.addEventListener("click", function (event) {
+  const searchPanel = document.getElementById("search-panel");
+  const searchContainer = document.getElementById("search-container");
+  const searchButton = document.getElementById("search-button"); // Assuming there's a button to open the search panel
+
+  if (
+    !searchContainer.contains(event.target) &&
+    !searchButton.contains(event.target) &&
+    !searchPanel.classList.contains("hidden")
+  ) {
+    searchPanel.classList.remove("flex");
+    searchPanel.classList.add("hidden");
+  }
+});
+
+// Example dictionary of search terms, their corresponding links, and text content
+const dictionaries = {
+  id: {
+    "home s": {
+      link: "index.html#home",
+      text: "Selamat datang di bagian rumah di mana Anda dapat menemukan pembaruan terbaru.",
+    },
+    about: {
+      link: "index.html#about",
+      text: "Pelajari lebih lanjut tentang perusahaan dan tim kami di bagian tentang.",
+    },
+    product: {
+      link: "index.html#product",
+      text: "Temukan berbagai produk kami di bagian produk.",
+    },
+    contact: {
+      link: "index.html#contact",
+      text: "Hubungi kami melalui bagian kontak.",
+    },
+    catalog: {
+      link: "catalog.html",
+      text: "Jelajahi katalog kami untuk melihat semua item yang tersedia.",
+    },
+  },
+  en: {
+    "home s": {
+      link: "index.html#home",
+      text: "Welcome to the home section where you can find the latest updates.",
+    },
+    about: {
+      link: "index.html#about",
+      text: "Learn more about our company and team in the about section.",
+    },
+    product: {
+      link: "index.html#product",
+      text: "Discover our range of products in the product section.",
+    },
+    contact: {
+      link: "index.html#contact",
+      text: "Get in touch with us through the contact section.",
+    },
+    catalog: {
+      link: "catalog.html",
+      text: "Browse our catalog to see all available items.",
+    },
+  },
+};
+
+// Perform the search and display results
+// Perform the search and display results
+function performSearch() {
+  const query = document.getElementById("search-input").value.toLowerCase();
+  const resultsContainer = document.getElementById("search-results");
+  resultsContainer.innerHTML = "";
+
+  // Get the user's device language
+  const deviceLang = navigator.language.split("-")[0]; // Get the language code (e.g., 'en' from 'en-US')
+  const supportedLangs = ["en", "id"]; // List of supported languages
+  const defaultLang = supportedLangs.includes(deviceLang) ? deviceLang : "en"; // Fallback to 'en' if deviceLang is not supported
+
+  const selectedLang = localStorage.getItem("selectedLang") || defaultLang;
+  const dictionary = dictionaries[selectedLang];
+
+  // Filter the dictionary based on the query
+  const results = Object.keys(dictionary).filter((key) => {
+    const item = dictionary[key];
+    return key.includes(query) || item.text.toLowerCase().includes(query);
+  });
+
+  // Display the results
+  results.forEach((result) => {
+    const item = dictionary[result];
+    const li = document.createElement("li");
+    li.classList.add(
+      "p-2",
+      "cursor-pointer",
+      "hover:underline",
+      "hover:text-[#c19b86]",
+      "truncate"
+    );
+
+    const topic = document.createElement("span");
+    topic.textContent = result;
+    topic.classList.add("font-bold");
+
+    const text = document.createElement("span");
+    text.innerHTML = highlightText(item.text, query);
+    text.classList.add("text-sm", "text-gray-600", "truncate");
+
+    li.appendChild(topic);
+    li.appendChild(document.createTextNode(" - "));
+    li.appendChild(text);
+    li.onclick = () => {
+      window.location.href = item.link;
+    };
+
+    resultsContainer.appendChild(li);
+  });
+}
+
+// Function to highlight the search text
+function highlightText(text, query) {
+  const regex = new RegExp(`(${query})`, "gi");
+  return text.replace(regex, '<span class="highlight">$1</span>');
+}
 //ketika humburger menu diklik
 document.querySelector("#hamburger-menu").onclick = () => {
   navbarNav.classList.toggle("active");
+  overlay.classList.toggle("active"); // Show or hide the overlay
 };
 
 //klik di luar sidebar untuk menghilangkan nav
@@ -12,12 +154,20 @@ const hamburger = document.querySelector("#hamburger-menu");
 document.addEventListener("click", function (e) {
   if (!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
     navbarNav.classList.remove("active");
+    overlay.classList.remove("active");
   }
 });
 
+// Prevent the event listener on #hamburger-menu from triggering the document's click event
+// hamburger.addEventListener("click", function (e) {
+//   e.stopPropagation();
+// });
+
 // Efek Bg Navbar saat di scroll
 window.onscroll = function () {
-  const navbars = document.querySelectorAll(".navbar, .navbar-alt");
+  const navbars = document.querySelectorAll(
+    ".navbar, .navbar-alt, .lang-en, .lang-in"
+  );
   navbars.forEach((navbar) => {
     if (window.scrollY > 400) {
       navbar.classList.add("scrolled");
@@ -27,34 +177,33 @@ window.onscroll = function () {
   });
 };
 
-//  Search Func
-function search() {
-  let filter = document.getElementById("find").value.toUpperCase();
-  let cards = document.querySelectorAll(".product-card");
-  let cardTitle = document.getElementsByTagName("h3");
+// Readmore About Us
+document
+  .querySelectorAll(".read-more-btn, .read-less-btn")
+  .forEach((button) => {
+    button.addEventListener("click", function () {
+      var moreText = document.querySelector('[data-key="about4"]');
+      var readMoreBtn = document.querySelector(".read-more-btn");
+      var readLessBtn = document.querySelector(".read-less-btn");
 
-  for (let i = 0; i <= cardTitle.length; i++) {
-    let a = cardTitle[i].getElementsByTagName("h3")[0];
-    let title = a.innerHTML || a.innerText || a.textContent;
+      // Toggle the "about-4" text visibility
+      moreText.classList.toggle("hidden");
 
-    if (title.toUpperCase().indexOf(filter) > -1) {
-      cards[i].style.display = "";
-    } else {
-      cards[i].style.display = "none";
-    }
-  }
-}
-
-// Efek Scroll Smooth
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth",
+      // Toggle the buttons visibility
+      if (readMoreBtn) readMoreBtn.classList.toggle("hidden");
+      if (readLessBtn) readLessBtn.classList.toggle("hidden");
     });
   });
-});
+// // Efek Scroll Smooth
+// document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+//   anchor.addEventListener("click", function (e) {
+//     e.preventDefault();
+
+//     document.querySelector(this.getAttribute("href")).scrollIntoView({
+//       behavior: "smooth",
+//     });
+//   });
+// });
 
 // Klik di filter untuk menampilkan atau menghilangkan filter
 var filterIcon = document.querySelector(".catalog-name .fa-filter");
@@ -95,7 +244,46 @@ document.addEventListener("click", function () {
 // Translate (Paling Bawah Taruhnya)
 // Define translations
 
-function changeLanguage(lang) {
+// function changeLanguage(lang) {
+
+//   document.querySelectorAll("[data-key]").forEach((elem) => {
+//     const key = elem.getAttribute("data-key");
+//     if (translations[lang] && translations[lang].hasOwnProperty(key)) {
+//       elem.textContent = translations[lang][key];
+//     }
+//   });
+
+//   // Change Style
+//   const langIn = document.getElementById("lang-in");
+//   const langEn = document.getElementById("lang-en");
+
+//   if (lang === "id") {
+//     // Set Indonesian to active
+//     langIn.classList.add("not-lang");
+//     langIn.classList.remove("scrolled");
+//     langEn.classList.add("scrolled");
+//     langEn.classList.remove("not-lang");
+//   } else if (lang === "en") {
+//     // Set English to active
+//     langIn.classList.add("scrolled");
+//     langIn.classList.remove("not-lang");
+//     langEn.classList.add("not-lang");
+//     langEn.classList.remove("scrolled");
+//   }
+// }
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   changeLanguage("en"); // Or detect the user's language to set it dynamically
+// });
+// Function to set the language
+function setLanguage(lang) {
+  localStorage.setItem("selectedLang", lang);
+  applyTranslations(lang);
+  updateLanguageStyles(lang);
+}
+
+// Apply translations based on the selected language
+function applyTranslations(lang) {
   const translations = {
     en: {
       home: "Home",
@@ -103,6 +291,7 @@ function changeLanguage(lang) {
       product: "Product",
       contact: "Contact",
       catalog: "Catalog",
+      searchPlaceholder: "Search...",
       home1: "Discover Natural Goodness",
       home12: "with Abila Indonesia",
       home13:
@@ -118,7 +307,8 @@ function changeLanguage(lang) {
         "The natural wonders of Abila Pure Coconut Oil! Specially designed to care for the beauty and health of your skin and grow naturally. Enriched with pure coconut nutrients that help to retain moisture and strengthen hair, this product is the best choice for your daily care. Feel its gentle touch and prove its superiority today!",
       about5:
         "Make Abila virgin coconut oil part of your beauty and wellness routine and feel the difference. With consistent use, you not only take care of yourself but also enjoy tangible results. Optimise your beauty as well as your health with the natural wonders of Abila coconut oil today.",
-      about6: "Why Abila?",
+      about6: "Why",
+      about61: "Abila?",
       about7:
         "Here are quotes from health experts on the health and beauty benefits of virgin coconut oil",
       about8: "1. Healthy and Glowing Skin",
@@ -190,7 +380,8 @@ function changeLanguage(lang) {
       product: "Produk",
       contact: "Kontak",
       catalog: "Katalog",
-      home1: "Temukan kebaikan alami",
+      searchPlaceholder: "Cari...",
+      home1: "Temukan Kebaikan Alami",
       home12: "dengan ABILA",
       home13:
         "Produsen terkemuka Minyak Kelapa Murni. Dikembangkan dengan cinta dan dedikasi untuk kualitas, produk kami memberikan manfaat langsung dari alam untuk kesehatan dan kecantikan Anda.",
@@ -205,7 +396,8 @@ function changeLanguage(lang) {
         "Keajaiban alami Minyak Kelapa Murni Abila! Dirancang khusus untuk merawat kecantikan dan kesehatan kulit juga tumbuh Anda secara alami. Diperkaya dengan nutrisi kelapa murni yang membantu menjaga kelembapan dan memperkuat rambut, produk ini adalah pilihan terbaik untuk perawatan harian Anda. Rasakan sentuhan lembutnya dan buktikan keunggulannya hari ini!",
       about5:
         "Jadikan minyak kelapa murni Abila bagian dari rutinitas kecantikan dan kesehatan Anda serta rasakan perbedaannya. Dengan penggunaan yang konsisten, Anda tidak hanya merawat diri tetapi juga menikmati hasil yang nyata. Optimalisasi kecantikan juga kesehatan Anda dengan keajaiban alami dari minyak kelapa Abila hari ini.",
-      about6: "Mengapa Harus Abila?",
+      about6: "Kenapa Harus",
+      about61: "Abila ?",
       about7:
         "Berikut adalah kutipan dari para pakar kesehatan tentang manfaat minyak kelapa murni untuk kesehatan dan kecantikan tubuh Anda.",
       about8: "1. ⁠Kulit yang Sehat dan Bersinar",
@@ -272,15 +464,52 @@ function changeLanguage(lang) {
       social: "Media Sosial",
     },
   };
-  console.log("translations: " + translations);
   document.querySelectorAll("[data-key]").forEach((elem) => {
     const key = elem.getAttribute("data-key");
     if (translations[lang] && translations[lang].hasOwnProperty(key)) {
       elem.textContent = translations[lang][key];
     }
   });
+
+  const searchInput = document.getElementById("find");
+  if (searchInput) {
+    searchInput.placeholder = translations[lang].searchPlaceholder;
+  }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  changeLanguage("en"); // Or detect the user's language to set it dynamically
+// Update language button styles
+function updateLanguageStyles(lang) {
+  const langIn = document.getElementById("lang-in");
+  const langEn = document.getElementById("lang-en");
+
+  if (lang === "id") {
+    langIn.classList.add("not-lang");
+    langIn.classList.remove("scrolled");
+    langEn.classList.add("scrolled");
+    langEn.classList.remove("not-lang");
+  } else {
+    langEn.classList.add("not-lang");
+    langEn.classList.remove("scrolled");
+    langIn.classList.add("scrolled");
+    langIn.classList.remove("not-lang");
+  }
+}
+
+// Load the selected language on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const selectedLang = localStorage.getItem("selectedLang") || "id";
+  if (!selectedLang) {
+    // Auto-detect user language
+    const userLang = navigator.language || navigator.userLanguage;
+    selectedLang = userLang.startsWith("id") ? "id" : "en";
+  }
+  setLanguage(selectedLang);
 });
+
+// Event listeners for language buttons
+document
+  .getElementById("lang-in")
+  .addEventListener("click", () => setLanguage("id"));
+document
+  .getElementById("lang-en")
+  .addEventListener("click", () => setLanguage("en"));
