@@ -398,7 +398,12 @@
             </div>
           </div>
           <h3 class="product-card-title">MINYAK KELAPA</h3>
-          <p class="top-tag" data-key="terlaris">Produk Terlaris</p>
+
+          <div class="top-detail-nonpc">
+            <p class="top-tag" data-key="terlaris">Produk Terlaris</p>
+            <p class="top-sell"><span>5432</span> produk terjual</p>
+            <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
+          </div>
           <p class="top-desk">
             Produk ini sangat cocok untuk berbagai keperluan, mulai dari
             memasak, menjaga perawatan kulit, dan rambut. Temukan keajaiban
@@ -419,7 +424,12 @@
             </div>
           </div>
           <h3 class="product-card-title">MINYAK KELAPA</h3>
-          <p class="top-tag" data-key="terlaris">Produk Terlaris</p>
+
+          <div class="top-detail-nonpc">
+            <p class="top-tag" data-key="terlaris">Produk Terlaris</p>
+            <p class="top-sell"><span>5432</span> produk terjual</p>
+            <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
+          </div>
           <p class="top-desk">
             Produk ini sangat cocok untuk berbagai keperluan, mulai dari
             memasak, menjaga perawatan kulit, dan rambut. Temukan keajaiban
@@ -439,7 +449,12 @@
             </div>
           </div>
           <h3 class="product-card-title">MINYAK KELAPA</h3>
-          <p class="top-tag" data-key="terlaris">Produk Terlaris</p>
+
+          <div class="top-detail-nonpc">
+            <p class="top-tag" data-key="terlaris">Produk Terlaris</p>
+            <p class="top-sell"><span>5432</span> produk terjual</p>
+            <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
+          </div>
           <p class="top-desk">
             Produk ini sangat cocok untuk berbagai keperluan, mulai dari
             memasak, menjaga perawatan kulit, dan rambut. Temukan keajaiban
@@ -460,7 +475,12 @@
             </div>
           </div>
           <h3 class="product-card-title">MINYAK KELAPA</h3>
-          <p class="top-tag" data-key="terlaris">Produk Terlaris</p>
+
+          <div class="top-detail-nonpc">
+            <p class="top-tag" data-key="terlaris">Produk Terlaris</p>
+            <p class="top-sell"><span>5432</span> produk terjual</p>
+            <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
+          </div>
           <p class="top-desk">
             Produk ini sangat cocok untuk berbagai keperluan, mulai dari
             memasak, menjaga perawatan kulit, dan rambut. Temukan keajaiban
@@ -1156,14 +1176,49 @@
     </script>
     <script>
       $(document).ready(function () {
-        $(".blog-content").slick({
-          infinite: true,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        });
-        $(".blog .blog-content .blog-item").click(function () {
-          $(".blog .blog-content .blog-item").not(this).removeClass("active");
-          $(this).toggleClass("active");
+        function applySlick() {
+          $(".blog-content").slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          });
+        }
+        function applySlickPC() {
+          $(".blog-content").slick({
+            infinite: true,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          });
+        }
+
+        function toggleActiveClass() {
+          $(".blog .blog-content .blog-item").click(function () {
+            $(".blog .blog-content .blog-item").not(this).removeClass("active");
+            $(this).toggleClass("active");
+          });
+        }
+
+        function init() {
+          // Cek ukuran layar
+          var windowWidth = $(window).width();
+
+          if (windowWidth <= 768) {
+            // Ukuran layar tablet atau ponsel
+            applySlick();
+            toggleActiveClass();
+          } else {
+            // Ukuran layar desktop
+            applySlickPC();
+            toggleActiveClass();
+          }
+        }
+
+        // Panggil fungsi init saat dokumen siap
+        init();
+
+        // Panggil fungsi init kembali jika ukuran layar berubah
+        $(window).resize(function () {
+          init();
         });
       });
     </script>

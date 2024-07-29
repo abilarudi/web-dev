@@ -272,7 +272,6 @@ body {
 }
 
 /* .about h2, */
-.product h2,
 .contact h2,
 .catalog h2,
 .category h3,
@@ -286,14 +285,28 @@ body {
   margin-top: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
+.product h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin: 3rem;
+  margin-bottom: 1rem;
+  padding: 0;
+  color: #03484a;
+  margin-top: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 /* .about h2 span, */
-.product h2 span,
 .contact h2 span,
 .catalog h2 span,
 .category h3 span,
 .FAQ h2 span {
   color: var(--primary);
+}
+.product h2 span {
+  color: #a16207;
+  font-weight: 700;
 }
 
 .about .row {
@@ -509,7 +522,7 @@ body {
   text-align: center;
   max-width: 30rem;
   margin: auto;
-  font-weight: 100;
+  font-weight: 400;
   line-height: 1.6;
 }
 .product {
@@ -520,10 +533,13 @@ body {
 .product .row-product {
   display: flex;
   display: -webkit- flex;
-  margin: 1rem;
+  margin: 1.5rem;
   align-items: center;
   .product-card {
     display: block;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    align-content: center;
   }
 }
 .product .row-product .product-card-image {
@@ -655,19 +671,20 @@ body {
 
 .product .row-product .product-card .product-card-title {
   margin: 0 1rem;
-  font-size: larger;
+  font-size: 16px;
   font-weight: 700;
   color: #000000;
   text-align: center;
 }
 .product .row-product .product-card .top-desk {
-  margin: 0 1rem;
+  margin: 0 0;
   color: #a25b1d;
   font-weight: 400;
-  font-size: smaller;
+  font-size: 14px;
   text-align: justify;
-  padding-bottom: 1.5rem;
-  border-top: 1px solid var(--text);
+  padding: 1rem;
+  border: 1.5px solid var(--text);
+  border-radius: 2rem;
 }
 .product .row-product .top-detail {
   /* display: flex; */
@@ -680,9 +697,10 @@ body {
 /* FIX */
 .product .row-product .top-sell {
   color: #000000;
-  text-align: center;
-  font-size: smaller;
+  align-self: center;
+  font-size: 14px;
   font-weight: 400;
+  margin-right: 0.5rem;
 }
 .product .row-product .top-sell span {
   font-weight: 700;
@@ -713,6 +731,13 @@ body {
   padding: 1rem;
   border-radius: 1rem;
 }
+.product .product-card .top-detail-nonpc {
+  display: inline-block;
+  .top-sell,
+  .top-link {
+    display: none;
+  }
+}
 /* Blog Section */
 .blog {
   background-color: #ede1d1;
@@ -730,6 +755,9 @@ body {
     text-align: center;
     padding: 3rem;
     background-color: #ffffef;
+    .content {
+      font-size: 14px;
+    }
   }
 }
 .blog .blog-item {
@@ -748,6 +776,7 @@ body {
   }
   .sumber {
     border-top: 2px solid var(--text);
+    font-size: 13px;
     .tokoh {
       font-weight: 700;
     }
@@ -1339,9 +1368,11 @@ html {
     grid-template-columns: auto;
   }
   .product .row-product .product-card {
-    margin: 10rem;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    width: 100%;
+    align-items: center;
+    margin: 1rem;
+    /* margin-top: 5rem;
+    margin-bottom: 5rem; */
   }
   .product .row-product .product-card .top-tag {
     font-size: 1.2rem;
@@ -1350,15 +1381,16 @@ html {
     width: 60%;
   }
   .product .row-product .product-card .top-desk {
-    font-size: 1rem;
+    font-size: 14px;
+    width: 100%;
   }
   .product .row-product .top-detail {
     font-size: 1rem;
   }
   .product .row-product .top-sell {
     color: #000000;
-    text-align: left;
-    font-size: 1rem;
+    /* text-align: left; */
+    font-size: 13px;
   }
   .product .row-product .top-sell span {
     font-weight: 700;
@@ -1366,6 +1398,37 @@ html {
   }
   .product .row-product .top-link a {
     font-size: 1.2rem;
+  }
+  .product .row-product .container {
+    .top-detail {
+      position: relative;
+      bottom: 0;
+      align-items: center;
+      top: 0;
+      transform: translate(0, -110%);
+      -ms-transform: translate(0, -110%);
+      /* background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 1); Black see-through */
+      color: var(--text);
+      display: block;
+      width: 200px;
+      border-radius: 50%;
+      transition: 0.5s ease;
+      opacity: 0;
+      color: var(--text);
+      font-size: 20px;
+      padding: 20px;
+      text-align: center;
+      /* object-fit: cover;
+    box-sizing: border-box; */
+    }
+  }
+  .product .product-card .top-detail-nonpc {
+    display: inline-block;
+    .top-sell,
+    .top-link {
+      display: inline-block;
+    }
   }
 
   /* .contact .row {
@@ -1484,9 +1547,9 @@ html {
     grid-template-columns: auto;
   }
   .product .row-product .product-card {
-    margin: 10rem;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin: 1rem;
+    /* margin-top: 5rem;
+    margin-bottom: 5rem; */
   }
   .product .row-product .product-card .top-tag {
     font-size: 1.2rem;
@@ -1495,15 +1558,15 @@ html {
     width: 60%;
   }
   .product .row-product .product-card .top-desk {
-    font-size: 1rem;
+    font-size: 14px;
   }
   .product .row-product .top-detail {
     font-size: 1rem;
   }
   .product .row-product .top-sell {
     color: #000000;
-    text-align: left;
-    font-size: 1rem;
+    /* text-align: left; */
+    font-size: 13px;
   }
   .product .row-product .top-sell span {
     font-weight: 700;
@@ -1512,6 +1575,53 @@ html {
   .product .row-product .top-link a {
     font-size: 1.2rem;
   }
+  .product .row-product .container {
+    .top-detail {
+      position: relative;
+      bottom: 0;
+      align-items: center;
+      top: 0;
+      transform: translate(0, -110%);
+      -ms-transform: translate(0, -110%);
+      /* background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 1); Black see-through */
+      color: var(--text);
+      display: block;
+      width: 200px;
+      border-radius: 50%;
+      transition: 0.5s ease;
+      opacity: 0;
+      color: var(--text);
+      font-size: 20px;
+      padding: 20px;
+      text-align: center;
+      /* object-fit: cover;
+    box-sizing: border-box; */
+      .top-sell {
+        align-items: center;
+      }
+    }
+  }
+  .product .product-card .top-detail-nonpc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    align-items: center;
+    .top-tag,
+    .top-sell,
+    .top-link {
+      display: block;
+      text-align: center;
+    }
+    .top-link {
+      margin-bottom: 0.3rem;
+    }
+    .top-sell {
+      transform: translate(-50%, 0%);
+    }
+  }
+
   .catalog-row {
     grid-template-columns: repeat(1, 1fr);
   }
