@@ -1,10 +1,10 @@
-//Toggle class active
+// Toggle class active
 const navbarNav = document.querySelector(".navbar-nav");
 let overlay = document.querySelector(".dark-overlay");
 
 if (!overlay) {
   overlay = document.createElement("div");
-  overlay.className = "dark-overlay";
+  overlay.className = "dark-overlay hidden";
   document.body.appendChild(overlay);
 }
 
@@ -14,9 +14,13 @@ function toggleInputVisibility() {
   if (searchPanel.classList.contains("hidden")) {
     searchPanel.classList.remove("hidden");
     searchPanel.classList.add("flex");
+    overlay.classList.remove("hidden");
+    overlay.classList.add("flex");
   } else {
     searchPanel.classList.remove("flex");
     searchPanel.classList.add("hidden");
+    overlay.classList.remove("flex");
+    overlay.classList.add("hidden");
   }
   document.getElementById("search-input").focus();
 }
@@ -34,6 +38,8 @@ document.addEventListener("click", function (event) {
   ) {
     searchPanel.classList.remove("flex");
     searchPanel.classList.add("hidden");
+    overlay.classList.remove("flex");
+    overlay.classList.add("hidden");
   }
 });
 
@@ -124,7 +130,7 @@ function performSearch() {
 
     const text = document.createElement("span");
     text.innerHTML = highlightText(item.text, query);
-    text.classList.add("text-sm", "text-gray-600", "truncate");
+    text.classList.add("md:text-sm", "text-xl", "text-gray-600", "truncate");
 
     li.appendChild(topic);
     li.appendChild(document.createTextNode(" - "));
