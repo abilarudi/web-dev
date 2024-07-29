@@ -31,6 +31,7 @@
     <link rel="Stylesheet" href="CSS/style.css" />
     <link rel="stylesheet" href="CSS/output.css" />
     <link rel="stylesheet" href="CSS/slide.css" />
+
   </head>
   <body>
     <!-- Navbar Start -->
@@ -122,69 +123,84 @@
       class="p-10 w-full h-max relative"
       style="background-image: url('/image/catalogpro/bg.svg')"
     >
+      <img src="image/catalogpro/awan-3.svg" alt="" class="absolute z-0 bottom-0 right-0 w-[35%] md:w-[20%]">
+      <img src="image/catalogpro/awan-4.svg" alt="" class="absolute z-0 bottom-0 left-0 w-[35%] md:w-[20%]">
       <img
         src="image/catalogpro/pohon1.svg"
         alt=""
         class="w-[35%] md:w-[15%] absolute z-30 bottom-0 left-0 hidden xl:block"
       />
       <div
-        class="relative z-20 container flex flex-col-reverse mx-auto lg:flex-row text-gray-800 rounded-xl mt-20 mb-6 p-10 bg-orange-100"
+        class="relative container flex flex-col-reverse mx-auto lg:flex-row text-gray-800 rounded-xl mt-20 mb-6 p-10 bg-orange-100"
       >
         <img
           src="image/catalogpro/+.svg"
           alt=""
-          class="w-[10%] xl:w-[5%] absolute z-30 top-0 left-0"
+          class="w-[10%] xl:w-[5%] absolute z-20 top-0 left-0"
         />
         <div
-          class="relative z-40 flex flex-col px-5 py-8 space-y-6 rounded-xl sm:p-8 w-full lg:p-12 lg:w-1/2 xl:w-2/5 h-max xl:h-72 text-black"
+          class="relative z-40 flex flex-col px-5 py-8 space-y-6 rounded-xl sm:p-8 w-full lg:p-12 h-max xl:h-72 text-black"
         >
           <img
             src="image/catalogpro/pohon2.svg"
             alt=""
             class="w-[30%] absolute z-30 block xl:hidden bottom-0 right-0"
           />
-          <div class="flex space-x-2 sm:space-x-4">
+          <div class="relative z-50 flex space-x-2 sm:space-x-4">
             <div class="space-y-2">
-              <p class="text-lg font-medium leading-snug">
-                Abila Minyak kelapa
-              </p>
-              <p class="leading-snug">
-                Praesentium ea et neque distinctio quas eius repudiandae quaerat
-                obcaecati voluptatem similique!
+              <p class="text-2xl font-semibold leading-snug">
+                VCO Oil Minyak Kelapa Murni 250ml - Minyak VCO Untuk Kecantikan - Minyak Virgin Coconut Oil Herbal
               </p>
             </div>
           </div>
-          <div class="flex space-x-2 sm:space-x-4">
+
+          <div class="relative flex space-x-2 sm:space-x-4">
             <div class="space-y-2">
-              <p class="text-lg font-medium leading-snug">
-                Abila Minyak kelapa
-              </p>
-              <p class="leading-snug">
-                Praesentium ea et neque distinctio quas eius repudiandae quaerat
-                obcaecati voluptatem similique!
+              <p class="text-3xl font-bold leading-snug">
+                Rp60.000
               </p>
             </div>
           </div>
-          <div class="flex space-x-4 w-full justify-center">
-            <div class="flex flex-row space-y-0 space-x-4 xl:mt-10">
+
+          <div class="flex space-x-2 sm:space-x-4">
+            <div class="space-y-2 flex gap-x-10">
+
+              <div class="" alt="quantity">
+                <p class="text-2xl font-semibold mt-2">
+                  Quantity :
+                </p>
+              </div>
+
+              <div class="flex items-center text-xl">
+                  <button id="decrement" class="border bg-yellow-900 hover:bg-yellow-950 text-gray-50 px-4  rounded-md mr-2">-</button>
+                  <span id="counter" class="text-center w-8">1</span>
+                  <button id="increment" class="border bg-yellow-900 hover:bg-yellow-950 text-gray-50 px-4  rounded-md ml-2">+</button>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class=" relative z-50 flex space-x-4 w-full justify-start">
+            <div class="relative z-50 flex flex-row space-y-0 space-x-4 xl:mt-10">
               <button
-                class="px-8 py-1 text-lg font-semibold rounded bg-yellow-900 hover:bg-yellow-950 text-gray-50"
+                class="relative z-50 px-4 py-1 text-lg font-semibold rounded bg-yellow-900 hover:bg-yellow-950 text-gray-50"
               >
-                Rp 90.000
+                Masukkan Keranjang
               </button>
               <a
                 href="https://wa.me/6287856684717?text=Halo,%20saya%20ingin%20memesan%20produk%20Abila%20berikut:%0A*Nama%3A*%20%0A*No.%20Telepon%3A*%20%0A*Produk%3A*%20%0A*Kuantitas%3A*%20%0A*Catatan%3A*%20"
-                class="px-8 py-3 text-lg font-semibold rounded bg-yellow-900 hover:bg-yellow-950 text-gray-50"
+                class="relative z-50 px-4 py-3 text-lg font-semibold rounded bg-yellow-900 hover:bg-yellow-950 text-gray-50"
               >
                 Beli Sekarang
               </a>
             </div>
           </div>
+
         </div>
 
         <!-- slider img-->
         <div
-          class="relative lg:w-1/2 xl:w-3/5 h-max rounded-xl"
+          class="relative w-full h-max rounded-xl z-20"
           style="background-image: url('/image/catalogpro/bgimg.svg')"
         >
           <img
@@ -268,8 +284,10 @@
     <section
       class="category pt-10 w-full h-max relative z-0"
       id="category"
-      style="background-image: url('/image/catalogpro/bg2.svg')"
+      style="background-image: url('/image/catalogpro/bg.svg')"
     >
+    <img src="image/catalogpro/awan-1.svg" alt="" class="absolute z-0 top-0 left-0 w-[35%] md:w-[20%]">
+    <img src="image/catalogpro/awan-2.svg" alt="" class="absolute z-0 top-0 right-0 w-[35%] md:w-[20%]">
       <img
         src="image/catalogpro/kelapa2.svg"
         alt=""
@@ -286,7 +304,7 @@
         class="block md:hidden w-[15%] md:w-[10%] absolute z-10 top-0 left-0"
       />
       <!-- table information -->
-      <div class="py-10">
+      <div class="py-10 relative">
         <div class="product-description">
           <button class="desk" onclick="openCity(event,'Deskripsi')">
             Deskripsi
@@ -300,28 +318,35 @@
         </div>
         <div class="border-sum">
           <div id="Deskripsi" class="sumcontent">
+
             <div class="desc-fix">
-              <div class="title-desc">Ringkasan</div>
-              <div class="content-desc">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
-                dolore sunt temporibus magni repellendus architecto aliquid ab
-                cumque sit minima!
+              <div class="title-desc p-5 font-semibold text-2xl"><span>Minyak kelapa Abila</span></div>
+              <div class="content-desc p-5 text-xl">
+                Minyak kelapa murni dalam kemasan 250 ml ini terbuat dari 100% santan kelapa segar 
+                pilihan yang diolah tanpa bahan kimia tambahan. Minyak ini kaya akan manfaat untuk kesehatan dan kecantikan, 
+                menjadikannya pilihan ideal untuk berbagai kebutuhan di rumah Anda.
               </div>
             </div>
+
             <div class="desc-fix">
-              <div class="title-desc">Ukuran</div>
-              <div class="content-desc">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
-                dolore sunt temporibus magni repellendus architecto aliquid ab
-                cumque sit minima!
+              <div class="title-desc p-5 font-semibold text-2xl"><span>Manfaat</span></div>
+              <div class="content-desc p-5 text-xl">
+                Memasak: Minyak kelapa murni memiliki titik didih tinggi sehingga aman untuk digunakan untuk menggoreng, menumis, dan membakar makanan. Minyak ini juga dapat memberikan rasa kelapa yang lezat pada masakan Anda.
+                Menjaga kesehatan: Minyak kelapa murni mengandung asam lemak laurat yang tinggi, yang memiliki sifat antimikroba dan antivirus. Minyak ini dapat membantu meningkatkan kekebalan tubuh, melawan infeksi, dan menjaga kesehatan pencernaan.
+                Merawat kecantikan: Minyak kelapa murni dapat digunakan sebagai pelembap alami untuk kulit dan rambut. Minyak ini dapat membantu menghidrasi kulit, mengatasi rambut kering dan kusam, dan bahkan membantu pertumbuhan rambut.
+                Keunggulan:
               </div>
-            </div>
-            <div class="desc-fix">
-              <div class="title-desc">Tips</div>
-              <div class="content-desc">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
-                dolore sunt temporibus magni repellendus architecto aliquid ab
-                cumque sit minima!
+              <div class="content-desc p-5 text-xl">
+                Murni: Dibuat dari 100% santan kelapa segar tanpa bahan kimia tambahan.
+                Sehat: Kaya akan asam lemak laurat yang bermanfaat untuk kesehatan.
+                Serbaguna: Dapat digunakan untuk memasak, menjaga kesehatan, dan merawat kecantikan.
+                Praktis: Kemasan 250 ml mudah disimpan dan dibawa ke mana saja.
+              </div>
+              <div class="content-desc p-5 text-xl">
+                Memasak: Gunakan minyak kelapa murni untuk menggoreng, menumis, atau membakar makanan.
+                Menjaga kesehatan: Minum 1-2 sendok makan minyak kelapa murni setiap pagi dengan air hangat.
+                Merawat kecantikan: Gunakan minyak kelapa murni sebagai pelembap untuk kulit dan rambut.
+                Simpan di tempat yang sejuk dan terhindar dari sinar matahari langsung.
               </div>
             </div>
           </div>
@@ -391,47 +416,34 @@
     <!-- Detail Product End -->
 
     <!-- Footer Section Start -->
-    <footer class="w-full h-max bg-teal-800 text-white">
-      <div
-        class="container flex flex-col items-center justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0"
-      >
-        <div class="lg:w-1/3 flex flex-col items-center lg:items-start">
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            class="flex justify-center space-x-3 lg:justify-start"
-          >
-            <div class="flex items-center justify-center w-16 h-16">
-              <img src="image/ABILA.svg" alt="" />
-            </div>
-            <div class="flex items-center justify-center w-12 h-12">
-              <img src="image/Coconut.svg" alt="" />
-            </div>
-          </a>
-          <p
-            class="mt-4 text-sm flex justify-center space-x-3 lg:justify-start"
-            data-key="alamat"
-          >
-            Perum. Bumi Asri Blok E-10 Kec Kota, kediri, 64126
-          </p>
-        </div>
+
+    <footer class="w-full h-max bg-teal-800 text-white ">
+      <div class="container flex flex-col items-center justify-between py-10 mx-5 px-10 space-y-8 lg:flex-row lg:space-y-0">
+          <div class="lg:w-1/3 flex flex-col items-center lg:items-start">
+              <a rel="noopener noreferrer" href="#" class="flex justify-center space-x-3 lg:justify-start">
+                  <div class="flex items-center justify-center">
+                      <img src="image/ABILA.svg" alt="" class="w-28 h-auto">
+                  </div>
+                  <div class="flex items-center justify-center">
+                      <img src="image/Coconut.svg" alt="" class="w-12 h-auto mb-5">
+                  </div>
+              </a>
+              <p class="mt-4 text-lg flex justify-center space-x-3 lg:justify-start">Perum. Bumi Asri Blok E-10 Kec Kota, kediri, 64126</p>
+          </div>
 
         <div
-          class="grid grid-cols-2 text-sm gap-x-36 md:gap-x-28 gap-y-8 lg:w-2/3 sm:grid-cols-4"
-        >
+          class="grid grid-cols-2 text-lg gap-x-36 md:gap-x-20 gap-y-8 lg:w-2/3 sm:grid-cols-4 m-2">
           <div class="space-y-3">
             <h3
               class="tracking-wide uppercase bg-teal-950 rounded-3xl flex justify-center p-3 w-fit"
-              data-key="about"
-            >
+              data-key="about">
               Tentang
             </h3>
             <div class="flex justify-start p-1">
               <ul class="space-y-1">
                 <li>
                   <a rel="noopener noreferrer" class="hover:text-bg" href="#"
-                    >Abila</a
-                  >
+                    >Abila</a>
                 </li>
                 <li>
                   <a
@@ -439,8 +451,7 @@
                     class="hover:text-bg"
                     href="#"
                     data-key="founder"
-                    >Pendiri</a
-                  >
+                    >Pendiri</a>
                 </li>
                 <li>
                   <a
@@ -448,8 +459,7 @@
                     class="hover:text-bg"
                     href="#"
                     data-key="factory"
-                    >Perusahaan</a
-                  >
+                    >Perusahaan</a>
                 </li>
               </ul>
             </div>
@@ -468,7 +478,7 @@
                   <a
                     rel="noopener noreferrer"
                     class="hover:text-bg"
-                    href="index.html#home"
+                    href="#home"
                     data-key="home"
                     >Beranda</a
                   >
@@ -477,7 +487,7 @@
                   <a
                     rel="noopener noreferrer"
                     class="hover:text-bg"
-                    href="index.html#about"
+                    href="#about"
                     data-key="home"
                     >Tentang Kami</a
                   >
@@ -486,7 +496,7 @@
                   <a
                     rel="noopener noreferrer"
                     class="hover:text-bg"
-                    href="index.html#product"
+                    href="#product"
                     data-key="product"
                     >Produk</a
                   >
@@ -495,7 +505,7 @@
                   <a
                     rel="noopener noreferrer"
                     class="hover:text-bg"
-                    href="index.html#contact"
+                    href="#contact"
                     data-key="contact"
                     >Kontak</a
                   >
@@ -521,14 +531,14 @@
               Media Sosial
             </div>
             <div class="flex justify-start">
-              <div class="flex justify-start space-x-3">
+              <div class="flex justify-center space-x-3">
                 <a
                   rel="noopener noreferrer"
                   href="#"
                   title="Tiktok"
                   class="flex items-center p-1 hover:text-bg text-white text-2xl"
                 >
-                  <i class="fa-brands fa-tiktok"></i>
+                  <i class="fa-brands fa-tiktok text-4xl"></i>
                 </a>
                 <a
                   rel="noopener noreferrer"
@@ -536,7 +546,7 @@
                   title="Instagram"
                   class="flex items-center p-1 text-white hover:text-bg text-3xl"
                 >
-                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-instagram text-4xl"></i>
                 </a>
               </div>
             </div>
@@ -600,5 +610,6 @@
 
     <!-- My Javascript -->
     <script src="js/script.js"></script>
+    <script src="js/cat1pro.js"></script>
   </body>
 </html>
