@@ -763,22 +763,11 @@ video {
   margin-top: 2rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
 .line-clamp-1 {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
-}
-
-.line-clamp-2 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
 }
 
 .line-clamp-4 {
@@ -1767,10 +1756,6 @@ video {
 
   .md\:w-\[8\%\] {
     width: 8%;
-  }
-
-  .md\:w-56 {
-    width: 14rem;
   }
 
   .md\:grid-cols-2 {
