@@ -130,7 +130,7 @@ function performSearch() {
 
     const text = document.createElement("span");
     text.innerHTML = highlightText(item.text, query);
-    text.classList.add("md:text-sm", "text-xl", "text-gray-600", "truncate");
+    text.classList.add("md:text-base", "text-xl", "text-gray-600", "truncate");
 
     li.appendChild(topic);
     li.appendChild(document.createTextNode(" - "));
