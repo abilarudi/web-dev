@@ -95,7 +95,7 @@
       <!-- Search Panel -->
       <div
         id="search-panel"
-        class="hidden fixed inset-0 bg-black bg-opacity-50 items-center justify-center"
+        class="hidden md:fixed md:inset-0 absolute w-full h-full md:items-center justify-center items-start left-0 top-full"
       >
         <div
           class="p-4 bg-newbg rounded-lg shadow-lg w-3/4 max-w-lg"
@@ -105,10 +105,13 @@
             type="text"
             id="search-input"
             placeholder="Search..."
-            class="w-full p-2 border placeholder-bg2 border-bg2 bg-newbg text-bg2 rounded-md"
+            class="w-full p-2 placeholder:text-2xl md:placeholder:text-base text-2xl md:text-base border placeholder-bg2 border-bg2 bg-newbg text-bg2 rounded-md"
             onkeyup="performSearch()"
           />
-          <ul id="search-results" class="mt-2 text-bg2"></ul>
+          <ul
+            id="search-results"
+            class="mt-2 text-bg2 text-2xl md:text-base"
+          ></ul>
         </div>
       </div>
     </nav>
@@ -218,7 +221,7 @@
                   checked="checked"
                 />
                 <div class="carousel-item">
-                  <img src="image/abilahome1.png" />
+                  <img src="image/catalogpro/produk/foto-produkA1 1.svg" />
                 </div>
                 <input
                   class="carousel-open"
@@ -229,7 +232,7 @@
                   hidden=""
                 />
                 <div class="carousel-item">
-                  <img src="image/abilahome4.png" />
+                  <img src="image/catalogpro/produk/foto-produkA2 1.svg" />
                 </div>
                 <input
                   class="carousel-open"
@@ -240,25 +243,45 @@
                   hidden=""
                 />
                 <div class="carousel-item">
-                  <img src="image/abilahome6.png" />
+                  <img src="image/catalogpro/produk/foto-produkA3 1.svg" />
                 </div>
-                <label for="carousel-3" class="carousel-control prev control-1"
+                <input
+                  class="carousel-open"
+                  type="radio"
+                  id="carousel-4"
+                  name="carousel"
+                  aria-hidden="true"
+                  hidden=""
+                />
+                <div class="carousel-item">
+                  <img src="image/catalogpro/produk/fot-produkA4 1.svg" />
+                </div>
+                <label for="carousel-4" class="carousel-control prev control-1"
                   >‹</label
+                >
+                <label for="carousel-1" class="carousel-control next control-4"
+                  >›</label
                 >
                 <label for="carousel-2" class="carousel-control next control-1"
                   >›</label
                 >
-                <label for="carousel-1" class="carousel-control prev control-2"
-                  >‹</label
-                >
                 <label for="carousel-3" class="carousel-control next control-2"
                   >›</label
+                >
+                <label for="carousel-4" class="carousel-control next control-3"
+                  >‹</label
+                >
+                <label for="carousel-1" class="carousel-control prev control-2"
+                  >‹</label
                 >
                 <label for="carousel-2" class="carousel-control prev control-3"
                   >‹</label
                 >
-                <label for="carousel-1" class="carousel-control next control-3"
+                <label for="carousel-3" class="carousel-control prev control-4"
                   >›</label
+                >
+                <label for="carousel-4" class="carousel-control prev control-1"
+                  >‹</label
                 >
                 <ol class="carousel-indicators">
                   <li>
@@ -269,6 +292,9 @@
                   </li>
                   <li>
                     <label for="carousel-3" class="carousel-bullet">•</label>
+                  </li>
+                  <li>
+                    <label for="carousel-4" class="carousel-bullet">•</label>
                   </li>
                 </ol>
               </div>
