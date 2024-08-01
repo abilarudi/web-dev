@@ -23,3 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
       updateCounter(-1);
     });
   });
+
+// function toggle class active shopping cart
+const cart = document.querySelector('#shopping-cart');
+document.querySelector('#shopping').onclick = (e) => {
+  cart.classList.toggle('active');
+  e.preventDefault();
+}
