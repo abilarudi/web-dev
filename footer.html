@@ -5,9 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer</title>
     <link rel="stylesheet" href="CSS/output.css">
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <script src="https://unpkg.com/feather-icons"></script>
+
 </head>
 
 <body>
+
+    <!-- Navbar Start -->
+    <nav class="navbar-alt py-7 md:py-4">
+        <div class="navbar-logo flex -top-3">
+          <img src="image/ABILA.svg" class="abila lg:w-32 w-36" alt="" />
+          <img src="image/Coconut.svg" class="w-20 lg:w-16" alt="" />
+        </div>
+  
+        <div class="navbar-nav">
+          <a href="index.html#home" data-key="home">Beranda</a>
+          <a href="index.html#about" data-key="about">Tentang Kami</a>
+          <a href="index.html#product" data-key="product">Produk</a>
+          <a href="index.html#contact" data-key="contact">Kontak</a>
+          <a href="catalog.html#catalog" data-key="catalog">Katalog</a>
+        </div>
+  
+        <div class="navbar-extra flex my-4">
+          <form action="">
+            <div class="navbar-search rounded-md bg-[#D9D9D9] flex">
+              <input
+                type="text"
+                placeholder="Search..."
+                id="find"
+                onkeyup="search()"
+                class="bg-[#D9D9D9] h-full rounded-md text-lg pl-2 text-bg2 w-full max-[450px]:hidden input-transition"
+              />
+              <a
+                href="#"
+                class="bg-bg rounded-md pl-1 pr-1"
+                id="search-button"
+                onclick="toggleInputVisibility()"
+              >
+                <i
+                  class="fa-solid fa-magnifying-glass text-3xl sm:text-2xl md:text-xl text-[#a25b1d]"
+                ></i>
+              </a>
+            </div>
+          </form>
+          <div class="w-fit px-0 ml-3 language text-start md:text-2xl text-4xl">
+            <button
+              id="lang-in"
+              class="not-lang hover:bg-[#7A9687] px-1 rounded-l-md lang-in"
+              onclick="setLanguage('id')"
+            >
+              In</button
+            ><button
+              id="lang-en"
+              class="border-white px-1 rounded-r-md lang-en hover:bg-[#7A9687] scrolled"
+              onclick="setLanguage('en')"
+            >
+              En
+            </button>
+          </div>
+  
+          <a href="#" id="shopping"
+            ><i data-feather="shopping-cart" class="md:w-7 w-8"></i
+          ></a>
+          <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+        </div>
+        <!-- Search Panel -->
+        <div
+          id="search-panel"
+          class="hidden md:fixed md:inset-0 absolute w-full h-full md:items-center justify-center items-start left-0 top-full"
+        >
+          <div
+            class="p-4 bg-newbg rounded-lg shadow-lg w-3/4 max-w-lg"
+            id="search-container"
+          >
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search..."
+              class="w-full p-2 placeholder:text-2xl md:placeholder:text-base text-2xl md:text-base border placeholder-bg2 border-bg2 bg-newbg text-bg2 rounded-md"
+              onkeyup="performSearch()"
+            />
+            <ul
+              id="search-results"
+              class="mt-2 text-bg2 text-2xl md:text-base"
+            ></ul>
+          </div>
+        </div>
+  
+        <!-- shooping cart start -->
+         
+        <!-- shooping cart end -->
+      </nav>
+
+
     <footer class="w-full h-max bg-teal-800 text-white ">
             <div class="container  flex flex-col items-center justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
                 <div class="lg:w-1/3 flex flex-col items-center lg:items-start">
@@ -103,5 +195,8 @@
             <div class="py-6 text-sm text-center dark:text-white">© 2024 ABILA INDONESIA. All Right Reserved</div>
     </footer>
     
+
+    <script src="js/script.js"></script>
+
 </body>
 </html>
