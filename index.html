@@ -70,34 +70,32 @@
       </div>
 
       <div class="navbar-extra flex my-4">
-        <form action="">
-          <div class="navbar-search rounded-md bg-[#D9D9D9] flex">
-            <input
-              type="text"
-              placeholder="Search..."
-              id="find"
-              onkeyup="search()"
-              class="bg-[#D9D9D9] h-full rounded-md text-lg pl-2 text-bg2 w-full max-[450px]:hidden input-transition"
-            />
-            <a
-              href="#"
-              class="bg-bg rounded-md pl-1 pr-1"
-              id="search-button"
-              onclick="toggleInputVisibility()"
-            >
-              <i
-                class="fa-solid fa-magnifying-glass text-3xl sm:text-2xl md:text-xl text-[#a25b1d]"
-              ></i>
-            </a>
+        <a
+          href="#"
+          class="rounded-md bg-[#D9D9D9] max-[450px]:bg-transparent min-[450px]:justify-between justify-end w-40 h-full flex"
+          id="search-button"
+          onclick="toggleInputVisibility()"
+        >
+          <div
+            class="rounded-l-md pt-1 max-[450px]:hidden w-5/6 h-full pl-2"
+            data-key="search"
+          >
+            Search...
           </div>
-        </form>
-        <div class="w-fit px-0 ml-3 language text-start md:text-2xl text-4xl">
+          <i
+            class="fa-solid bg-bg px-2 py-1 sm:py-0 fa-magnifying-glass rounded-md text-3xl sm:text-2xl text-[#a25b1d]"
+          ></i>
+        </a>
+
+        <div
+          class="w-fit flex px-0 ml-3 language text-start md:text-2xl text-4xl"
+        >
           <button
             id="lang-in"
             class="not-lang hover:bg-[#7A9687] px-1 rounded-l-md lang-in"
             onclick="setLanguage('id')"
           >
-            In</button
+            Id</button
           ><button
             id="lang-en"
             class="border-white px-1 rounded-r-md lang-en hover:bg-[#7A9687] scrolled"
@@ -221,26 +219,39 @@
         <div class="leftrow">
           <div class="title">
             <p>Hi, Choco!</p>
-            <h3>Ketahui Kami</h3>
-            <h3><span>di Abila Indonesia</span></h3>
+            <h3 data-key="about1">Ketahui Kami</h3>
+            <h3><span data-key="about2">di Abila Indonesia</span></h3>
           </div>
           <div class="content">
-            <p data-key="about3">
-              Minyak Kelapa Murni Abila, adalah solusi lengkap untuk kesehatan
-              dan kecantikan keluarga Anda. Dibutuhkan untuk menyelesaikan
-              masalah sekaligus menjaga tubuh tetap sehat dan cantik.
-              <button class="read-more-btn font-medium hover:underline">
+            <p >
+              <span class="font-light md:font-thin" data-key="about3"
+                >Minyak Kelapa Murni Abila, adalah solusi lengkap untuk
+                kesehatan dan kecantikan keluarga Anda. Dibutuhkan untuk
+                menyelesaikan masalah sekaligus menjaga tubuh tetap sehat dan
+                cantik.</span
+              >
+
+              <button
+                class="read-more-btn font-medium hover:underline"
+                data-key="selengkapnya"
+              >
                 Baca Selengkapnya
               </button>
             </p>
-            <p data-key="about4" class="hidden">
-              Keajaiban alami Minyak Kelapa Murni Abila! Dirancang khusus untuk
-              merawat kecantikan dan kesehatan kulit juga tumbuh Anda secara
-              alami. Diperkaya dengan nutrisi kelapa murni yang membantu menjaga
-              kelembapan dan memperkuat rambut, produk ini adalah pilihan
-              terbaik untuk perawatan harian Anda. Rasakan sentuhan lembutnya
-              dan buktikan keunggulannya hari ini!
-              <button class="read-less-btn font-medium hover:underline hidden">
+            <p class="hidden readless">
+              <span class="font-light md:font-thin" data-key="about4"
+                >Keajaiban alami Minyak Kelapa Murni Abila! Dirancang khusus
+                untuk merawat kecantikan dan kesehatan kulit juga tubuh Anda
+                secara alami. Diperkaya dengan nutrisi kelapa murni yang
+                membantu menjaga kelembapan dan memperkuat rambut, produk ini
+                adalah pilihan terbaik untuk perawatan harian Anda. Rasakan
+                sentuhan lembutnya dan buktikan keunggulannya hari ini!</span
+              >
+
+              <button
+                class="read-less-btn font-medium hover:underline hidden"
+                data-key="sedikitnya"
+              >
                 Baca Lebih Sedikit
               </button>
             </p>
@@ -264,49 +275,49 @@
         <div class="flex flex-wrap">
           <div class="justify-center w-full bg-bg2 mb-10 p-8 rounded-md">
             <p class="text-text2 font-thin text-xl">
-              <span data-key="about7" class="mb-4 inline-block font-medium">
+              <span data-key="about7" class="mb-4 block font-medium">
                 Berikut adalah kutipan dari para pakar kesehatan tentang manfaat
                 minyak kelapa murni untuk kesehatan dan kecantikan tubuh
               </span>
-              <span data-key="about8" class="font-semibold inline-block"
-                >1. ⁠Kulit yang Sehat dan Bersinar</span
-              >
-              <span class="inline-block mb-4" data-key="about9">
+              <span data-key="about8" class="font-semibold block">
+                1. ⁠Kulit yang Sehat dan Bersinar
+              </span>
+              <span class="block mb-4 font-light md:font-thin"  data-key="about9">
                 Diperkaya dengan vitamin E dan asam lemak esensial, minyak
                 kelapa Abila memberikan kelembapan mendalam untuk kulit yang
-                halus dan bercahaya.</span
-              >
-              <span class="font-semibold inline-block" data-key="about10"
-                >2.⁠ ⁠Rambut Kuat dan Berkilau :
+                halus dan bercahaya.
               </span>
-              <span class="inline-block mb-4" data-key="about11">
+              <span class="font-semibold block" data-key="about10">
+                2.⁠ ⁠Rambut Kuat dan Berkilau :
+              </span>
+              <span class="block mb-4 font-light md:font-thin" data-key="about11">
                 Gunakan sebagai masker rambut atau serum penata rambut alami,
                 minyak kelapa *Abila memperkuat helai rambut Anda, menjadikannya
                 lembut dan berkilau.
               </span>
-              <span class="font-semibold inline-block" data-key="about12">
+              <span class="font-semibold block" data-key="about12">
                 3.⁠ ⁠Antioksidan untuk Perlindungan
               </span>
-              <span class="inline-block mb-4" data-key="about13">
+              <span class="block mb-4 font-light md:font-thin" data-key="about13">
                 Perlindungan alami dari radikal bebas, membantu melawan penuaan
-                dini dan menjaga kulit tetap muda dan sehat.</span
-              >
-              <span class="font-semibold inline-block" data-key="about14">
+                dini dan menjaga kulit tetap muda dan sehat.
+              </span>
+              <span class="font-semibold block" data-key="about14">
                 4.⁠ ⁠Kemurnian yang Dijamin
               </span>
-              <span class="inline-block mb-4" data-key="about15">
+              <span class="block mb-4 font-light md:font-thin" data-key="about15">
                 Diproses dengan standar ketat untuk memastikan kemurnian
                 tertinggi, tanpa tambahan bahan kimia yang merugikan.
               </span>
-              <span class="font-semibold inline-block" data-key="about16">
-                5. ⁠Pilihan Ramah Lingkungan</span
-              >
-              <span class="inline-block mb-4" data-key="about17">
+              <span class="font-semibold block" data-key="about16">
+                5. ⁠Pilihan Ramah Lingkungan
+              </span>
+              <span class="block mb-4 font-light md:font-thin" data-key="about17">
                 Dibuat dengan memperhatikan keberlanjutan dan kualitas, Abila
                 memastikan bahwa setiap tetes minyak kelapa mendukung lingkungan
                 yang lebih baik.
               </span>
-              <span class="inline-block font-medium" data-key="about5">
+              <span class="block font-medium" data-key="about5">
                 Jadikan minyak kelapa murni Abila bagian dari rutinitas
                 kecantikan dan kesehatan Anda serta rasakan perbedaannya. Dengan
                 penggunaan yang konsisten, Anda tidak hanya merawat diri tetapi
@@ -321,27 +332,34 @@
             <p
               class="flex shadow-slate-500 shadow-md flex-wrap items-center w-full h-14 bg-white px-2 mb-7 rounded-r-full"
             >
-              <span class="inline text-black mr-1">Membantu Perawatan</span>
-              <span class="inline text-bg2">
+              <span class="inline text-black mr-1" data-key="about18"
+                >Membantu Perawatan</span
+              >
+              <span class="inline text-bg2" data-key="about19">
                 Untuk Kesehatan dan Kecantikan Anda</span
               >
             </p>
             <p
               class="flex shadow-slate-500 shadow-md flex-wrap items-center w-full h-14 bg-white px-2 mb-7 rounded-r-full"
             >
-              <span class="inline text-black mr-1"
+              <span class="inline text-black mr-1" data-key="about20"
                 >Tersertifikasi Halal Republik Indonesia dengan</span
               >
-              <span class="inline text-bg2"> ID00110000440040622</span>
+              <span class="inline text-bg2" data-key="about21">
+                ID00110000440040622</span
+              >
             </p>
             <p
               class="flex shadow-slate-500 shadow-md flex-wrap items-center w-full h-14 bg-white px-2 mb-7 rounded-r-full"
             >
-              <span class="inline text-black mr-1">Diperkaya dengan</span
-              ><span class="text-bg2 mr-1">Vitamin E</span>
-              <span class="text-black mr-1">dan</span>
-              <span class="text-bg2 mr-1">Asam Lemak Esensial</span>
-              <span class="text-black"
+              <span class="inline text-black mr-1" data-key="about22"
+                >Diperkaya dengan</span
+              ><span class="text-bg2 mr-1" data-key="about23">Vitamin E</span>
+              <span class="text-black mr-1" data-key="about24">dan</span>
+              <span class="text-bg2 mr-1" data-key="about25"
+                >Asam Lemak Esensial</span
+              >
+              <span class="text-black" data-key="about26"
                 >Untuk Membuat Kulit yang Sehat dan Bersinar</span
               >
             </p>
@@ -358,7 +376,7 @@
 
           <div class="em-content">
             <div class="em-number">3+</div>
-            <div class="em-title" data-key="Mitra">Mitra Kami</div>
+            <div class="em-title" data-key="mitra">Mitra Kami</div>
             <div class="em-link">
               <a href="#product" data-key="lihatmitra"> Lihat Mitra </a>
             </div>
@@ -381,8 +399,11 @@
 
     <!-- Product Section Start -->
     <section id="product" class="product">
-      <h2><span>Produk</span> Unggulan</h2>
-      <p>
+      <h2 class="text-center font-bold lg:text-4xl md:text-3xl text-2xl mb-8">
+        <span class="text-primary" data-key="product">Produk </span
+        ><span class="text-oren" data-key="unggul">Unggulan</span>
+      </h2>
+      <p data-key="product1">
         Jelajahi produk unggulan kami, favorit pelanggan dengan kualitas premium
         dan hasil nyata, dirancang untuk kecantikan dan kesehatan Anda.
       </p>
@@ -507,18 +528,13 @@
             alt=""
             class="absolute top-1/2 transform -translate-y-1/2 left-0 lg:w-60 w-52"
           />
-          <h2
-            data-key="keunggulan"
-            class="text-center font-bold lg:text-4xl md:text-3xl text-2xl"
-          >
+          <h2 class="text-center font-bold lg:text-4xl md:text-3xl text-2xl">
             <span class="text-primary drop-shadow-2xl" data-key="keunggulan1"
               >KEUNGGULAN </span
-            ><span
-              class="text-yellow-700 drop-shadow-2xl"
-              data-key="keunggulan2"
+            ><span class="text-oren drop-shadow-2xl" data-key="keunggulan2"
               >MINYAK
             </span>
-            <span class="text-yellow-700 drop-shadow-2xl" data-key="keunggulan3"
+            <span class="text-oren drop-shadow-2xl" data-key="keunggulan3"
               >KELAPA
             </span>
           </h2>
@@ -534,7 +550,7 @@
           <div class="blog-item">
             <div class="kutipan">
               <div class="mark-top">''</div>
-              <div class="content">
+              <div class="content" data-key="blog1">
                 VCO (virgin coconut oil) memang telah diteliti memiliki banyak
                 manfaat bagi kesehatan, di antaranya untuk membantu menurunkan
                 berat badan, mencegah serangan jantung, mengatasi resistensi
@@ -556,7 +572,7 @@
           <div class="blog-item">
             <div class="kutipan">
               <div class="mark-top">''</div>
-              <div class="content">
+              <div class="content" data-key="blog2">
                 Manfaat minyak kelapa untuk ibu hamil 6 bulan ke atas bisa
                 digunakan sebagai minyat pijat. Bagus untuk kulit, sekaligus
                 mengurasi rasa sakit dan nyeri otot yang biasanya datang pada
@@ -572,7 +588,7 @@
           <div class="blog-item">
             <div class="kutipan">
               <div class="mark-top">''</div>
-              <div class="content">
+              <div class="content" data-key="blog3">
                 Virgin Coconut Oil (VCO) aman-aman saja untuk dikonsumsi wanita
                 yang sedang hamil dan hingga saat ini tidak terbukti ada dampak
                 negatif tertentu terhadap kehamilan dan janin dalam kandungan.
@@ -594,7 +610,7 @@
           <div class="blog-item">
             <div class="kutipan">
               <div class="mark-top">''</div>
-              <div class="content">
+              <div class="content" data-key="blog4">
                 Minyak kelapa murni mampu mengembalikan pancaran kulit dalam
                 waktu singkat
               </div>
@@ -611,7 +627,7 @@
           <div class="blog-item">
             <div class="kutipan">
               <div class="mark-top">''</div>
-              <div class="content">
+              <div class="content" data-key="blog5">
                 Minyak kelapa adalah minyak yang paling penting karena
                 mengandung Asam Lemak laurat. Lemak laurat memiliki sifat unik
                 untuk digunakan dalam industri makanan serta penggunaan sabun
@@ -630,7 +646,7 @@
           <div class="blog-item">
             <div class="kutipan">
               <div class="mark-top">''</div>
-              <div class="content">
+              <div class="content" data-key="blog6">
                 minyak kelapa murni bukanlah hal baru. Penggunaannya telah
                 digunakan oleh praktisi pengobatan Ayurveda di India sejak 3
                 hingga 4 ribu tahun yang lalu. ini karena minyak kelapa murni
@@ -649,7 +665,7 @@
           <div class="blog-item">
             <div class="kutipan">
               <div class="mark-top">''</div>
-              <div class="content">
+              <div class="content" data-key="blog7">
                 Minyak kelapa membantu mencegah obesitas, meningkatkan
                 kekebalan, melindungi dari bakteri, virus dan jamur sekaligus
                 memastikan jantung yang sehat
@@ -667,12 +683,12 @@
           <div class="blog-item">
             <div class="kutipan">
               <div class="mark-top">''</div>
-              <div class="content">
-                VJika ada minyak yang bisa digunakan setiap hari untuk makan
-                yang membantu masalah jantung, kanker dan penyakit kritis
-                lainnya serta membantu proses pencernaan dan sistem kekebalan
-                tubuh, apakah Anda tertarik? Jika demikian, saya sarankan
-                mengambil minyak kelapa
+              <div class="content" data-key="blog8">
+                Jika ada minyak yang bisa digunakan setiap hari untuk makan yang
+                membantu masalah jantung, kanker dan penyakit kritis lainnya
+                serta membantu proses pencernaan dan sistem kekebalan tubuh,
+                apakah Anda tertarik? Jika demikian, saya sarankan mengambil
+                minyak kelapa
               </div>
               <div class="mark-bot">''</div>
               <div class="sumber">
@@ -687,7 +703,7 @@
           <div class="blog-item">
             <div class="kutipan">
               <div class="mark-top">''</div>
-              <div class="content">
+              <div class="content" data-key="blog9">
                 minyak kelapa meningkatkan pencernaan yang sehat dan
                 anti-inflamasi. Keduanya penting dalam membantu meredakan
                 refluks alias asam lambung naik yang menyakitkan selama akhir
@@ -703,66 +719,6 @@
               </div>
             </div>
           </div>
-          <!-- <div class="blog1">
-            <div class="blog-img">
-              <img
-                src="image/abilahome1.png"
-                alt="Cococnut Oil1"
-                width="100%"
-              />
-            </div>
-            <div class="blog-isi">
-              <div class="blog-judul">Lorem ipsum dolor sit amet.</div>
-              <div class="blog-resume">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
-                voluptatibus.
-                <a
-                  href="http://ners.unair.ac.id/site/index.php/news-fkp-unair/30-lihat/1391-inilah-4-manfaat-minyak-kelapa-untuk-kesehatan-tubuh"
-                  >Baca selengkapnya></a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="blog2">
-            <div class="blog-img">
-              <img
-                src="image/abilahome1.png"
-                alt="Cococnut Oil1"
-                width="100%"
-              />
-            </div>
-            <div class="blog-isi">
-              <div class="blog-judul">Lorem ipsum dolor sit amet.</div>
-              <div class="blog-resume">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
-                voluptatibus.
-                <a
-                  href="http://ners.unair.ac.id/site/index.php/news-fkp-unair/30-lihat/1391-inilah-4-manfaat-minyak-kelapa-untuk-kesehatan-tubuh"
-                  >Baca selengkapnya></a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="blog1">
-            <div class="blog-img">
-              <img
-                src="image/abilahome1.png"
-                alt="Cococnut Oil1"
-                width="100%"
-              />
-            </div>
-            <div class="blog-isi">
-              <div class="blog-judul">Lorem ipsum dolor sit amet.</div>
-              <div class="blog-resume">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
-                voluptatibus.
-                <a
-                  href="http://ners.unair.ac.id/site/index.php/news-fkp-unair/30-lihat/1391-inilah-4-manfaat-minyak-kelapa-untuk-kesehatan-tubuh"
-                  >Baca selengkapnya></a
-                >
-              </div>
-            </div>
-          </div> -->
         </div>
       </div>
     </section>
@@ -771,41 +727,138 @@
 
     <!-- FAQ Section Start -->
     <section id="FAQ" class="FAQ">
-      <h2 data-key="faq"><span>Cari Tahu tentang</span> Abila</h2>
+      <h2 class="text-center font-bold lg:text-4xl md:text-3xl text-2xl mb-8">
+        <span class="text-primary" data-key="faq1">FAQ : </span
+        ><span class="text-oren" data-key="faq2">Minyak Kelapa Murni </span>
+        <span class="text-unggul">Abila</span>
+      </h2>
       <div class="QnA-border">
         <div class="QnA">
-          <button class="Question" data-key="q1">
-            Lorem ipsum dolor sit amet.?
+          <button
+            class="Question text-2xl p-4 md:text-xl font-semibold"
+            data-key="q1"
+          >
+            Apa itu minyak kelapa murni ?
           </button>
-          <div class="Answer">
+          <div class="Answer text-xl md:text-lg p-4">
             <p data-key="a1">
-              ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-              odio quae iusto molestiae iure facilis aut aperiam cupiditate
-              inventore nihil.
+              Minyak kelapa murni adalah minyak yang diperoleh dari daging
+              kelapa segar yang diproses tanpa menggunakan bahan kimia atau
+              pemanasan berlebih. Proses ini mempertahankan kualitas nutrisi dan
+              rasa alami minyak kelapa.
             </p>
           </div>
         </div>
         <div class="QnA">
-          <button class="Question" data-key="q2">
-            Lorem ipsum dolor sit amet.?
+          <button
+            class="Question text-2xl p-4 md:text-xl font-semibold"
+            data-key="q2"
+          >
+            Apa perbedaan antara minyak kelapa murni dan minyak kelapa
+            terhidrogenasi ?
           </button>
-          <div class="Answer">
+          <div class="Answer text-xl md:text-lg p-4">
             <p data-key="a2">
-              ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-              odio quae iusto molestiae iure facilis aut aperiam cupiditate
-              inventore nihil.
+              Minyak kelapa murni adalah minyak yang diperoleh dari kelapa segar
+              tanpa proses kimia tambahan, sementara minyak kelapa
+              terhidrogenasi telah mengalami proses kimia untuk meningkatkan
+              umur simpan dan stabilitasnya, yang dapat menghilangkan beberapa
+              manfaat kesehatan.
             </p>
           </div>
         </div>
         <div class="QnA">
-          <button class="Question" data-key="q3">
-            Lorem ipsum dolor sit amet.?
+          <button
+            class="Question text-2xl p-4 md:text-xl font-semibold"
+            data-key="q3"
+          >
+            Apa manfaat kesehatan dari minyak kelapa murni ?
           </button>
-          <div class="Answer">
+          <div class="Answer text-xl md:text-lg p-4">
             <p data-key="a3">
-              ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-              odio quae iusto molestiae iure facilis aut aperiam cupiditate
-              inventore nihil.
+              Minyak kelapa murni mengandung asam lemak jenuh sehat, seperti
+              asam laurat, yang dapat mendukung kesehatan jantung, meningkatkan
+              sistem kekebalan tubuh, dan memiliki sifat anti-inflamasi dan
+              antibakteri.
+            </p>
+          </div>
+        </div>
+        <div class="QnA">
+          <button
+            class="Question text-2xl p-4 md:text-xl font-semibold"
+            data-key="q4"
+          >
+            Bagaimana cara menyimpan minyak kelapa murni?
+          </button>
+          <div class="Answer text-xl md:text-lg p-4">
+            <p data-key="a4">
+              Simpan minyak kelapa murni di tempat yang sejuk dan kering, jauh
+              dari sinar matahari langsung. Jika disimpan dengan benar, minyak
+              kelapa murni dapat bertahan lama tanpa mudah tengik.
+            </p>
+          </div>
+        </div>
+        <div class="QnA">
+          <button
+            class="Question text-2xl p-4 md:text-xl font-semibold"
+            data-key="q5"
+          >
+            Bisakah minyak kelapa murni digunakan untuk memasak?
+          </button>
+          <div class="Answer text-xl md:text-lg p-4">
+            <p data-key="a5">
+              Ya, minyak kelapa murni cocok untuk memasak karena memiliki titik
+              asap yang tinggi, sehingga aman digunakan untuk memasak dengan
+              suhu tinggi. Selain itu, rasanya yang lembut dapat menambah cita
+              rasa pada berbagai hidangan.
+            </p>
+          </div>
+        </div>
+        <div class="QnA">
+          <button
+            class="Question text-2xl p-4 md:text-xl font-semibold"
+            data-key="q6"
+          >
+            Apa saja penggunaan lain dari minyak kelapa murni? ?
+          </button>
+          <div class="Answer text-xl md:text-lg p-4">
+            <p data-key="a6">
+              Selain digunakan dalam memasak, minyak kelapa murni juga sering
+              digunakan dalam perawatan kulit dan rambut, seperti untuk
+              melembapkan kulit, mengurangi kerutan, atau sebagai masker rambut.
+            </p>
+          </div>
+        </div>
+        <div class="QnA">
+          <button
+            class="Question text-2xl p-4 md:text-xl font-semibold"
+            data-key="q7"
+          >
+            Apakah minyak kelapa murni aman untuk semua orang?
+          </button>
+          <div class="Answer text-xl md:text-lg p-4">
+            <p data-key="a7">
+              Minyak kelapa murni umumnya aman untuk sebagian besar orang,
+              tetapi bagi mereka yang memiliki alergi terhadap kelapa atau
+              kondisi kesehatan tertentu, sebaiknya konsultasikan dengan
+              profesional medis sebelum menggunakannya.
+            </p>
+          </div>
+        </div>
+        <div class="QnA">
+          <button
+            class="Question text-2xl p-4 md:text-xl font-semibold"
+            data-key="q8"
+          >
+            Bagaimana cara membedakan minyak kelapa murni dari minyak kelapa
+            biasa?
+          </button>
+          <div class="Answer text-xl md:text-lg p-4">
+            <p data-key="a8">
+              Minyak kelapa murni biasanya memiliki label yang menyebutkan bahwa
+              produk tersebut "virgin" atau "extra virgin", dan umumnya memiliki
+              aroma kelapa yang khas. Minyak kelapa biasa atau olahan mungkin
+              memiliki proses pemurnian dan penghilangan rasa.
             </p>
           </div>
         </div>
@@ -1158,7 +1211,7 @@
     </script>
 
     <!-- My Javascript -->
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
     <!-- jQuery (required for Slick Slider) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Slick Slider JS -->
