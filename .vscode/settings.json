@@ -1,0 +1,5 @@
+{
+  "liveServer.settings.port": 5501,
+  "git.enabled": true,
+  "git.path": "/usr/local/bin/git"
+}

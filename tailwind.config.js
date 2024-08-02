@@ -11,7 +11,8 @@ module.exports = {
         text: "#808080",
         text2: "#fff9d0",
         unggul: "#feaa37",
-        foter: '#78948D'
+        foter: "#78948D",
+        oren: "#a16207",
       },
       backgroundColor: {
         coklat: "C6A969",

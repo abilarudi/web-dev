@@ -272,10 +272,7 @@ body {
 }
 
 /* .about h2, */
-.contact h2,
-.catalog h2,
-.category h3,
-.FAQ h2 {
+.contact h2 .category h3 {
   text-align: center;
   font-size: 2.6rem;
   margin: 3rem;
@@ -285,7 +282,7 @@ body {
   margin-top: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
-.product h2 {
+/* .product h2 {
   text-align: center;
   font-size: 2.6rem;
   font-weight: 700;
@@ -295,19 +292,17 @@ body {
   color: #03484a;
   margin-top: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* .about h2 span, */
 .contact h2 span,
-.catalog h2 span,
-.category h3 span,
-.FAQ h2 span {
+.category h3 span {
   color: var(--primary);
 }
-.product h2 span {
+/* .product h2 span {
   color: #a16207;
-  font-weight: 700;
-}
+  font-weight: 700; 
+}*/
 
 .about .row {
   display: flex;
@@ -511,7 +506,6 @@ body {
   padding: 8rem 7% 1.4rem;
 } */
 
-.product h2,
 .contact h2,
 .FAQ h2 {
   margin-bottom: 3rem;
@@ -844,11 +838,9 @@ body {
   background-color: var(--bg);
   color: var(--primary);
   cursor: pointer;
-  padding: 18px;
   width: 100%;
   text-align: left;
   outline: none;
-  font-size: 14px;
   transition: 0.4s;
   border-top: 2px solid var(--primary);
 }
@@ -857,11 +849,9 @@ body {
   background-color: #ffffec;
 }
 .FAQ .QnA .Answer {
-  padding: 1rem;
   display: none;
   background-color: #ffffec;
   overflow: hidden;
-  font-size: 12px;
   border-bottom: 2px solid var(--primary);
 }
 
@@ -1378,7 +1368,7 @@ html {
     font-size: 1.2rem;
   }
   .product .row-product .product-card img {
-    width: 60%;
+    /* width: 60%; */
   }
   .product .row-product .product-card .top-desk {
     font-size: 14px;
@@ -1555,7 +1545,7 @@ html {
     font-size: 1.2rem;
   }
   .product .row-product .product-card img {
-    width: 60%;
+    /* width: 60%; */
   }
   .product .row-product .product-card .top-desk {
     font-size: 14px;
