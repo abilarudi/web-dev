@@ -22,4 +22,15 @@ document.addEventListener('DOMContentLoaded', function() {
     decrementButton.addEventListener('click', function() {
       updateCounter(-1);
     });
+<<<<<<< HEAD
   });
+=======
+  });
+
+// function toggle class active shopping cart
+const cart = document.querySelector('#shopping-cart');
+document.querySelector('#shopping').onclick = (e) => {
+  cart.classList.toggle('active');
+  e.preventDefault();
+}
+>>>>>>> e0a44539420263f305d596bfe30ba88839226fba
