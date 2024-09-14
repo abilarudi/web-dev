@@ -210,7 +210,6 @@ document
 
 // Klik di mana saja untuk menghilangkan filter
 
-
 function setLanguage(lang) {
   localStorage.setItem("selectedLang", lang);
   console.log("lang : ", lang);
@@ -541,8 +540,8 @@ function applyTranslations(lang) {
         "VCO Oil Minyak Kelapa Murni 500ml - Minyak VCO Untuk Kecantikan - Minyak Virgin Coconut Oil Herbal",
       // Cat1Pro
       jumlah: "Jumlah : ",
-      keranjang: "Masukkan Keranjang",
-      beli: "Beli Sekarang",
+      keranjang: "Order via Shopee",
+      beli: "Order via WhatsApp",
       desc: "Deskripsi",
       howto: "Cara Penggunaan",
       review: "Review",
