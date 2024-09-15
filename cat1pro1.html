@@ -41,11 +41,11 @@
       </div>
 
       <div class="navbar-nav">
-        <a href="index.html#home" data-key="home">Beranda</a>
-        <a href="index.html#about" data-key="about">Tentang Kami</a>
-        <a href="index.html#product" data-key="product">Produk</a>
-        <a href="index.html#contact" data-key="contact">Kontak</a>
-        <a href="catalog.html#catalog" data-key="catalog">Katalog</a>
+        <a href="index.html#home" data-key="home"></a>
+        <a href="index.html#about" data-key="about"></a>
+        <a href="index.html#product" data-key="product"></a>
+        <a href="index.html#contact" data-key="contact"></a>
+        <a href="catalog.html#catalog" data-key="catalog"></a>
       </div>
 
       <div class="navbar-extra flex my-4">
@@ -138,11 +138,6 @@
       <div
         class="relative container flex flex-col mx-auto lg:flex-row text-gray-800 rounded-xl mt-20 mb-6 bg-orange-100"
       >
-        <!-- <img
-          src="image/catalogpro/bg-putih.svg"
-          alt=""
-          class="w-[50%] h-full absolute z-20 bottom-0 left-0 hidden md:block"
-        /> -->
         <img
           src="image/catalogpro/+.svg"
           alt=""
@@ -277,9 +272,7 @@
                   +
                 </button>
               </div>
-              <div class="text-xl mt-2">
-                <p>Tersisah 1000 produk</p>
-              </div>
+        
             </div>
           </div>
 
@@ -448,24 +441,6 @@
             </div>
           </div> -->
         </div>
-        <script>
-          function openCity(evt, cityName) {
-            var i, sumcontent, desk;
-            sumcontent = document.getElementsByClassName("sumcontent");
-            for (i = 0; i < sumcontent.length; i++) {
-              sumcontent[i].style.display = "none";
-            }
-            desk = document.getElementsByClassName("desk");
-            for (i = 0; i < desk.length; i++) {
-              desk[i].className = desk[i].className.replace(" active", "");
-            }
-            document.getElementById(cityName).style.display = "block";
-            evt.currentTarget.className += " active";
-          }
-          document.addEventListener("DOMContentLoaded", function () {
-            openCity(null, "Deskripsi");
-          });
-        </script>
       </div>
     </section>
 

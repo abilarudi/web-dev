@@ -1,3 +1,32 @@
+// Function to load a component and apply translations
+function loadComponent(url, elementId, lang) {
+  fetch(url)
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById(elementId).innerHTML = data;
+      // Optionally, reinitialize any scripts or libraries here
+      feather.replace(); // Example: reinitialize Feather icons
+
+      // Apply translations and update language styles
+      applyTranslations(lang);
+      updateLanguageStyles(lang);
+      initializeNavbar();
+    })
+    .catch((error) => console.error("Error loading component:", error));
+}
+
+// Load the navbar and footer when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  const selectedLang = localStorage.getItem("selectedLang") || "id";
+  if (!selectedLang) {
+    // Auto-detect user language
+    const userLang = navigator.language || navigator.userLanguage;
+    selectedLang = userLang.startsWith("id") ? "id" : "en";
+  }
+  loadComponent("/component/navbar.html", "navbar", selectedLang);
+  loadComponent("/component/footer.html", "footer", selectedLang);
+});
+
 // Toggle class active
 const navbarNav = document.querySelector(".navbar-nav");
 let overlay = document.querySelector(".dark-overlay");
@@ -148,21 +177,34 @@ function highlightText(text, query) {
   const regex = new RegExp(`(${query})`, "gi");
   return text.replace(regex, '<span class="highlight">$1</span>');
 }
-//ketika humburger menu diklik
-document.querySelector("#hamburger-menu").onclick = () => {
-  navbarNav.classList.toggle("active");
-  overlay.classList.toggle("active"); // Show or hide the overlay
-};
+function initializeNavbar() {
+  const hamburger = document.querySelector("#hamburger-menu");
+  const navbarNav = document.querySelector(".navbar-nav"); // Assuming the navbar has a class of 'navbar-nav'
+  let overlay = document.querySelector(".dark-overlay");
 
-//klik di luar sidebar untuk menghilangkan nav
-const hamburger = document.querySelector("#hamburger-menu");
-
-document.addEventListener("click", function (e) {
-  if (!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
-    navbarNav.classList.remove("active");
-    overlay.classList.remove("active");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.className = "dark-overlay hidden";
+    document.body.appendChild(overlay);
   }
-});
+
+  // Toggle navbar and overlay when hamburger menu is clicked
+  hamburger.onclick = () => {
+    navbarNav.classList.toggle("active");
+    overlay.classList.toggle("active");
+  };
+
+  // Hide navbar and overlay when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
+      navbarNav.classList.remove("active");
+      overlay.classList.remove("active");
+    }
+  });
+}
+
+// Call the function to initialize the navbar functionality
+document.addEventListener("DOMContentLoaded", initializeNavbar);
 
 // Efek Bg Navbar saat di scroll
 window.onscroll = function () {
