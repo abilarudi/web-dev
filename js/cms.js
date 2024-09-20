@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 async function fetchAndDisplayFAQ() {
   try {
     const response = await fetch(
-      "https://admin.abilaindonesia.com/wp-json/custom-cms/v1/faq-section"
+      "https://abilaindonesia.com/wp/wp-json/custom-cms/v1/faq-section"
     );
 
     if (!response.ok) {
@@ -149,7 +149,7 @@ async function fetchAndDisplayFAQ() {
 async function fetchAndDisplayArticles() {
   try {
     const response = await fetch(
-      "https://admin.abilaindonesia.com/wp-json/custom-cms/v1/article-section"
+      "https://abilaindonesia.com/wp/wp-json/custom-cms/v1/article-section"
     );
     if (!response.ok) {
       throw new Error("Failed to fetch article data");

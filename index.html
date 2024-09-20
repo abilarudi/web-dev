@@ -559,6 +559,7 @@
               >Nama Lengkap</span
             >
             <input
+              id="fullname"
               type="text"
               placeholder="Input your Name"
               class="block px-3 w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100 text-yellow-950"
@@ -569,6 +570,7 @@
               >Alamat Email</span
             >
             <input
+              id="email"
               type="email"
               placeholder="Input your Email"
               class="block px-3 w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100 text-yellow-950"
@@ -577,6 +579,7 @@
           <label class="block">
             <span class="mb-1 font-semibold" data-key="formmsg">Pesan</span>
             <textarea
+              id="message"
               rows="3"
               placeholder="Input your Message"
               class="block px-3 w-full rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100 text-yellow-950"
@@ -586,6 +589,7 @@
             type="button"
             class="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-yellow-800 hover:ring-white"
             data-key="submit"
+            onclick="sendToWhatsApp()"
           >
             Kirim
           </button>
@@ -605,7 +609,7 @@
     </script>
 
     <!-- My Javascript -->
-    <script src="js/script.js" defer></script>
+    <script src="js/script.js"></script>
     <script src="js/cms.js" defer></script>
     <script src="js/cat1pro.js"></script>
     <!-- jQuery (required for Slick Slider) -->
