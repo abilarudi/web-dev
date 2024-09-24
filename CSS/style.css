@@ -565,6 +565,8 @@ body {
   margin-top: 50px;
   .top-detail {
     position: relative;
+    display: flex;
+    justify-content: between;
     bottom: 0;
     align-items: center;
     top: 0;
