@@ -585,7 +585,7 @@ const translations = {
       "Minyak kelapa murni dalam kemasan 250 ml ini terbuat dari 100% santan kelapa segar pilihan yang diolah tanpa bahan kimia tambahan. Minyak ini kaya akan manfaat untuk kesehatan dan kecantikan, menjadikannya pilihan ideal untuk berbagai kebutuhan di rumah Anda.",
     contact1: "Hubungi Kami",
     contact2: "Berikut Kontak dan Alamat Abila Indonesia",
-    alamat: "Perum. Bumi Asri Blok E-10 Kec Kota, kediri, 64126",
+    alamat: "Perum. Bumi Asri Blok E-10 Kec Kota, Kediri, 64126",
     telp: "+62 818-1880-7558",
     email: "abilarudi@gmail.com",
     formname: "Nama Lengkap",
@@ -638,7 +638,6 @@ function sendToWhatsApp() {
   // Open WhatsApp with the pre-filled message
   window.open(whatsappURL, "_blank");
 }
-
 
 // Update language button styles
 function updateLanguageStyles(lang) {
