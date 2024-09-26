@@ -565,6 +565,8 @@ body {
   margin-top: 50px;
   .top-detail {
     position: relative;
+    display: flex;
+    justify-content: between;
     bottom: 0;
     align-items: center;
     top: 0;
@@ -689,13 +691,16 @@ body {
 /* Blog Section */
 .blog {
   background-color: #ede1d1;
+  height: max;
 }
 /* NEW */
 .blog .blog-content {
-  display: flex;
+  height: max;
+  width: max;
   margin: 3rem;
   border-radius: 3rem;
-  display: -webkit- flex;
+  display: -webkit- grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   background-color: var(--primary);
   .blog-item {
     margin: 3rem;
@@ -1409,6 +1414,12 @@ html {
     width: 100%;
     margin: 20px;
   }
+  .blog .blog-content {
+    width: full;
+    height: max;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin: 3rem;
+  }
 }
 
 /* yang mobile belum diatur aboutnya */
@@ -1596,6 +1607,12 @@ html {
   .category .border-product {
     width: 100%;
     margin: 20px;
+  }
+
+  .blog .blog-content {
+    width: full;
+    height: max;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
 /* Responsive break point?
