@@ -19,68 +19,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 // Function to fetch and display FAQ
-// async function fetchAndDisplayFAQ() {
-//   const response = await fetch(
-//     "https://admin.abilaindonesia.com/wp-json/custom-cms/v1/faq-section"
-//   );
-//   if (!response.ok) {
-//     throw new Error("Failed to fetch FAQ data");
-//   }
-
-//   const data = await response.json();
-//   const qnaContainer = document.getElementById("QnA-border");
-
-//   // Create a fragment to minimize reflows and repaints
-//   const fragment = document.createDocumentFragment();
-
-//   data.forEach((faq) => {
-//     const qnaDiv = createElement("div", null, ["QnA"]);
-
-//     const questionButton = createElement("button", faq.tanya, [
-//       "Question",
-//       "text-2xl",
-//       "p-4",
-//       "md:text-xl",
-//       "font-semibold",
-//     ]);
-//     questionButton.dataset.key = `q${faq.id}`;
-
-//     const answerDiv = createElement("div", null, [
-//       "Answer",
-//       "text-xl",
-//       "md:text-lg",
-//       "p-4",
-//     ]);
-//     answerDiv.style.display = "none"; // Initially hide answers
-
-//     const answerParagraph = createElement("p", faq.jawab);
-//     answerParagraph.dataset.key = `a${faq.id}`;
-
-//     answerDiv.appendChild(answerParagraph);
-//     appendChildren(qnaDiv, [questionButton, answerDiv]);
-
-//     // Append the QnA div to the fragment
-//     fragment.appendChild(qnaDiv);
-
-//     // Add event listener for accordion effect
-//     questionButton.addEventListener("click", function () {
-//       this.classList.toggle("active");
-//       if (answerDiv.style.display === "block") {
-//         answerDiv.style.display = "none";
-//       } else {
-//         answerDiv.style.display = "block";
-//       }
-//     });
-//   });
-
-//   // Append the fragment to the container
-//   qnaContainer.appendChild(fragment);
-// }
-// Function to fetch and display FAQ
 async function fetchAndDisplayFAQ() {
   try {
     const response = await fetch(
-      "https://abilaindonesia.com/wp/wp-json/custom-cms/v1/faq-section"
+      "https://admin.abilaindonesia.com/wp-json/custom-cms/v1/faq-section"
     );
 
     if (!response.ok) {
@@ -149,7 +91,7 @@ async function fetchAndDisplayFAQ() {
 async function fetchAndDisplayArticles() {
   try {
     const response = await fetch(
-      "https://abilaindonesia.com/wp/wp-json/custom-cms/v1/article-section"
+      "https://admin.abilaindonesia.com/wp-json/custom-cms/v1/article-section"
     );
     if (!response.ok) {
       throw new Error("Failed to fetch article data");
