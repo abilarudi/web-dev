@@ -13,11 +13,33 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Initialize slick carousel and event listeners
     initializeSlickCarousel();
+
+    // Initialize slick carousel for product section
+    initializeSlickProducts();
   } catch (error) {
     console.error("Error fetching the data:", error);
   }
 });
 
+// Use the window load event to initialize the Slick carousel only after everything, including images, has loaded
+// Ensure the slick carousel initializes after everything is fully loaded
+window.addEventListener("load", async function () {
+  try {
+    // Fetch and display FAQ
+    await fetchAndDisplayFAQ();
+
+    // Fetch and display articles
+    await fetchAndDisplayArticles();
+
+    // Fetch and display products
+    await fetchAndDisplayProducts();
+
+    // Initialize slick carousel after content is fully loaded
+    initializeSlickProducts();
+  } catch (error) {
+    console.error("Error fetching the data:", error);
+  }
+});
 // Function to fetch and display FAQ
 async function fetchAndDisplayFAQ() {
   try {
@@ -402,46 +424,10 @@ async function fetchAndDisplayProducts() {
   }
 }
 
-// Utility function to create an element with optional text and class names
-// function createElement(tag, textContent = null, classNames = []) {
-//   const element = document.createElement(tag);
-//   if (textContent) element.textContent = textContent;
-//   if (classNames.length) element.classList.add(...classNames);
-//   return element;
-// }
-
 // Utility function to append multiple children to a parent element
 function appendChildren(parent, children) {
   children.forEach((child) => parent.appendChild(child));
 }
-
-// Improved lazyLoadImages function with throttling and better performance
-// function lazyLoadImages() {
-//   const lazyImages = document.querySelectorAll("img.lazy");
-
-//   if ("IntersectionObserver" in window) {
-//     const lazyImageObserver = new IntersectionObserver((entries, observer) => {
-//       entries.forEach((entry) => {
-//         if (entry.isIntersecting) {
-//           const lazyImage = entry.target;
-//           lazyImage.src = lazyImage.dataset.src;
-//           lazyImage.classList.remove("lazy");
-//           lazyImageObserver.unobserve(lazyImage);
-//         }
-//       });
-//     });
-
-//     lazyImages.forEach((lazyImage) => {
-//       lazyImageObserver.observe(lazyImage);
-//     });
-//   } else {
-//     // Fallback for older browsers
-//     lazyImages.forEach((lazyImage) => {
-//       lazyImage.src = lazyImage.dataset.src;
-//       lazyImage.classList.remove("lazy");
-//     });
-//   }
-// }
 
 // Function to initialize accordion click listeners
 function initializeAccordions() {
@@ -506,7 +492,9 @@ function initializeSlickCarousel() {
       init();
     });
   });
+}
 
+function initializeSlickProducts() {
   // Initialize slick carousel for product section
   $(document).ready(function () {
     $(".row-product").slick({
