@@ -245,6 +245,8 @@
         const product = products.find((p) => p.id == productId);
 
         if (product) {
+          // Format product.description and product.benefits
+          const formattedDescription = formatDescription(product.description);
           productContainer.innerHTML = `
           <section
   class="p-10 w-full h-max relative"
@@ -422,18 +424,9 @@
               <div class="border-sum">
                 <div id="Deskripsi" class="sumcontent" style="display:block">
                   <div class="desc-fix">
-                    <div class="title-desc p-5 font-semibold text-2xl">Deskripsi Produk</div>
-                    <div  class="content-desc p-5 text-xl">${
-                      product.description
-                    }</div>
+                    <div  class="content-desc p-5 text-xl">${formattedDescription}</div>
                   </div>
 
-                  <div class="desc-fix">
-                    <div class="title-desc p-5 font-semibold text-2xl">Manfaat</div>
-                    <div  class="content-desc p-5 text-xl">${
-                      product.benefits
-                    }</div>
-                  </div>
                 </div>
 
                 <div id="Cara Penggunaan howto" class="sumcontent">
@@ -448,44 +441,6 @@
           productContainter.innerHTML = "<p>Product not found.</p>";
         }
 
-        // Add Container to the body
-        // newDiv.id = "product-detail";
-        // document.body.appendChild(newDiv);
-        // document.body.appendChild(footers);
-        // // footers.classList.add("w-full", "h-max", "bg-teal-800", "text-white");
-        // footers.innerHTML = footer.innerHTML;
-
-        // const productListContainer = document.getElementById("product-list");
-        // productListContainer.style.display = "none";
-        // const productDetailContainer =
-        //   document.getElementById("product-detail");
-        // const productd = products.find((p) => p.id == productId);
-
-        // if (productd) {
-        //   productDetailContainer.innerHTML = `
-        //                 <h2>${product.title}</h2>
-        //                 <img src="${product.thumbnail}" alt="${
-        //     product.title
-        //   }" />
-        //                 <p>Price: ${product.price}</p>
-        //                 <p>Description: ${product.description}</p>
-        //                 <p>How To Use: ${product.howto}</p>
-        //                 <p>Sold: ${product.selled}</p>
-        //                 <div>
-        //                     ${product.media
-        //                       .map(
-        //                         (image) =>
-        //                           `<img src="${image}" style="width: 100px; margin-right: 10px;">`
-        //                       )
-        //                       .join("")}
-        //                 </div>
-        //                 <a href="${sendwa()}">Back to product list</a>
-        //                 <a href="/catalog.html">Back to product list</a>
-        //             `;
-        // } else {
-        //   productDetailContainer.innerHTML = "<p>Product not found.</p>";
-        // }
-
         // Wait for the content to be fully loaded
         await new Promise((resolve) => {
           if (document.readyState === "complete") {
@@ -494,6 +449,26 @@
             window.addEventListener("load", resolve);
           }
         });
+      }
+      // Function to format description based on asterisks (*) and double line breaks (\r\n\r\n)
+      function formatDescription(text) {
+        // Split the description based on double \r\n\r\n
+        let paragraphs = text.split("\r\n\r\n");
+
+        return paragraphs
+          .map((paragraph) => {
+            // Check for *{sentence}* pattern
+            if (paragraph.includes("*")) {
+              // Replace *{sentence}* with div.title-desc
+              paragraph = paragraph.replace(/\*(.*?)\*/g, (match, p1) => {
+                return `<div class="title-desc font-semibold text-2xl"><span>${p1}</span></div>`;
+              });
+            }
+
+            // Wrap remaining content in div.content-desc
+            return `<div class="content-desc p-5 text-xl">${paragraph}</div>`;
+          })
+          .join(""); // Combine all formatted paragraphs
       }
 
       document.addEventListener("DOMContentLoaded", () => {
@@ -516,8 +491,11 @@
         // Product detail route
         function showProductDetail() {
           const hash = window.location.hash.substring(1); // Remove #
+          console.log("hash : " + window.location.hash);
           const [path, id] = hash.split("/");
           if (path === "product") {
+            console.log("path : " + path);
+            console.log("id : " + id);
             renderProductDetail(id, products);
           } else {
             showHome();

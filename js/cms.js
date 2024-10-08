@@ -141,6 +141,167 @@ async function fetchAndDisplayArticles() {
 }
 
 // Function to Fetch and Display Products
+// async function fetchAndDisplayProducts() {
+//   try {
+//     const response = await fetch(
+//       "https://admin.abilaindonesia.com/wp-json/custom-cms/v1/product-section"
+//     );
+//     if (!response.ok) {
+//       throw new Error("Failed to fetch product data");
+//     }
+
+//     const data = await response.json();
+//     const productListContainer = document.getElementById("product-list");
+//     const catContainer = document.getElementById("cat"); // New container for the template
+
+//     // Create a fragment to minimize reflows and repaints
+//     const fragment = document.createDocumentFragment();
+//     const catFragment = document.createDocumentFragment(); // New fragment for the template
+
+//     data.forEach((product) => {
+//       const productLink = createElement("a", product.title);
+//       productLink.href = `#product/${product.id}`;
+//       productLink.style.display = "block";
+
+//       // Append the link to the fragment
+//       fragment.appendChild(productLink);
+
+//       // Create the new template and append it to the catFragment
+//       const productCard = document.createElement("div");
+//       productCard.classList.add("relative", "mx-auto", "w-full");
+
+//       productCard.innerHTML = `
+//         <a
+//           href="#product/${product.id}"
+//           class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"
+//         >
+//           <div class="relative z-0 shadow p-4 rounded-lg bg-white">
+//             <p
+//               class="absolute z-10 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded"
+//               data-key="terlaris"
+//             >
+//               Produk terlaris
+//             </p>
+//             <div
+//               class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden w-40 h-max md:w-56 md:h-56 mt-7"
+//             >
+//               <img
+//                 src="${product.thumbnail}"
+//                 alt="${product.title}"
+//                 class="w-full h-full"
+//               />
+//               <div
+//                 class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full"
+//               >
+//                 <div class="absolute inset-0 bg-black opacity-10"></div>
+//               </div>
+//             </div>
+
+//             <div class="mt-4 border-b-2">
+//               <h2
+//                 class="font-bold text-base md:text-lg text-gray-800 line-clamp-1"
+//                 title="${product.title}"
+//                 data-key="vco250"
+//               >
+//                 ${product.title}
+//               </h2>
+//               <p
+//                 class="mt-2 text-sm text-gray-800 line-clamp-1 mb-2"
+//                 title="${product.description}"
+//                 data-key="vco250title"
+//               >
+//                 ${product.description}
+//               </p>
+//             </div>
+
+//             <div class="grid grid-cols-2 gap-3 mt-8">
+//               <div class="flex items-center">
+//                 <div class="relative">
+//                   <div class="">
+//                     <span class="text-yellow-800 font-bold text-sm">${product.selled}</span>
+//                   </div>
+//                   <span
+//                     class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"
+//                   ></span>
+//                 </div>
+
+//                 <p
+//                   class="ml-2 text-gray-800 line-clamp-1 text-sm"
+//                   data-key="terjual"
+//                 >
+//                   Produk Terjual
+//                 </p>
+//               </div>
+
+//               <div class="flex justify-end">
+//                 <p
+//                   class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2"
+//                 >
+//                   <span class="text-sm" data-key="sekarang">Dapatkan Sekarang</span>
+//                 </p>
+//               </div>
+//             </div>
+//           </div>
+//         </a>
+//       `;
+
+//       catFragment.appendChild(productCard); // Append the card to the catFragment
+//     });
+
+//     // Append the fragments to their respective containers
+//     productListContainer.appendChild(fragment);
+//     catContainer.appendChild(catFragment); // Append the catFragment to #cat
+
+//     // After the product list is loaded, initialize routing
+//     setupRoutes(data);
+//   } catch (error) {
+//     console.error("Error fetching product data:", error);
+//   }
+// }
+
+// // Function to render product details
+// function renderProductDetail(productId, products) {
+//   const productListContainer = document.getElementById("product-list");
+//   productListContainer.style.display = "none";
+//   const productDetailContainer = document.getElementById("product-detail");
+//   const product = products.find((p) => p.id == productId);
+
+//   if (product) {
+//     productDetailContainer.innerHTML = `
+//                 <h2>${product.title}</h2>
+//                 <img src="${product.thumbnail}" alt="${product.title}" />
+//                 <p>Price: ${product.price}</p>
+//                 <p>Description: ${product.description}</p>
+//                 <p>How To Use: ${product.howto}</p>
+//                 <p>Sold: ${product.selled}</p>
+//                 <div>
+//                     ${product.media
+//                       .map(
+//                         (image) =>
+//                           `<img src="${image}" style="width: 100px; margin-right: 10px;">`
+//                       )
+//                       .join("")}
+//                 </div>
+//                 <a href="/product.html">Back to product list</a>
+//             `;
+//   } else {
+//     productDetailContainer.innerHTML = "<p>Product not found.</p>";
+//   }
+// }
+
+// Utility function to create an element with content and classes
+function createElement(tag, content = "", classes = []) {
+  const element = document.createElement(tag);
+  if (content) element.textContent = content;
+  if (classes.length > 0) element.classList.add(...classes);
+  return element;
+}
+
+// Utility function to append multiple children to a parent
+function appendChildren(parent, children) {
+  children.forEach((child) => parent.appendChild(child));
+}
+
 async function fetchAndDisplayProducts() {
   try {
     const response = await fetch(
@@ -151,176 +312,103 @@ async function fetchAndDisplayProducts() {
     }
 
     const data = await response.json();
-    const productListContainer = document.getElementById("product-list");
-    const catContainer = document.getElementById("cat"); // New container for the template
+    const productListContainer = document.getElementById("row-product");
 
     // Create a fragment to minimize reflows and repaints
     const fragment = document.createDocumentFragment();
-    const catFragment = document.createDocumentFragment(); // New fragment for the template
 
     data.forEach((product) => {
-      const productLink = createElement("a", product.title);
-      productLink.href = `#product/${product.id}`;
-      productLink.style.display = "block";
+      // Only display product if 'featured' is 'on'
+      if (product.featured === "on") {
+        // Create product card container
+        const productCard = document.createElement("div");
+        productCard.classList.add("product-card");
 
-      // Append the link to the fragment
-      fragment.appendChild(productLink);
+        // Create container div for the image and top details
+        const containerDiv = document.createElement("div");
+        containerDiv.classList.add("container");
 
-      // Create the new template and append it to the catFragment
-      const productCard = document.createElement("div");
-      productCard.classList.add("relative", "mx-auto", "w-full");
+        // Create image element
+        const img = document.createElement("img");
+        img.src = product.thumbnail;
+        img.alt = product.title;
+        img.classList.add("product-card-image", "xl:w-[90%]");
 
-      productCard.innerHTML = `
-        <a
-          href="#product/${product.id}"
-          class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"
-        >
-          <div class="relative z-0 shadow p-4 rounded-lg bg-white">
-            <p
-              class="absolute z-10 top-1 left-1 bg-custom-green-30 text-custom-green-100 p-1 rounded"
-              data-key="terlaris"
-            >
-              Produk terlaris
-            </p>
-            <div
-              class="flex justify-center mx-auto relative z-20 rounded-lg overflow-hidden w-40 h-max md:w-56 md:h-56 mt-7"
-            >
-              <img
-                src="${product.thumbnail}" 
-                alt="${product.title}"
-                class="w-full h-full"
-              />
-              <div
-                class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full"
-              >
-                <div class="absolute inset-0 bg-black opacity-10"></div>
-              </div>
-            </div>
+        // Create top detail div
+        const topDetailDiv = document.createElement("div");
+        topDetailDiv.classList.add("top-detail");
 
-            <div class="mt-4 border-b-2">
-              <h2
-                class="font-bold text-base md:text-lg text-gray-800 line-clamp-1"
-                title="${product.title}"
-                data-key="vco250"
-              >
-                ${product.title}
-              </h2>
-              <p
-                class="mt-2 text-sm text-gray-800 line-clamp-1 mb-2"
-                title="${product.description}"
-                data-key="vco250title"
-              >
-                ${product.description}
-              </p>
-            </div>
+        // Create 'products sold' text
+        const topSellP = createElement("p", "", ["top-sell"]);
+        const soldSpan = createElement("span", product.selled);
+        topSellP.appendChild(soldSpan);
+        topSellP.appendChild(document.createTextNode(" produk terjual"));
 
-            <div class="grid grid-cols-2 gap-3 mt-8">
-              <div class="flex items-center">
-                <div class="relative">
-                  <div class="">
-                    <span class="text-yellow-800 font-bold text-sm">${product.selled}</span>
-                  </div>
-                  <span
-                    class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"
-                  ></span>
-                </div>
+        // Create 'Detail Produk' link
+        const topLinkP = createElement("p", "", ["top-link"]);
+        const topLinkA = createElement("a", "Detail Produk");
+        topLinkA.href = `catalog.html`;
+        topLinkP.appendChild(topLinkA);
 
-                <p
-                  class="ml-2 text-gray-800 line-clamp-1 text-sm"
-                  data-key="terjual"
-                >
-                  Produk Terjual
-                </p>
-              </div>
+        // Append elements to the top detail div
+        appendChildren(topDetailDiv, [topSellP, topLinkP]);
 
-              <div class="flex justify-end">
-                <p
-                  class="inline-block font-semibold bg-custom-green-30 text-custom-green-100 whitespace-nowrap leading-tight rounded p-2"
-                >
-                  <span class="text-sm" data-key="sekarang">Dapatkan Sekarang</span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </a>
-      `;
+        // Append image and top detail to the container
+        appendChildren(containerDiv, [img, topDetailDiv]);
 
-      catFragment.appendChild(productCard); // Append the card to the catFragment
+        // Create product title
+        const productTitle = createElement("h3", product.title, [
+          "product-card-title",
+        ]);
+
+        // Create top detail for non-PC view
+        const topDetailNonPC = document.createElement("div");
+        topDetailNonPC.classList.add("top-detail-nonpc");
+
+        // Reuse top-sell and top-link for non-PC view
+        const topSellNonPC = topSellP.cloneNode(true);
+        const topLinkNonPC = topLinkP.cloneNode(true);
+
+        // Append elements to non-PC detail div
+        appendChildren(topDetailNonPC, [topSellNonPC, topLinkNonPC]);
+
+        // Truncate product description to 200 characters
+        let truncatedDescription = product.description;
+        if (truncatedDescription.length > 170) {
+          truncatedDescription = truncatedDescription.substring(0, 200) + "...";
+        }
+        // Create product description
+        const productDescription = createElement("p", truncatedDescription, [
+          "top-desk",
+        ]);
+
+        // Append everything to the product card
+        appendChildren(productCard, [
+          containerDiv,
+          productTitle,
+          topDetailNonPC,
+          productDescription,
+        ]);
+
+        // Append product card to the fragment
+        fragment.appendChild(productCard);
+      }
     });
 
-    // Append the fragments to their respective containers
+    // Append fragment to the product list container
     productListContainer.appendChild(fragment);
-    catContainer.appendChild(catFragment); // Append the catFragment to #cat
-
-    // After the product list is loaded, initialize routing
-    setupRoutes(data);
   } catch (error) {
     console.error("Error fetching product data:", error);
   }
 }
 
-// Function to render product details
-function renderProductDetail(productId, products) {
-  const productListContainer = document.getElementById("product-list");
-  productListContainer.style.display = "none";
-  const productDetailContainer = document.getElementById("product-detail");
-  const product = products.find((p) => p.id == productId);
-
-  if (product) {
-    productDetailContainer.innerHTML = `
-                <h2>${product.title}</h2>
-                <img src="${product.thumbnail}" alt="${product.title}" />
-                <p>Price: ${product.price}</p>
-                <p>Description: ${product.description}</p>
-                <p>How To Use: ${product.howto}</p>
-                <p>Sold: ${product.selled}</p>
-                <div>
-                    ${product.media
-                      .map(
-                        (image) =>
-                          `<img src="${image}" style="width: 100px; margin-right: 10px;">`
-                      )
-                      .join("")}
-                </div>
-                <a href="/product.html">Back to product list</a>
-            `;
-  } else {
-    productDetailContainer.innerHTML = "<p>Product not found.</p>";
-  }
-}
-
-// Function to setup routes
-function setupRoutes(products) {
-  // Home route
-  function showHome() {
-    document.getElementById("product-detail").innerHTML =
-      "<p>Please select a product from the list.</p>";
-  }
-
-  // Product detail route
-  function showProductDetail() {
-    const hash = window.location.hash.substring(1); // Remove #
-    const [path, id] = hash.split("/");
-    if (path === "product") {
-      renderProductDetail(id, products);
-    } else {
-      showHome();
-    }
-  }
-
-  // Listen for hash changes
-  window.addEventListener("hashchange", showProductDetail);
-  // Initial route handling
-  showProductDetail();
-}
-
 // Utility function to create an element with optional text and class names
-function createElement(tag, textContent = null, classNames = []) {
-  const element = document.createElement(tag);
-  if (textContent) element.textContent = textContent;
-  if (classNames.length) element.classList.add(...classNames);
-  return element;
-}
+// function createElement(tag, textContent = null, classNames = []) {
+//   const element = document.createElement(tag);
+//   if (textContent) element.textContent = textContent;
+//   if (classNames.length) element.classList.add(...classNames);
+//   return element;
+// }
 
 // Utility function to append multiple children to a parent element
 function appendChildren(parent, children) {
@@ -328,32 +416,32 @@ function appendChildren(parent, children) {
 }
 
 // Improved lazyLoadImages function with throttling and better performance
-function lazyLoadImages() {
-  const lazyImages = document.querySelectorAll("img.lazy");
+// function lazyLoadImages() {
+//   const lazyImages = document.querySelectorAll("img.lazy");
 
-  if ("IntersectionObserver" in window) {
-    const lazyImageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const lazyImage = entry.target;
-          lazyImage.src = lazyImage.dataset.src;
-          lazyImage.classList.remove("lazy");
-          lazyImageObserver.unobserve(lazyImage);
-        }
-      });
-    });
+//   if ("IntersectionObserver" in window) {
+//     const lazyImageObserver = new IntersectionObserver((entries, observer) => {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//           const lazyImage = entry.target;
+//           lazyImage.src = lazyImage.dataset.src;
+//           lazyImage.classList.remove("lazy");
+//           lazyImageObserver.unobserve(lazyImage);
+//         }
+//       });
+//     });
 
-    lazyImages.forEach((lazyImage) => {
-      lazyImageObserver.observe(lazyImage);
-    });
-  } else {
-    // Fallback for older browsers
-    lazyImages.forEach((lazyImage) => {
-      lazyImage.src = lazyImage.dataset.src;
-      lazyImage.classList.remove("lazy");
-    });
-  }
-}
+//     lazyImages.forEach((lazyImage) => {
+//       lazyImageObserver.observe(lazyImage);
+//     });
+//   } else {
+//     // Fallback for older browsers
+//     lazyImages.forEach((lazyImage) => {
+//       lazyImage.src = lazyImage.dataset.src;
+//       lazyImage.classList.remove("lazy");
+//     });
+//   }
+// }
 
 // Function to initialize accordion click listeners
 function initializeAccordions() {
@@ -370,6 +458,7 @@ function initializeAccordions() {
 
 // Function to initialize slick carousel and toggle active class
 function initializeSlickCarousel() {
+  // Initialize slick carousel for blog section
   $(document).ready(function () {
     function applySlick() {
       $(".blog-content").slick({
@@ -415,6 +504,31 @@ function initializeSlickCarousel() {
     // Re-initialize on window resize
     $(window).resize(function () {
       init();
+    });
+  });
+
+  // Initialize slick carousel for product section
+  $(document).ready(function () {
+    $(".row-product").slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      centerMode: true,
+      centerPadding: "0",
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+      ],
+    });
+    $(".product .row-product .product-card-image").click(function () {
+      $(".product .row-product .product-card-image")
+        .not($(this))
+        .removeClass("active");
+      $(this).toggleClass("active");
     });
   });
 }

@@ -335,8 +335,8 @@
           Anda.
         </p>
 
-        <div class="row-product">
-          <div class="product-card">
+        <div class="row-product" id="row-product">
+          <!-- <div class="product-card">
             <div class="container">
               <img
                 src="image/catalogpro/produk/produk1.svg"
@@ -346,14 +346,13 @@
               <div class="top-detail">
                 <p class="top-sell"><span>5432</span> produk terjual</p>
                 <p class="top-link">
-                  <a href="cat1pro1.html">Detail Produk</a>
+                  <a href="catalog.html#product/114">Detail Produk</a>
                 </p>
               </div>
             </div>
             <h3 class="product-card-title">MINYAK KELAPA</h3>
 
             <div class="top-detail-nonpc">
-              <!-- <p class="top-tag" data-key="terlaris">Produk Terlaris</p> -->
               <p class="top-sell"><span>5432</span> produk terjual</p>
               <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
             </div>
@@ -382,7 +381,6 @@
             <h3 class="product-card-title">MINYAK KELAPA</h3>
 
             <div class="top-detail-nonpc">
-              <!-- <p class="top-tag" data-key="terlaris">Produk Terlaris</p> -->
               <p class="top-sell"><span>5432</span> produk terjual</p>
               <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
             </div>
@@ -411,7 +409,6 @@
             <h3 class="product-card-title">MINYAK KELAPA</h3>
 
             <div class="top-detail-nonpc">
-              <!-- <p class="top-tag" data-key="terlaris">Produk Terlaris</p> -->
               <p class="top-sell"><span>5432</span> produk terjual</p>
               <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
             </div>
@@ -440,7 +437,6 @@
             <h3 class="product-card-title">MINYAK KELAPA</h3>
 
             <div class="top-detail-nonpc">
-              <!-- <p class="top-tag" data-key="terlaris">Produk Terlaris</p> -->
               <p class="top-sell"><span>5432</span> produk terjual</p>
               <p class="top-link"><a href="cat1pro1.html">Detail Produk</a></p>
             </div>
@@ -450,8 +446,9 @@
               minyak kelapa kami dan nikmati kebaikan alam dalam setiap
               tetesnya.
             </p>
-          </div>
+          </div> -->
         </div>
+
         <h3 class="catalog-link m-10">
           <a href="catalog.html">DAPATKAN LAINNYA!</a>
         </h3>
@@ -485,7 +482,7 @@
             class="absolute top-1/2 transform -translate-y-1/2 right-0 lg:w-60 w-52"
           />
         </div>
-        <div class="h-max bg-unggul w-full"></div>
+        <div class="h-9 bg-unggul w-full"></div>
         <!-- Article Section Below, DON'T DELETE (FROM js/cms.js) -->
         <div class="blog-content" id="blogContent"></div>
       </div>
@@ -502,22 +499,21 @@
       />
       <div class="realtive z-10">
         <section id="FAQ" class="FAQ">
-              <h2
-                class="text-center font-bold lg:text-4xl md:text-3xl text-2xl mb-8"
-              >
-                <span class="text-primary" data-key="faq1">FAQ : </span
-                ><span class="text-oren" data-key="faq2">Minyak Kelapa Murni </span>
-                <span class="text-unggul realtive z-20">Abila</span>
-              </h2>
-              <!-- FAQ SECTION BELOW, DON'T DELETE (FROM js/cms.js) -->
-              <div id="QnA-border" class="relative z-10"></div>
+          <h2
+            class="text-center font-bold lg:text-4xl md:text-3xl text-2xl mb-8"
+          >
+            <span class="text-primary" data-key="faq1">FAQ : </span
+            ><span class="text-oren" data-key="faq2">Minyak Kelapa Murni </span>
+            <span class="text-unggul realtive z-20">Abila</span>
+          </h2>
+          <!-- FAQ SECTION BELOW, DON'T DELETE (FROM js/cms.js) -->
+          <div id="QnA-border" class="relative z-10"></div>
         </section>
       </div>
     </div>
     <!-- FAQ Section End -->
 
     <!-- Kontak Section Start -->
-     <div class="">
     <section
       id="contact"
       class="py-6 w-full h-max mt-28"
@@ -662,30 +658,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <!-- Custom JS to initialize Slick Slider -->
-    <script>
-      $(document).ready(function () {
-        $(".row-product").slick({
-          infinite: true,
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          centerMode: true,
-          centerPadding: "0",
-          responsive: [
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 1,
-              },
-            },
-          ],
-        });
-        $(".product .row-product .product-card-image").click(function () {
-          $(".product .row-product .product-card-image")
-            .not($(this))
-            .removeClass("active");
-          $(this).toggleClass("active");
-        });
-      });
-    </script>
   </body>
 </html>
