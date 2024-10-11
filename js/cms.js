@@ -208,7 +208,7 @@ async function fetchAndDisplayProducts() {
         // Create 'Detail Produk' link
         const topLinkP = createElement("p", "", ["top-link"]);
         const topLinkA = createElement("a", "Detail Produk");
-        topLinkA.href = `catalog.html`;
+        topLinkA.href = `catalog.html#product/${product.id}`;
         topLinkP.appendChild(topLinkA);
 
         // Append elements to the top detail div

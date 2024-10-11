@@ -1385,7 +1385,7 @@ html {
     margin-top: 0px;
     margin-bottom: 0px;
     display: flex;
-    jastify-content: center;
+    justify-content: center;
     width: 100%;
     .top-sell,
     .top-link {
@@ -1522,9 +1522,7 @@ html {
   .product .row-product .product-card .top-tag {
     font-size: 1.2rem;
   }
-  .product .row-product .product-card img {
-    /* width: 60%; */
-  }
+
   .product .row-product .product-card .top-desk {
     margin-top: 10px;
     position: center;
@@ -1550,6 +1548,7 @@ html {
     font-size: 1.2rem;
   }
   .product .row-product .container {
+    /* height: 10px; */
     .top-detail {
       position: relative;
       bottom: 0;
