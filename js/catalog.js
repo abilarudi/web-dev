@@ -1,9 +1,12 @@
 // Order by WhatsApp
-function catComponent() {
-    const nav = document.createElement("nav");
-  const catalog = document.getElementById("catalog-content");
-
-}
+// Retrieve the selected language from localStorage
+document.addEventListener("DOMContentLoaded", () => {
+  const selectedLang = localStorage.getItem("selectedLang") || "id";
+  console.log("Selected Language in catalog.js:", selectedLang);
+  // Use the selectedLang variable as needed
+  // For example, you can call a function to set the language
+  // setLanguage(selectedLang);
+});
 
 // Utility function to create elements with classes and content
 function createElement(tag, content = "", classes = []) {
@@ -18,6 +21,8 @@ function appendChildren(parent, children) {
   children.forEach((child) => parent.appendChild(child));
 }
 
+const catContent = document.getElementById("catalog-content"); // New container for the template
+
 async function fetchAndDisplayProducts() {
   try {
     const response = await fetch(
@@ -30,8 +35,9 @@ async function fetchAndDisplayProducts() {
     const data = await response.json();
     const catContainer = document.getElementById("cat"); // New container for the template
 
+    // Add the specified class and style to the catContent element
+
     // Create a fragment to minimize reflows and repaints
-    // const fragment = document.createDocumentFragment();
     const catFragment = document.createDocumentFragment(); // New fragment for the template
 
     data.forEach((product) => {
@@ -118,9 +124,10 @@ async function fetchAndDisplayProducts() {
     });
 
     // Append the fragments to their respective containers
-    // productListContainer.appendChild(fragment);
+
     catContainer.appendChild(catFragment); // Append the catFragment to #cat
 
+    clearAndRenderBody(navbar, catContent, footer);
     // After the product list is loaded, initialize routing
     setupRoutes(data);
   } catch (error) {
@@ -130,13 +137,6 @@ async function fetchAndDisplayProducts() {
 
 // Function to render product details
 async function renderProductDetail(productId, products) {
-  // Remove the catalog content from the body
-  //   const catalog = document.getElementById("catalog-content");
-  //   if (catalog && footer) {
-  //     catalog.remove();
-  //     footer.remove();
-  //   }
-
   // Dynamically add the CSS file to the document head
   const link = document.createElement("link");
   link.rel = "stylesheet";
@@ -288,13 +288,14 @@ async function renderProductDetail(productId, products) {
                 </div>
 
                 <div class="relative z-50 w-full h-max flex justify-start gap-10">
-                  <a
-                    href="index.html"
+                  <button
+                    onclick="sendwa()"
+                    type="button"
                     id="wa"
                     class="relative z-50 px-4 py-3 mt-10 xl:mt-20 text-lg font-semibold rounded bg-yellow-900 hover:bg-yellow-950 text-gray-50"
                   >
                     <span class="italic">Order via WhatsApp</span>
-                  </a>
+                  </button>
                   <a
                     href="https://shopee.co.id/abilaindonesia"
                     class="relative z-50 px-4 py-3 mt-10 xl:mt-20 text-lg font-semibold rounded bg-yellow-900 hover:bg-yellow-950 text-gray-50"
@@ -404,6 +405,7 @@ footers.classList.add("w-full", "h-max", "bg-teal-800", "text-white");
 
 // Function to setup routes
 function setupRoutes(products) {
+  hasReloaded = localStorage.setItem("hasReloaded", false);
   // Product detail route
   function showProductDetail() {
     const hash = window.location.hash.substring(1); // Remove #
@@ -411,9 +413,10 @@ function setupRoutes(products) {
 
     const [path, id] = hash.split("/");
     // Check if the hash is empty
-    if (hash === "") {
-      // Set the hash to the default value and reload the page
-      window.location.hash = "#catalog";
+    if (path === "catalog" && !localStorage.getItem("hasReloaded")) {
+      localStorage.setItem("hasReloaded", true); // Set the flag to true
+      window.location.reload();
+      localStorage.setItem("hasReloaded", false);
       return;
     }
     console.log("hash : " + window.location.hash);
@@ -434,3 +437,24 @@ function setupRoutes(products) {
 
 // Call the function to fetch and display products when the page is loaded
 document.addEventListener("DOMContentLoaded", fetchAndDisplayProducts);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sendwaButton = document.getElementById("sendwa-button");
+  const counterElement = document.getElementById("counter");
+
+  sendwaButton.addEventListener("click", () => {
+    const counterValue = counterElement.textContent;
+    sendwa(counterValue);
+  });
+
+  const incrementButton = document.getElementById("increment");
+  incrementButton.addEventListener("click", () => {
+    counterElement.textContent = parseInt(counterElement.textContent) + 1;
+  });
+});
+
+function sendwa(counterValue) {
+  // Your existing sendwa function implementation
+  console.log("Counter value:", counterValue);
+  // Add your logic to send the counter value via WhatsApp
+}

@@ -601,6 +601,7 @@ const translations = {
 
 // Apply translations based on the selected language
 function applyTranslations(lang) {
+  
   document.querySelectorAll("[data-key]").forEach((elem) => {
     const key = elem.getAttribute("data-key");
     if (translations[lang] && translations[lang].hasOwnProperty(key)) {
