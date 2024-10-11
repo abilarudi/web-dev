@@ -51,6 +51,21 @@
     <!-- My Style -->
     <link rel="Stylesheet" href="CSS/style.css" />
     <link rel="stylesheet" href="CSS/output.css" />
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include Slick CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+
+    <!-- Include Slick JS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
   </head>
 
   <body>
@@ -490,6 +505,64 @@
 
     <!-- Blog Section End -->
 
+    <!-- Testimoni Section Start -->
+    <div class="testi">
+      <div class="title-testi">TESTIMONI</div>
+      <div id="content-testi" class="content">
+        <div class="person">
+          <div class="content-person">
+            <h4 class="name">Zizah</h4>
+            <p class="title">"Wajahku lebih resik"</p>
+            <p class="city">Indonesia</p>
+          </div>
+        </div>
+        <div class="person">
+          <div class="content-person">
+            <h4 class="name">Zizah</h4>
+            <p class="title">
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio quae doloremque labore corrupti numquam recusandae in
+              atque aperiam ipsa, sequi omnis nostrum earum a explicabo!"
+            </p>
+            <p class="city">Indonesia</p>
+          </div>
+        </div>
+        <div class="person">
+          <div class="content-person">
+            <h4 class="name">Zizah</h4>
+            <p class="title">
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+              reiciendis accusamus quidem blanditiis quibusdam obcaecati. Fugit
+              impedit officia ullam excepturi."
+            </p>
+            <p class="city">Indonesia</p>
+          </div>
+        </div>
+        <div class="person">
+          <div class="content-person">
+            <h4 class="name">Zizah</h4>
+            <p class="title">
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Accusantium ducimus praesentium modi quos laborum totam!""
+            </p>
+            <p class="city">Indonesia</p>
+          </div>
+        </div>
+        <div class="person">
+          <div class="content-person">
+            <h4 class="name">Zizah</h4>
+            <p class="title">
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Accusantium ducimus praesentium modi quos laborum totam!""
+            </p>
+            <p class="city">Indonesia</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimoni Section End -->
+
     <!-- FAQ Section Start -->
     <div class="relative">
       <img
@@ -645,6 +718,29 @@
     <!-- Feather Icons -->
     <script>
       feather.replace();
+    </script>
+
+    <!-- Testi Script -->
+    <script>
+      $(document).ready(function () {
+        $("#content-testi").slick({
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          dots: true,
+          arrows: true,
+          responsive: [
+            {
+              breakpoint: 768, // jika lebar layar kurang dari 768px (ukuran tablet/HP)
+              settings: {
+                slidesToShow: 1, // tampilkan hanya 1 slide
+                slidesToScroll: 1, // geser 1 slide setiap kali scroll
+              },
+            },
+          ],
+        });
+      });
     </script>
 
     <!-- My Javascript -->
