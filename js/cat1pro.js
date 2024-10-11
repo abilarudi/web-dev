@@ -86,6 +86,7 @@ observers.observe(document.body, {
 // Function to open the city (tab)
 function openCity(evt, cityName) {
   var i, sumcontent, desk;
+  console.log("aloo");
 
   // Hide all content with the class 'sumcontent'
   sumcontent = document.getElementsByClassName("sumcontent");

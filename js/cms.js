@@ -1,3 +1,40 @@
+let selectedLang;
+// Retrieve the selected language from localStorage
+document.addEventListener("DOMContentLoaded", () => {
+  selectedLang = localStorage.getItem("selectedLang") || "id";
+  console.log("Selected Language in cms.js:", selectedLang);
+});
+
+// Function to set the language
+// async function setLanguage(lang) {
+//   selectedLang = lang;
+//   localStorage.setItem("selectedLang", lang);
+//   console.log("lang" + lang);
+//   console.log("Select lang : " + selectedLang);
+//   try {
+//     // Fetch and display products
+//     // await fetchAndDisplayArticles();
+
+//     // Initialize slick carousel after content is fully loaded
+//     // initializeSlickCarousel();
+//   } catch (error) {
+//     console.error("Error fetching the data:", error);
+//   }
+// }
+
+// Event listeners for language buttons
+// document
+//   .getElementById("lang-in")
+//   .addEventListener("click", () => setLanguage("id"));
+// document
+//   .getElementById("lang-en")
+//   .addEventListener("click", () => setLanguage("en"));
+
+// Example function to set the language
+// function setLanguage(lang){
+
+// }
+
 // // Initialize accordions on document ready
 // document.addEventListener("click", initializeAccordions);
 document.addEventListener("DOMContentLoaded", async function () {
@@ -118,7 +155,11 @@ async function fetchAndDisplayArticles() {
 
       const kutipan = createElement("div", null, ["kutipan"]);
       const markTop = createElement("div", "''", ["mark-top"]);
-      const content = createElement("div", item.article, ["content"]);
+      const content = createElement(
+        "div",
+        selectedLang === "id" ? item.article : item.article_en,
+        ["content"]
+      );
       const markBot = createElement("div", "''", ["mark-bot"]);
 
       const sumber = createElement("div", null, ["sumber"]);
