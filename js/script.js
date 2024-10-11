@@ -75,47 +75,63 @@ document.addEventListener("click", function (event) {
 // Example dictionary of search terms, their corresponding links, and text content
 const dictionaries = {
   id: {
-    "home s": {
+    Beranda: {
       link: "index.html#home",
       text: "Selamat datang di bagian rumah di mana Anda dapat menemukan pembaruan terbaru.",
     },
-    about: {
+    "Tentang Kami": {
       link: "index.html#about",
       text: "Pelajari lebih lanjut tentang perusahaan dan tim kami di bagian tentang.",
     },
-    product: {
+    Produk: {
       link: "index.html#product",
       text: "Temukan berbagai produk kami di bagian produk.",
     },
-    contact: {
+    Kontak: {
       link: "index.html#contact",
       text: "Hubungi kami melalui bagian kontak.",
     },
-    catalog: {
+    Katalog: {
       link: "catalog.html",
       text: "Jelajahi katalog kami untuk melihat semua item yang tersedia.",
     },
+    FaQ: {
+      link: "index.html#faq",
+      text: "Temukan jawaban atas pertanyaan umum di bagian FAQ.",
+    },
+    Review: {
+      link: "index.html#review",
+      text: "Baca ulasan dari pelanggan kami di bagian ulasan.",
+    },
   },
   en: {
-    "home s": {
+    Home: {
       link: "index.html#home",
       text: "Welcome to the home section where you can find the latest updates.",
     },
-    about: {
+    "About Us": {
       link: "index.html#about",
       text: "Learn more about our company and team in the about section.",
     },
-    product: {
+    Product: {
       link: "index.html#product",
       text: "Discover our range of products in the product section.",
     },
-    contact: {
+    Contact: {
       link: "index.html#contact",
       text: "Get in touch with us through the contact section.",
     },
-    catalog: {
+    Catalog: {
       link: "catalog.html",
       text: "Browse our catalog to see all available items.",
+    },
+    FaQ: {
+      link: "index.html#faq",
+      text: "Find answers to common questions in the FAQ section.",
+    },
+    Review: {
+      link: "index.html#review",
+      text: "Read reviews from our customers in the review section.",
     },
   },
 };
@@ -311,7 +327,8 @@ const translations = {
     unggulan: "Featured Products",
     desunggulan:
       "Explore our featured products, customer favourites with premium quality and actual results, formulated for your beauty and health.",
-    product1: "COCONUT OIL",
+    product1:
+      "Explore our featured products, customer favorites with premium quality and real results, designed for your beauty and health.",
     despro1:
       "This product is perfect for a variety of purposes, from cooking, maintaining skincare, and hair. Discover the magic of our coconut oil and savour the goodness of nature in every drop.",
     terjualproduct1: "5432 products sold", // Urus Span
@@ -486,7 +503,8 @@ const translations = {
     desunggulan:
       "Jelajahi produk unggulan kami, favorit pelanggan dengan kualitas premium dan hasil nyata, dirancang untuk kecantikan dan kesehatan Anda",
     terlaris: "Produk Terlaris",
-    product1: "MINYAK KELAPA",
+    product1:
+      "Jelajahi produk unggulan kami, favorit pelanggan dengan kualitas premium dan hasil nyata, dirancang untuk kecantikan dan kesehatan Anda.",
     despro1:
       "Produk ini sangat cocok untuk berbagai keperluan, mulai dari memasak, menjaga perawatan kulit, dan rambut. Temukan keajaiban minyak kelapa kami dan nikmati kebaikan alam dalam setiap tetesnya.",
     terjualproduct1: "5432 produk terjual", // Urus Span
