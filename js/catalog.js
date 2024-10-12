@@ -288,14 +288,13 @@ async function renderProductDetail(productId, products) {
                 </div>
 
                 <div class="relative z-50 w-full h-max flex justify-start gap-10">
-                  <button
-                    onclick="sendwa()"
-                    type="button"
+                  <a
+                    href="https://wa.me/6281212345678"
                     id="wa"
                     class="relative z-50 px-4 py-3 mt-10 xl:mt-20 text-lg font-semibold rounded bg-yellow-900 hover:bg-yellow-950 text-gray-50"
                   >
                     <span class="italic">Order via WhatsApp</span>
-                  </button>
+                  </a>
                   <a
                     href="https://shopee.co.id/abilaindonesia"
                     class="relative z-50 px-4 py-3 mt-10 xl:mt-20 text-lg font-semibold rounded bg-yellow-900 hover:bg-yellow-950 text-gray-50"
@@ -304,7 +303,7 @@ async function renderProductDetail(productId, products) {
                   </a>
                 </div>
               </div>
-            </div>
+            </div>se 
           </section>
           
           <section
@@ -438,23 +437,28 @@ function setupRoutes(products) {
 // Call the function to fetch and display products when the page is loaded
 document.addEventListener("DOMContentLoaded", fetchAndDisplayProducts);
 
-document.addEventListener("DOMContentLoaded", () => {
-  const sendwaButton = document.getElementById("sendwa-button");
-  const counterElement = document.getElementById("counter");
+function sendwa(product, price) {
+  // Validate parameters
+  if (typeof product !== "string" || typeof price !== "number") {
+    console.error(
+      "Invalid parameters: product should be a string and price should be a number."
+    );
+    return;
+  }
 
-  sendwaButton.addEventListener("click", () => {
-    const counterValue = counterElement.textContent;
-    sendwa(counterValue);
-  });
+  // Get the WhatsApp link element
+  const wa = document.getElementById("wa");
 
-  const incrementButton = document.getElementById("increment");
-  incrementButton.addEventListener("click", () => {
-    counterElement.textContent = parseInt(counterElement.textContent) + 1;
-  });
-});
+  // Check if the element exists
+  if (!wa) {
+    console.error('Element with ID "wa" not found.');
+    return;
+  }
 
-function sendwa(counterValue) {
-  // Your existing sendwa function implementation
-  console.log("Counter value:", counterValue);
-  // Add your logic to send the counter value via WhatsApp
+  // Create the message and URL
+  const message = `Halo, saya ingin memesan ${product} dengan harga Rp${price}.`;
+  const url = `https://wa.me/6281212345678?text=${encodeURIComponent(message)}`;
+
+  // Set the href attribute of the element
+  wa.href = url;
 }

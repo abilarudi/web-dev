@@ -267,7 +267,8 @@ body {
 .contact,
 .catalog,
 .category,
-.FAQ {
+.FAQ,
+.testi {
   padding: 8rem 7% 1.4rem;
 }
 
@@ -785,6 +786,51 @@ body {
   color: var(--primary);
   text-decoration: underline;
 } */
+
+/* Testimoni Section */
+.testi .title-testi {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #84563c;
+  position: relative;
+  display: inline-block;
+}
+.testi .title-testi::after {
+  content: "";
+  position: absolute;
+  top: 70%;
+  left: 100%;
+  width: 600%;
+  height: 2px;
+  background-color: #84563c;
+}
+.testi .content {
+  display: flex;
+  /* overflow-x: auto;
+  scroll-behavior: smooth; */
+}
+.testi .person {
+  display: inline;
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: #fdb320;
+  color: #03484a;
+  margin-bottom: 1.5rem;
+  font-size: 16px;
+  margin: 1rem;
+  .name {
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+  }
+  .title {
+    padding-bottom: 0.5rem;
+    text-align: justify;
+  }
+  .city {
+    border-top: solid 1.5px #a25b1d;
+  }
+}
+
 /* FAQ Section */
 .FAQ {
   background-color: #ede1d1;
